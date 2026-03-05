@@ -1,0 +1,1481 @@
+[
+    {
+        "id": "sea-and-sky_npcc_croupier",
+        "name": "Croupier",
+        "role": "controller",
+        "info": {
+            "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+            "tactics": "The Croupier is a tricky mid-range fighter that forces enemies to choose between their attack rolls and their health. Croupiers work especially well against enemies that make many attacks, but they have fewer options against armor, control effects, and forced saves."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                12,
+                14,
+                16
+            ],
+            "evade": [
+                10,
+                14,
+                18
+            ],
+            "edef": [
+                10,
+                11,
+                12
+            ],
+            "heatcap": [
+                7,
+                7,
+                7
+            ],
+            "speed": [
+                5,
+                5,
+                5
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                11,
+                13,
+                15
+            ],
+            "hull": [
+                -2,
+                -2,
+                -2
+            ],
+            "agility": [
+                2,
+                3,
+                4
+            ],
+            "systems": [
+                2,
+                3,
+                4
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    1
+                ],
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_bandits_arm_croupier",
+            "sea-and-sky_npcf_jinx_croupier",
+            "sea-and-sky_npcf_fifty_fifty_croupier"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_stack_the_odds_croupier",
+            "sea-and-sky_npcf_loaded_die_croupier",
+            "sea-and-sky_npcf_big_blind_croupier",
+            "sea-and-sky_npcf_the_house_always_wins_croupier",
+            "sea-and-sky_npcf_gamblers_fallacy_croupier",
+            "sea-and-sky_npcf_fate_weave_croupier"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_gatekeeper",
+        "name": "Gatekeeper",
+        "role": "artillery",
+        "info": {
+            "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+            "tactics": "The Gatekeeper is an unusual artillery unit that compensates for its poor range by warping the very definition of Range with its gates, which allow the Gatekeeper and its allies to extend their reach and attack from otherwise impossible angles. However, the Gatekeeper builds Heat the more its gates are used, and its enemies are perfectly capable of exploiting gates themselves."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                10,
+                12,
+                14
+            ],
+            "evade": [
+                10,
+                13,
+                16
+            ],
+            "edef": [
+                10,
+                12,
+                14
+            ],
+            "heatcap": [
+                8,
+                8,
+                8
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                20,
+                20,
+                20
+            ],
+            "save": [
+                10,
+                12,
+                14
+            ],
+            "hull": [
+                -2,
+                -2,
+                -2
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                2,
+                3,
+                4
+            ],
+            "engineering": [
+                2,
+                3,
+                4
+            ],
+            "size": [
+                [
+                    0.5,
+                    1
+                ],
+                [
+                    0.5,
+                    1
+                ],
+                [
+                    0.5,
+                    1
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_unlock_doors_gatekeeper",
+            "sea-and-sky_npcf_skeleton_key_gatekeeper"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_eversion_gatekeeper",
+            "sea-and-sky_npcf_summon_gatekeeper",
+            "sea-and-sky_npcf_watchman_gatekeeper",
+            "sea-and-sky_npcf_slam_shut_gatekeeper",
+            "sea-and-sky_npcf_close_sesame_gatekeeper",
+            "sea-and-sky_npcf_open_sesame_gatekeeper",
+            "sea-and-sky_npcf_almighty_janitor_gatekeeper"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_hitchhiker",
+        "name": "Hitchhiker",
+        "role": "defender",
+        "info": {
+            "flavor": "In the early days of the Makaptan labor conflict, logistical issues on both sides limited the number of chassis that could be fielded at once. As a workaround, fighters would train in the perilous art of mech jockeying, enabling them to multiply force at a much lower material cost. Although advances in infrastructure have removed the need for these so-called \"hitchhikers\", a few dauntless individuals continue to swear by the technique's effectiveness.",
+            "tactics": "The Hitchhiker clings to an ally to passively augment its own defenses while providing support fire and interfering with nearby enemies' attacks. Its optionals can grant its partner a variety of offensive and defensive buffs. Hitchhikers function best when enabling frontliners and are less durable and effective if isolated."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                12,
+                15,
+                18
+            ],
+            "evade": [
+                10,
+                12,
+                14
+            ],
+            "edef": [
+                8,
+                9,
+                10
+            ],
+            "heatcap": [
+                6,
+                6,
+                6
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                5,
+                5,
+                5
+            ],
+            "save": [
+                10,
+                12,
+                14
+            ],
+            "hull": [
+                -1,
+                -1,
+                -1
+            ],
+            "agility": [
+                2,
+                3,
+                4
+            ],
+            "systems": [
+                1,
+                2,
+                3
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_black_thumb_hitchhiker",
+            "sea-and-sky_npcf_blown_kiss_pistol_hitchhiker",
+            "sea-and-sky_npcf_im_helping_hitchhiker",
+            "sea-and-sky_npcf_slow_down_buckaroo_hitchhiker"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_go_get_em_tiger_hitchhiker",
+            "sea-and-sky_npcf_on_your_six_hitchhiker",
+            "sea-and-sky_npcf_thisll_patch_ya_up_hitchhiker",
+            "sea-and-sky_npcf_that_was_too_close_hitchhiker",
+            "sea-and-sky_npcf_get_dunked_on_hitchhiker",
+            "sea-and-sky_npcf_my_lucky_day_hitchhiker"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_lantern",
+        "name": "Lantern",
+        "role": "support",
+        "info": {
+            "flavor": "For centuries, folktales on Maguayan have warned of pale spirits that roam the wilderness, cursing those who trespass on their territory with ill fortune. These stories, once dismissed by outsiders as the superstition of a backwater planet, have only grown more vivid and widespread with time. Theorists agree the mysterious entities must be paracausal in nature, but more specific conclusions require further data.",
+            "tactics": "The Lantern is a highly mobile support that makes nearby enemies easier to attack and liable to taking additional damage. It can mark an individual character with a targetable shadow that effectively increases their hurtbox, denying them cover. Lanterns can close distance easily but pose little threat on their own; they work best with allies that can reliably output damage and keep them alive."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                10,
+                12,
+                14
+            ],
+            "evade": [
+                14,
+                16,
+                18
+            ],
+            "edef": [
+                10,
+                12,
+                14
+            ],
+            "heatcap": [
+                12,
+                12,
+                12
+            ],
+            "speed": [
+                6,
+                6,
+                6
+            ],
+            "sensor": [
+                5,
+                5,
+                5
+            ],
+            "save": [
+                12,
+                14,
+                16
+            ],
+            "hull": [
+                -2,
+                -2,
+                -2
+            ],
+            "agility": [
+                2,
+                3,
+                4
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                2,
+                3,
+                4
+            ],
+            "size": [
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_shadow_tag_lantern",
+            "sea-and-sky_npcf_will_o_wisp_lantern",
+            "sea-and-sky_npcf_heat_wave_lantern",
+            "sea-and-sky_npcf_levitate_lantern"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_glare_lantern",
+            "sea-and-sky_npcf_night_shade_lantern",
+            "sea-and-sky_npcf_confuse_ray_lantern",
+            "sea-and-sky_npcf_mystical_fire_lantern",
+            "sea-and-sky_npcf_nightmare_lantern",
+            "sea-and-sky_npcf_illuminate_lantern"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_monsoon",
+        "name": "Monsoon",
+        "role": "artillery",
+        "info": {
+            "flavor": "Monsoon-class frames date back to the Maguayan civil war and were first developed by Flue for the defense of Opal's capital city. The archetype's defining characteristics are the use of advanced e-warfare systems to secure a defensive perimeter and bursts of overwhelming firepower to pre-empt approach. Modern incarnations incorporate technology from IPS-N's Raleigh platform to smoothly transition between shielded and firing stances.",
+            "tactics": "True to its namesake, the Monsoon alternates between wielding long-range firepower and shielding itself from close-quarters fire. It can protect nearby allies by granting them hard cover and redirecting attacks towards itself. Clever foes will exploit its inability to control when its shields are down, as well as its reliance on offense to handle ranged attackers."
+        },
+        "stats": {
+            "armor": [
+                2,
+                2,
+                2
+            ],
+            "hp": [
+                14,
+                17,
+                20
+            ],
+            "evade": [
+                7,
+                8,
+                9
+            ],
+            "edef": [
+                12,
+                14,
+                16
+            ],
+            "heatcap": [
+                8,
+                8,
+                8
+            ],
+            "speed": [
+                3,
+                3,
+                3
+            ],
+            "sensor": [
+                15,
+                15,
+                15
+            ],
+            "save": [
+                11,
+                13,
+                15
+            ],
+            "hull": [
+                2,
+                3,
+                4
+            ],
+            "agility": [
+                -2,
+                -2,
+                -2
+            ],
+            "systems": [
+                2,
+                3,
+                4
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    2
+                ],
+                [
+                    2
+                ],
+                [
+                    2
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_typhoon_flechette_launcher_monsoon",
+            "sea-and-sky_npcf_habagat_oscillatory_shields_monsoon",
+            "sea-and-sky_npcf_guardian_monsoon",
+            "sea-and-sky_npcf_sturdy_frame_monsoon",
+            "sea-and-sky_npcf_rain_shadow_monsoon"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_kinetic_reservoir_monsoon",
+            "sea-and-sky_npcf_flood_targeting_monsoon",
+            "sea-and-sky_npcf_memetic_caltrops_monsoon",
+            "sea-and-sky_npcf_galeforce_repulsor_monsoon",
+            "sea-and-sky_npcf_hailstone_rounds_monsoon",
+            "sea-and-sky_npcf_amihan_interdiction_routines_monsoon"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_paladin",
+        "name": "Paladin",
+        "role": "support",
+        "info": {
+            "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+            "tactics": "Paladins protect nearby allied characters from control effects. Interpose and Pure Will allow them to absorb debilitating conditions that would otherwise shut down their allies, while Lean on Me prevents forced movement. Paladins work well alongside allies who are typically vulnerable to tech actions, but they cannot mitigate damage."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                20,
+                24,
+                28
+            ],
+            "evade": [
+                6,
+                7,
+                8
+            ],
+            "edef": [
+                12,
+                14,
+                16
+            ],
+            "heatcap": [
+                8,
+                8,
+                8
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                11,
+                13,
+                15
+            ],
+            "hull": [
+                2,
+                3,
+                4
+            ],
+            "agility": [
+                -2,
+                -2,
+                -2
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                2,
+                3,
+                4
+            ],
+            "size": [
+                [
+                    2
+                ],
+                [
+                    2
+                ],
+                [
+                    2
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_pathos_shotgun_paladin",
+            "sea-and-sky_npcf_interpose_paladin",
+            "sea-and-sky_npcf_lean_on_me_paladin",
+            "sea-and-sky_npcf_pure_will_paladin"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_indignation_paladin",
+            "sea-and-sky_npcf_fiery_rebuke_paladin",
+            "sea-and-sky_npcf_fortify_paladin",
+            "sea-and-sky_npcf_share_burdens_paladin",
+            "sea-and-sky_npcf_rallying_cry_paladin",
+            "sea-and-sky_npcf_lay_on_hands_paladin"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_pioneer",
+        "name": "Pioneer",
+        "role": "support",
+        "info": {
+            "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+            "tactics": "Pioneers are support units that enhances their allies' mobility while hindering that of enemies. Unlike their Mirage colleagues, they support from the frontline, focusing their efforts on a specific area of the battlefield and providing benefits both on their own turn and on allied turns. Pioneers are durable and have few weaknesses, but cannot accomplish much on their own."
+        },
+        "stats": {
+            "armor": [
+                1,
+                1,
+                1
+            ],
+            "hp": [
+                15,
+                18,
+                21
+            ],
+            "evade": [
+                8,
+                10,
+                12
+            ],
+            "edef": [
+                9,
+                11,
+                13
+            ],
+            "heatcap": [
+                10,
+                10,
+                10
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                12,
+                14
+            ],
+            "hull": [
+                1,
+                1,
+                1
+            ],
+            "agility": [
+                -1,
+                -1,
+                -1
+            ],
+            "systems": [
+                0,
+                1,
+                2
+            ],
+            "engineering": [
+                2,
+                3,
+                4
+            ],
+            "size": [
+                [
+                    2
+                ],
+                [
+                    2
+                ],
+                [
+                    2
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_pavement_drone_pioneer",
+            "sea-and-sky_npcf_reconnoiter_pioneer",
+            "sea-and-sky_npcf_all_terrain_treads_pioneer"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_expansionist_pioneer",
+            "sea-and-sky_npcf_sensor_relays_pioneer",
+            "sea-and-sky_npcf_map_territory_misalignment_pioneer",
+            "sea-and-sky_npcf_displacement_mine_pioneer",
+            "sea-and-sky_npcf_manifest_destiny_pioneer",
+            "sea-and-sky_npcf_breakfall_routines_pioneer"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_reaper",
+        "name": "Reaper",
+        "role": "defender",
+        "info": {
+            "flavor": "Makaptan's blackwash wranglers are known for their bravado, but there are those notorious few who actively cultivate a menacing aura. These self-styled \"reapers\" flaunt their mastery over nanites by wielding them in combat, and many moonlight as mercenaries in addition to their usual wrangling gigs. The psychological threat of being consumed by greywash is by itself often enough to erode even the most experienced pilot's composure.",
+            "tactics": "Reapers are melee defenders that use their signature debuff, Frightened, to force nearby enemies to pay attention to them or suffer debilitating effects. Though strong against stationary and grouped opponents, Reapers are slow for their short range and benefit from allies that provide reliable damage, mobility, and ways to deal with long-range attackers."
+        },
+        "stats": {
+            "armor": [
+                2,
+                2,
+                2
+            ],
+            "hp": [
+                14,
+                18,
+                22
+            ],
+            "evade": [
+                7,
+                8,
+                9
+            ],
+            "edef": [
+                10,
+                12,
+                14
+            ],
+            "heatcap": [
+                6,
+                6,
+                6
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                5,
+                5,
+                5
+            ],
+            "save": [
+                12,
+                15,
+                18
+            ],
+            "hull": [
+                1,
+                2,
+                3
+            ],
+            "agility": [
+                -1,
+                -1,
+                -1
+            ],
+            "systems": [
+                2,
+                3,
+                4
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    1
+                ],
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_greywash_scythe_reaper",
+            "sea-and-sky_npcf_sow_reaper",
+            "sea-and-sky_npcf_reap_reaper"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_malaise_reaper",
+            "sea-and-sky_npcf_morbid_curiosity_reaper",
+            "sea-and-sky_npcf_blight_reaper",
+            "sea-and-sky_npcf_overwhelming_presence_reaper",
+            "sea-and-sky_npcf_cascading_fear_reaper",
+            "sea-and-sky_npcf_executioner_reaper"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_thermostat",
+        "name": "Thermostat",
+        "role": "controller",
+        "info": {
+            "flavor": "Advanced climate-control technology, originally developed for life support systems in Makaptan's most extreme environments, is the basis for the Thermostat archetype. Remote-effect liturgicode allows the Thermostat to effectively control other mechs' reactor temperatures in apparent violation of the laws of thermodynamics. Once a rarity outside of the Kahilwayan system, Thermostat chassis are gaining popularity across Union space, much to the chagrin of Harrison Armory designers.",
+            "tactics": "Thermostats manipulate Heat – both their own and that of other mechs – to fuel powerful systems. They can punish Danger Zone-abusing enemies by either overloading them with Heat or sapping it away. Thermostats themselves achieve peak performance and durability in the Danger Zone, but peppering them with repeated attacks will force them out."
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                16,
+                18,
+                20
+            ],
+            "evade": [
+                8,
+                9,
+                10
+            ],
+            "edef": [
+                10,
+                12,
+                14
+            ],
+            "heatcap": [
+                10,
+                11,
+                12
+            ],
+            "speed": [
+                4,
+                4,
+                4
+            ],
+            "sensor": [
+                15,
+                15,
+                15
+            ],
+            "save": [
+                12,
+                14,
+                16
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                2,
+                3,
+                4
+            ],
+            "engineering": [
+                1,
+                2,
+                3
+            ],
+            "size": [
+                [
+                    1
+                ],
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_carnot_cycle_thermostat",
+            "sea-and-sky_npcf_heatsync_thermostat",
+            "sea-and-sky_npcf_second_law_thermostat",
+            "sea-and-sky_npcf_blackbody_barrier_thermostat"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_maxwells_demon_thermostat",
+            "sea-and-sky_npcf_first_law_thermostat",
+            "sea-and-sky_npcf_thermal_shock_thermostat",
+            "sea-and-sky_npcf_ultraviolet_catastrophe_thermostat",
+            "sea-and-sky_npcf_third_law_thermostat",
+            "sea-and-sky_npcf_paracausal_coolant_thermostat"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_tunneler",
+        "name": "Tunneler",
+        "role": "striker",
+        "info": {
+            "flavor": "The first mechs fielded in the Makaptan labor conflict were repurposed excavators previously used to create space for tunnel boring machines. Today's Tunneler-class frames are the culmination of that technology, boasting full maneuverability underground and independent tunnel-boring capability. However, they come with steep maintenance costs and the tendency to max out cooling systems.",
+            "tactics": "Tunnelers dive into the earth to bypass obstacles, then strike from below with increased accuracy. They excel at punching through defensive lines and can leave behind tunnels to allow their allies easy access to objectives. Although tough, Tunnelers are slow aboveground, and they are susceptible to control effects and having their tunnels turned against them."
+        },
+        "stats": {
+            "armor": [
+                1,
+                1,
+                1
+            ],
+            "hp": [
+                16,
+                19,
+                22
+            ],
+            "evade": [
+                9,
+                11,
+                13
+            ],
+            "edef": [
+                6,
+                7,
+                8
+            ],
+            "heatcap": [
+                8,
+                8,
+                8
+            ],
+            "speed": [
+                3,
+                3,
+                4
+            ],
+            "sensor": [
+                5,
+                5,
+                5
+            ],
+            "save": [
+                10,
+                12,
+                14
+            ],
+            "hull": [
+                2,
+                3,
+                4
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                -1,
+                -1,
+                -1
+            ],
+            "engineering": [
+                1,
+                2,
+                3
+            ],
+            "size": [
+                [
+                    2
+                ],
+                [
+                    2
+                ],
+                [
+                    2
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_lithodynamic_movement_suite_tunneler",
+            "sea-and-sky_npcf_subterranean_networks_tunneler",
+            "sea-and-sky_npcf_borehead_ram_tunneler"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_explosive_emergence_tunneler",
+            "sea-and-sky_npcf_earthrend_tunneler",
+            "sea-and-sky_npcf_burrow_tunneler",
+            "sea-and-sky_npcf_underwatch_tunneler",
+            "sea-and-sky_npcf_sinkhole_carver_tunneler",
+            "sea-and-sky_npcf_oversize_tunnels_tunneler"
+        ],
+        "power": 100
+    },
+    {
+        "id": "sea-and-sky_npcc_croupier_loaded_die",
+        "name": "Loaded Die",
+        "role": "controller",
+        "info": {
+            "flavor": "",
+            "tactics": ""
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                5,
+                8,
+                10
+            ],
+            "evade": [
+                10,
+                10,
+                10
+            ],
+            "edef": [
+                10,
+                10,
+                10
+            ],
+            "heatcap": [
+                0,
+                0,
+                0
+            ],
+            "speed": [
+                0,
+                0,
+                0
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                10,
+                10
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_murphys_law_loaded_die"
+        ],
+        "optional_features": [],
+        "power": 0
+    },
+    {
+        "id": "sea-and-sky_npcc_gatekeeper_gate",
+        "name": "Gate",
+        "role": "support",
+        "info": {
+            "flavor": "",
+            "tactics": ""
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                1,
+                1,
+                1
+            ],
+            "evade": [
+                5,
+                5,
+                5
+            ],
+            "edef": [
+                8,
+                8,
+                8
+            ],
+            "heatcap": [
+                0,
+                0,
+                0
+            ],
+            "speed": [
+                0,
+                0,
+                0
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                10,
+                10
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    1
+                ],
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_einstein_rosen_bridge_gate"
+        ],
+        "optional_features": [],
+        "power": 0
+    },
+    {
+        "id": "sea-and-sky_npcc_pioneer_displacement_mine",
+        "name": "Displacement Mine",
+        "role": "support",
+        "info": {
+            "flavor": "",
+            "tactics": ""
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                1,
+                1,
+                1
+            ],
+            "evade": [
+                10,
+                10,
+                10
+            ],
+            "edef": [
+                10,
+                10,
+                10
+            ],
+            "heatcap": [
+                0,
+                0,
+                0
+            ],
+            "speed": [
+                0,
+                0,
+                0
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                10,
+                10
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_kinetic_shunt_displacement_mine"
+        ],
+        "optional_features": [],
+        "power": 0
+    },
+    {
+        "id": "sea-and-sky_npcc_pioneer_pavement_drone",
+        "name": "Pavement Drone",
+        "role": "support",
+        "info": {
+            "flavor": "",
+            "tactics": ""
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                5,
+                8,
+                10
+            ],
+            "evade": [
+                10,
+                10,
+                10
+            ],
+            "edef": [
+                10,
+                10,
+                10
+            ],
+            "heatcap": [
+                0,
+                0,
+                0
+            ],
+            "speed": [
+                3,
+                3,
+                3
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                10,
+                10
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ],
+                [
+                    0.5
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_whitewash_pavement_pavement_drone"
+        ],
+        "optional_features": [],
+        "power": 0
+    },
+    {
+        "id": "sea-and-sky_npcc_tunneler_borehole",
+        "name": "Borehole",
+        "role": "support",
+        "info": {
+            "flavor": "",
+            "tactics": ""
+        },
+        "stats": {
+            "armor": [
+                0,
+                0,
+                0
+            ],
+            "hp": [
+                8,
+                10,
+                12
+            ],
+            "evade": [
+                5,
+                5,
+                5
+            ],
+            "edef": [
+                5,
+                5,
+                5
+            ],
+            "heatcap": [
+                0,
+                0,
+                0
+            ],
+            "speed": [
+                0,
+                0,
+                0
+            ],
+            "sensor": [
+                10,
+                10,
+                10
+            ],
+            "save": [
+                10,
+                10,
+                10
+            ],
+            "hull": [
+                0,
+                0,
+                0
+            ],
+            "agility": [
+                0,
+                0,
+                0
+            ],
+            "systems": [
+                0,
+                0,
+                0
+            ],
+            "engineering": [
+                0,
+                0,
+                0
+            ],
+            "size": [
+                [
+                    2
+                ],
+                [
+                    2
+                ],
+                [
+                    2
+                ]
+            ],
+            "activations": [
+                1,
+                1,
+                1
+            ]
+        },
+        "base_features": [
+            "sea-and-sky_npcf_subterranean_networks_borehole"
+        ],
+        "optional_features": [],
+        "power": 0
+    }
+]

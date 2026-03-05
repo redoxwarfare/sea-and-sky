@@ -1,0 +1,2041 @@
+[
+    {
+        "id": "sea-and-sky_npcf_bandits_arm_croupier",
+        "name": "Bandit's Arm",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "<b>On Critical Hit:</b> Target becomes <b>Impaired</b> until the end of their next turn.",
+        "tags": [],
+        "weapon_type": "Main Rifle",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "accuracy": [
+            1,
+            1,
+            1
+        ],
+        "damage": [
+            {
+                "type": "Kinetic",
+                "damage": [
+                    5,
+                    7,
+                    9
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Range",
+                "val": 10
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_jinx_croupier",
+        "name": "Jinx",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": true
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Croupier makes a tech attack against a character within <b>Sensors</b>. On a hit, until the end of the target's next turn, when they succeed on an attack, they must choose one: they take <b>{3/4/5} explosive damage</b>, or they reroll and keep the second result. This effect triggers only once per attack roll.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_fifty_fifty_croupier",
+        "name": "Fifty-Fifty",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Croupier is <b>Invisible</b> until it takes damage. It regains <b>Invisible</b> at the start of the next round.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_stack_the_odds_croupier",
+        "name": "Stack the Odds",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Croupier makes a tech attack against a character within <b>Sensors</b>. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack does <b>{3/4/5} less damage</b> to its target. If the attack deals multiple damage types, this effect only applies to the highest damage value.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_loaded_die_croupier",
+        "name": "Loaded Die",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "<b>Loaded Die (Size 1/2, HP {5/8/10}, Evasion {10/10/10}, E-Defense {10/10/10}, Tags: Drone)</b><br>The Croupier tosses a loaded die onto a free space within <b>Sensors</b>. Hostile characters within <b>Burst 2</b> of the die suffer the effect of <b>Jinx</b> until they leave the area.",
+        "tags": [
+            {
+                "id": "tg_drone"
+            },
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_limited",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_big_blind_croupier",
+        "name": "Big Blind",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character within <b>Range 10</b> takes a free action or reaction.",
+        "effect": "The Croupier interrupts the triggering character, attacking them with the <b>Bandit's Arm</b>.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_gamblers_fallacy_croupier",
+        "name": "Gambler's Fallacy",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "<b>1/round</b>, when a character within <b>Sensors</b> rolls an attack, check, or save, the Croupier may expend any number of charges from this system to add the same amount of <b>Accuracy</b> or <b>Difficulty</b> to the roll. The Croupier takes <b>2 heat</b> for every charge spent.<br>The Croupier regains a charge every time it or an allied character within line of sight and <b>Sensors</b> fails an attack, check, or save.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_limited",
+                "val": 3
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_the_house_always_wins_croupier",
+        "name": "The House Always Wins",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "A character within <b>Sensors</b> must make a <b>Systems</b> save. On a failure, they emit a <b>Burst 3</b> field of warped probability until the start of the Croupier's next turn. All attacks made by or against characters at least partially within the field cannot result in critical hits.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_fate_weave_croupier",
+        "name": "Fate Weave [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Croupier",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "When the Croupier triggers a hostile character's reaction, they must make a <b>Systems</b> save. On a failure, the Croupier ignores all effects of their reaction.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_skeleton_key_gatekeeper",
+        "name": "Skeleton Key",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "This weapon gains <b>+1 Accuracy</b> against targets that do not have <b>cover</b>.",
+        "tags": [],
+        "weapon_type": "Heavy Rifle",
+        "range": [
+            {
+                "type": "Range",
+                "val": 8
+            }
+        ],
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "damage": [
+            {
+                "type": "Energy",
+                "damage": [
+                    7,
+                    9,
+                    11
+                ]
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_unlock_doors_gatekeeper",
+        "name": "Unlock Doors",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Gatekeeper opens two <b>Line 3</b> gates in free spaces within <b>Sensors</b> but not necessarily line of sight. Each gate is <b>1 space</b> tall and has a black side and a red side, clearly indicated to all characters on the field. Gates count as normal pieces of <b>hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if a gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules. After each action or reaction that relies on a pair of gates, any Gatekeepers that opened either of the gates take <b>1 heat</b>.<br>If there are more than two gates per Gatekeeper on the field, the oldest excess gates close immediately. The Gatekeeper may close any number of gates as a protocol or before taking this action again.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_eversion_gatekeeper",
+        "name": "Eversion",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Gatekeeper chooses any number of gates within <b>Sensors</b> and flips their orientations (i.e. the black side becomes red and vice versa).",
+        "tags": [
+            {
+                "id": "tg_protocol"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_watchman_gatekeeper",
+        "name": "Watchman",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character begins movement within <b>Range 3</b> of any gate.",
+        "effect": "The Gatekeeper may attack the triggering character with <b>Overwatch</b> as long as they are a valid target for one of its weapons, dealing <b>half damage</b>, <b>burn</b>, and <b>heat</b>.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_slam_shut_gatekeeper",
+        "name": "Slam Shut",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Gatekeeper chooses a gate within <b>Sensors</b> (but not necessarily line of sight) that was not opened this turn. It may use the <b>Skeleton Key</b> to attack a character within line of sight and <b>Range 5</b> of that gate, then immediately closes it.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_summon_gatekeeper",
+        "name": "Summon",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Gatekeeper <b>teleports</b> a character within <b>Range 3</b> of a gate to a space within <b>Range 3</b> of any other gate. The starting and ending spaces of the teleport must be on the same color sides of their respective gates. Hostile characters may avoid this effect by passing an <b>Engineering</b> save. The Gatekeeper may use this action on itself.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_close_sesame_gatekeeper",
+        "name": "Close Sesame",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character makes a ranged or melee attack using a pair of gates.",
+        "effect": "The Gatekeeper suspends part of the attack in space and time. The triggering attack deals <b>half damage</b>, <b>burn</b>, and <b>heat</b>, and the Gatekeeper gains the <b>Open Sesame</b> quick action until the end of its next turn. If the attacker is hostile, they may negate these effects by passing a <b>Systems</b> save.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_open_sesame_gatekeeper",
+        "name": "Open Sesame",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Gatekeeper releases the suspended attack. The original attacker must repeat the attack roll against a target of the Gatekeeper's choice within <b>Range</b> or <b>Threat</b> of any gate, dealing <b>half damage</b>, <b>burn</b>, and <b>heat</b>. Line of sight and cover are determined as if the gate were the origin of the attack.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 3
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_almighty_janitor_gatekeeper",
+        "name": "Almighty Janitor [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Gatekeeper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>1/round</b>, when the Gatekeeper is in the <b>Danger Zone</b> and uses the <b>Skeleton Key</b> to <b>Skirmish</b>, its attack becomes <b>Line 8</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_black_thumb_hitchhiker",
+        "name": "Black Thumb",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "If it is not <b>Immobilized</b>, the Hitchhiker can start a <i>ride</i> with an adjacent allied character as a <b>quick action</b>, designating them as the <i>Driver</i> for the duration of the ride. The Hitchhiker may also deploy already riding with any allied character.<br>During a ride, the Hitchhiker gains <b>+4 Evasion</b> to a maximum of <b>20</b>, occupies the Driver's space, and is moved with the Driver whenever they move. The ride ends when the Hitchhiker would move away from the Driver or the Driver is destroyed. Before a ride ends, the Hitchhiker first moves into a free space of the triggering character's choice adjacent to the Driver.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_blown_kiss_pistol_hitchhiker",
+        "name": "\"Blown Kiss\" Pistol",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "This weapon gains <b>+1 Accuracy</b> when used during a reaction.",
+        "tags": [
+            {
+                "id": "tg_ap"
+            }
+        ],
+        "weapon_type": "Auxiliary CQB",
+        "attack_bonus": [
+            0,
+            1,
+            2
+        ],
+        "damage": [
+            {
+                "type": "Kinetic",
+                "damage": [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Range",
+                "val": 5
+            },
+            {
+                "type": "Threat",
+                "val": 3
+            }
+        ],
+        "on_hit": "Target's next successful attack deals <b>half damage</b>, <b>burn</b>, and <b>heat</b>."
+    },
+    {
+        "id": "sea-and-sky_npcf_im_helping_hitchhiker",
+        "name": "I'm Helping!",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": true
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "The Driver makes a successful attack roll.",
+        "effect": "The Hitchhiker attacks the same target with the <b>\"Blown Kiss\" Pistol</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_slow_down_buckaroo_hitchhiker",
+        "name": "Slow Down, Buckaroo",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": true
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character within <b>Range 5</b> makes an attack roll that does not target the Hitchhiker.",
+        "effect": "The Hitchhiker interrupts the triggering character, attacking them with the <b>\"Blown Kiss\" Pistol</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_that_was_too_close_hitchhiker",
+        "name": "That Was Too Close",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "Either the Hitchhiker or the Driver is targeted by a ranged attack.",
+        "effect": "Before the triggering attack is rolled, the Hitchhiker makes an attack roll with the <b>\"Blown Kiss\" Pistol</b>. If the result is higher than the triggering attack roll, the triggering attack automatically misses. This reaction cannot be taken if it would cause the Hitchhiker to exceed its <b>Heat Cap</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_go_get_em_tiger_hitchhiker",
+        "name": "Go Get 'Em, Tiger",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Driver gains the ability to <b>Overcharge</b> if they do not already have it. Instead of the standard cost, the Driver and all Hitchhikers riding with them take <b>1d3 heat</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_on_your_six_hitchhiker",
+        "name": "On Your Six",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Hitchhiker enters a state of hypervigilance. All of the Hitchhiker's and Driver's weapons gain <b>+2 Threat</b> until the start of the Hitchhiker's next turn. If the Hitchhiker's ride ends or it becomes <b>Jammed</b>, <b>Exposed</b>, or <b>Stunned</b>, this effect ends immediately.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_thisll_patch_ya_up_hitchhiker",
+        "name": "This'll Patch Ya Up",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Hitchhiker sprays a protective coating onto the Driver. The Driver gains <b>+2 Armor</b> up to a maximum of <b>4</b> until the end of the Hitchhiker's next turn or until the Hitchhiker's ride ends. The Hitchhiker cannot take this action again until its effect ends.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_shield"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_get_dunked_on_hitchhiker",
+        "name": "Get Dunked On!",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "A character within <b>Sensors</b> gains the <b>Hitchhiker's Mark</b>. Whenever they make an attack that does not include the Hitchhiker as a target, they must pass a <b>Systems</b> save afterwards or become <b>Jammed</b> until the end of their next turn. On a success, they become <b>Impaired</b> instead, but clear the <b>Hitchhiker's Mark</b>.<br>A character cannot be marked by more than one Hitchhiker at a time. The Hitchhiker can only mark one character at a time, but can transfer the <b>Hitchhiker's Mark</b> to another character by repeating this action.",
+        "tags": [
+            {
+                "id": "tg_full_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ],
+        "tech_type": "Full"
+    },
+    {
+        "id": "sea-and-sky_npcf_my_lucky_day_hitchhiker",
+        "name": "My Lucky Day [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Hitchhiker",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>1/round</b>, during a ride, either the Hitchhiker or the Driver may roll an attack, check, or save twice and choose the higher result.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_will_o_wisp_lantern",
+        "name": "Will-O-Wisp",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Lantern emits a <b>Burst 3</b> area of flickering light. All attacks against hostile characters within this area gain <b>+1 Accuracy</b>, and whenever they <b>critically hit</b>, the Lantern may take <b>2 heat</b> to deal <b>{3/4/5} burn</b> to the target.",
+        "tags": [
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_shadow_tag_lantern",
+        "name": "Shadow Tag",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Lantern blazes brightly, designating a hostile character within line of sight and <b>Sensors</b> as the <i>Gnomon</i> until they end their turn outside the Lantern's line of sight or <b>Sensors</b>, or the Lantern uses this action again or is destroyed.<br>The Gnomon casts a <b>Line 5</b> shadow that is as wide and tall as their <b>Size</b> and points directly away from the Lantern, updating its direction at the end of the Lantern's and the Gnomon's turns. If the Lantern is directly above or below the Gnomon, the Lantern may choose the shadow's direction.<br>The Lantern and allied characters may choose to treat the shadow as part of the Gnomon for any purpose. Additionally, the Gnomon makes all attacks, checks, and saves against the Lantern with <b>+1 Difficulty</b>.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 4
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_heat_wave_lantern",
+        "name": "Heat Wave",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Lantern clears all <b>heat</b>. Hostile characters within <b>Burst 2</b> must pass an <b>Agility</b> save or take <b>{3/4/5} burn</b>. If the Lantern takes this action in the <b>Danger Zone</b>, characters who fail also become <b>Shredded</b> until the end of their next turn. This action must be taken before the Lantern moves or takes any non-protocol action on its turn.",
+        "tags": [
+            {
+                "id": "tg_full_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_levitate_lantern",
+        "name": "Levitate",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Lantern can count any and all of its movement as <b>flying</b>. <b>1/round</b>, when it would make a <b>Hull</b> check or save, it may roll with its <b>Agility</b> instead.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_mystical_fire_lantern",
+        "name": "Mystical Fire",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "Hostile characters affected by <b>Will-O-Wisp</b> cannot clear <b>burn</b>, and if they end their turn within the <b>Burst 3</b> area they must pass an <b>Agility</b> save or take <b>{3/4/5} burn</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_night_shade_lantern",
+        "name": "Night Shade",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "Hostile characters may not draw line of sight into or through spaces within, above, or below the Gnomon's shadow.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_glare_lantern",
+        "name": "Glare",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Lantern emits a blinding light. Until the start of its next turn, whenever a ranged or melee attack targets it or an allied character within <b>Range 3</b>, first roll <b>1d6</b>. If the result is lower than half the Lantern's <b>heat</b>, the attack automatically misses.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_confuse_ray_lantern",
+        "name": "Confuse Ray",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "A character within <b>Range 3</b> must make a <b>Systems</b> save. On a failure, until they end their turn outside <b>Range 3</b> of the Lantern, they are <b>Impaired</b> and can only draw line of sight to adjacent spaces. Each character can only suffer this effect <b>1/scene</b>.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 4
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_nightmare_lantern",
+        "name": "Nightmare",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "Until the end of the round, allied characters always have line of sight to characters affected by <b>Will-O-Wisp</b> and ignore cover, <b>Invisible</b>, and <b>Hidden</b> when targeting them. This action cannot be taken if it was already used in this round or the previous one.",
+        "tags": [
+            {
+                "id": "tg_full_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 4
+            }
+        ],
+        "tech_type": "Full"
+    },
+    {
+        "id": "sea-and-sky_npcf_illuminate_lantern",
+        "name": "Illuminate [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The final attack roll against any character affected by <b>Will-O-Wisp</b> can never be affected by <b>Difficulty</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_typhoon_flechette_launcher_monsoon",
+        "name": "Typhoon Flechette Launcher",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "",
+        "tags": [
+            {
+                "id": "tg_ap"
+            },
+            {
+                "id": "tg_loading"
+            },
+            {
+                "id": "tg_ordnance"
+            }
+        ],
+        "weapon_type": "Superheavy Launcher",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ],
+        "damage": [
+            {
+                "type": "Kinetic",
+                "damage": [
+                    7,
+                    10,
+                    13
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Range",
+                "val": 20
+            },
+            {
+                "type": "Blast",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_habagat_oscillatory_shields_monsoon",
+        "name": "Habagat Oscillatory Shields",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "At the start of the Monsoon's turn, if it is unable to attack any hostile characters with the <b>Typhoon Flechette Launcher</b>, it gains <b>Resistance to all damage</b> from attacks that originate within <b>Range 5</b> until the end of the round. At the end of the Monsoon's turn, if it did not attack with the <b>Typhoon Flechette Launcher</b>, it automatically reloads that weapon.",
+        "tags": [
+            {
+                "id": "tg_shield"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_rain_shadow_monsoon",
+        "name": "Rain Shadow",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": true
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character within <b>Sensors</b> attacks an allied character within <b>Range 5</b>.",
+        "effect": "The Monsoon hijacks the attacker's systems, forcing them to instead target the Monsoon, even if they normally could not. If the attack is part of an area of effect, the area must be repositioned to include the Monsoon, which may change its targets.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_guardian_monsoon",
+        "name": "Guardian",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "Adjacent allied characters can use the Monsoon for <b>hard cover</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_sturdy_frame_monsoon",
+        "name": "Sturdy Frame",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "If the Monsoon is not <b>Immobilized</b>, when it is pushed, pulled, or knocked back, its movement is halved.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_kinetic_reservoir_monsoon",
+        "name": "Kinetic Reservoir",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "When the Monsoon makes an attack, it may expend any number of charges from this system to add the same amount of <b>Knockback</b> on hit. The Monsoon regains 2 charges each time it is hit by another character's ranged or melee attack.",
+        "tags": [
+            {
+                "id": "tg_limited",
+                "val": 4
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_memetic_caltrops_monsoon",
+        "name": "Memetic Caltrops",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Monsoon spreads paralytic memetics across a free <b>Blast 1</b> area within <b>Sensors</b>. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take <b>{2/3/4} AP energy damage</b> and must pass a <b>Systems</b> save or become <b>Impaired</b> and <b>Slowed</b> until the end of their next turn. The area lasts until the Monsoon takes this action again or this system is destroyed.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_flood_targeting_monsoon",
+        "name": "Flood Targeting",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Monsoon makes a tech attack against a character within <b>Sensors</b>. On a hit, until the start of the Monsoon's next turn, the target takes <b>{2/3/4} AP energy damage</b> each time they make an attack roll that does not target the Monsoon.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_galeforce_repulsor_monsoon",
+        "name": "Galeforce Repulsor",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "At the start of the Monsoon's turn, if it is unable to attack any hostile characters with the <b>Typhoon Flechette Launcher</b>, it may wreathe itself in a whirling energy field. While the field is active, when a ranged or melee attack hits the Monsoon, all damage is reduced to <b>0</b>, and the field dissipates. All characters always know whether the field is active.",
+        "tags": [
+            {
+                "id": "tg_shield"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_hailstone_rounds_monsoon",
+        "name": "Hailstone Rounds",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Monsoon loads a special servo-crippling round. The next time it uses the <b>Typhoon Flechette Launcher</b> to <b>Barrage</b>, the Monsoon chooses one of the following on-hit effects:<ul><li><b>Halt:</b> Targets must make an <b>Engineering</b> save. On a failure, they become <b>Immobilized</b> until the end of their next turn; on a success, they become <b>Slowed</b> instead.</li><li><b>Disable:</b> Targets must make a <b>Systems</b> save. On a failure, they become <b>Jammed</b> until the end of their next turn; on a success, they become <b>Impaired</b> instead.</li></ul>",
+        "tags": [
+            {
+                "id": "tg_full_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_amihan_interdiction_routines_monsoon",
+        "name": "Amihan Interdiction Routines [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Monsoon",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>Rain Shadow</b> also triggers when a character within <b>Sensors</b> forces an allied character within <b>Range 5</b> to make a save. If <b>Rain Shadow</b> is triggered in this way, the Monsoon makes the save instead and receives all effects.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_pathos_shotgun_paladin",
+        "name": "Pathos Shotgun",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "This weapon gains <b>+1 Accuracy</b> if the Paladin or an allied character within <b>Range 3</b> is suffering from a hostile condition.",
+        "tags": [],
+        "weapon_type": "Main CQB",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "damage": [
+            {
+                "type": "Energy",
+                "damage": [
+                    6,
+                    8,
+                    10
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Range",
+                "val": 5
+            },
+            {
+                "type": "Threat",
+                "val": 3
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_interpose_paladin",
+        "name": "Interpose",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": true
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A hostile character inflicts any number of conditions on an allied character within <b>Range 5</b> of the Paladin.",
+        "effect": "The Paladin may interrupt the triggering character, moving its <b>Speed</b> towards its ally by the most direct route possible. If the Paladin is adjacent to its ally before the triggering action or reaction resolves, it receives the conditions instead.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_pure_will_paladin",
+        "name": "Pure Will",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "When another character would inflict <b>Jammed</b> or <b>Stunned</b> on the Paladin, it may make a <b>Hull</b> save against them. On a success, the triggering character instead inflicts <b>Impaired</b> on the Paladin for the same duration they would have inflicted <b>Jammed</b> or <b>Stunned</b>.",
+        "tags": [
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_lean_on_me_paladin",
+        "name": "Lean on Me",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "As long as they are not <b>Immobilized</b>, the Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_fiery_rebuke_paladin",
+        "name": "Fiery Rebuke",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "After using <b>Interpose</b>, even if it can no longer take reactions, the Paladin may rebuke the triggering character. Until the end of the next round, they cannot use the action or reaction that triggered <b>Interpose</b>. Different <b>Invade</b> options are considered separate actions for this effect's purposes.",
+        "tags": [
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_indignation_paladin",
+        "name": "Indignation",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>1/round</b>, the Paladin or an allied character within <b>Range 3</b> may take a quick action or reaction that would normally be prevented by their hostile conditions. This trait cannot be used if it would cause the Paladin to exceed its <b>Heat Cap</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 4
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_fortify_paladin",
+        "name": "Fortify",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "An allied character within line of sight and <b>Range 5</b> is pushed, pulled, knocked back, or knocked <b>Prone</b>.",
+        "effect": "The movement or status is prevented, and the triggering character gains <b>Immunity</b> to all the above effects until the start of their next turn.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_rallying_cry_paladin",
+        "name": "Rallying Cry",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "Until the end of its next turn, the Paladin exudes a <b>Burst 3</b> aura. The Paladin and all allied characters within the aura count as <b>Invisible</b> against tech attacks and make saves against tech actions with <b>+2 Accuracy</b>. Each time a tech attack or tech action fails against an affected character, the attacker takes <b>{2/3/4} AP energy damage</b> and the Paladin takes <b>2 heat</b>. The Paladin cannot take this action again until its effects end.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_share_burdens_paladin",
+        "name": "Share Burdens",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "If the Paladin is not suffering any hostile conditions, it transfers one hostile condition from an allied character within <b>Sensors</b> to itself. The Paladin suffers the condition as if it had originally been inflicted on the Paladin, while the allied character instead becomes <b>Impaired</b> until the end of their next turn.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_lay_on_hands_paladin",
+        "name": "Lay on Hands [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Paladin",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "When the Paladin <b>Stabilizes</b>, it may additionally clear one hostile condition from itself or an adjacent allied character.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_pavement_drone_pioneer",
+        "name": "Pavement Drone",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "<b>Pavement Drone (Size 1/2, HP {1/1/1}, Evasion {10/10/10}, E-Defense {10/10/10}, Tags: Drone)</b><br>This drone can be attached to a free space or vertical surface within <b>Range 5</b>, where it covers a <b>Burst 3</b> area with whitewash pavement. The pavement affects characters that are at least partially within the <b>Burst 3</b> area and not <b>flying</b>. While on the pavement, the Pioneer and allied characters gain <b>Immunity</b> to the effects of <b>Slowed</b>, and whenever they begin movement on the pavement or move onto it, they gain <b>+2 Speed</b> until the end of the turn. Hostile characters that start their turn on the pavement or move onto it for the first time in a round must pass an <b>Engineering</b> save or become <b>Slowed</b> until the start of their next turn.<br>The Pioneer can deploy only one <b>Pavement Drone</b> at a time, but may redeploy an existing drone by taking this action again. The pavement lasts until the drone is redeployed or destroyed.",
+        "tags": [
+            {
+                "id": "tg_drone"
+            },
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_reconnoiter_pioneer",
+        "name": "Reconnoiter",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": true
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Pioneer surveys the battlefield, enabling up to two allied characters within <b>Sensors</b> to <b>Boost</b> as a reaction.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_all_terrain_treads_pioneer",
+        "name": "All-Terrain Treads",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Pioneer ignores <b>difficult terrain</b>. When it makes an <b>Engineering</b> check against <b>dangerous terrain</b> or <b>burn</b>, it may take <b>2 heat</b> to automatically succeed.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_expansionist_pioneer",
+        "name": "Expansionist",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Pioneer may have up to two <b>Pavement Drones</b> deployed at a time, but each drone only affects a <b>Burst 2</b> area. As a protocol, the Pioneer can move all <b>Pavement Drones</b> up to <b>3 spaces</b> in any direction.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_sensor_relays_pioneer",
+        "name": "Sensor Relays",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "When the Pioneer or an allied character uses a non-attack action or reaction, it may draw line of sight and measure distance starting from any <b>Pavement Drone</b> instead of itself.",
+        "tags": [
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_displacement_mine_pioneer",
+        "name": "Displacement Mine",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Pioneer deploys a displacement mine in a free space within <b>Range 3</b>. The mine detonates in a <b>Burst 1</b> area when an adjacent allied character triggers it as a free action or when a hostile character moves adjacent. Characters in the area are pushed <b>4 spaces</b> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <b>Agility</b> save or be knocked <b>Prone</b>. The Pioneer regains a charge of this system whenever a mine detonates.",
+        "tags": [
+            {
+                "id": "tg_mine"
+            },
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_limited",
+                "val": 3
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_map_territory_misalignment_pioneer",
+        "name": "Map-Territory Misalignment",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "A hostile character within <b>Sensors</b> must pass a <b>Systems</b> save with <b>+1 Difficulty</b> or choose one: they only have line of sight within <b>Range 3</b> until the end of their next turn, or they immediately move up to <b>4 spaces</b> in a direction of the Pioneer's choice. This movement ignores engagement and does not provoke reactions.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_manifest_destiny_pioneer",
+        "name": "Manifest Destiny",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Pioneer converts its intel into a decisive advantage. While this system is active, no other copy of it can be activated, and the following effects apply:<ul><li>The Pioneer takes <b>4 heat</b> at the end of each round before all other end-of-round effects.</li><li>While the Pioneer is adjacent to an <b>Objective</b> or in a <b>Control Zone</b>, hostile characters cannot <b>Interact</b> with, contest, or score that <b>Objective</b> or <b>Control Zone</b>.</li></ul>This system remains active until the Pioneer deactivates it as a protocol, becomes <b>Jammed</b>, <b>Stunned</b>, or <b>Exposed</b>, breaks adjacency with an <b>Objective</b>, or leaves a <b>Control Zone</b>.",
+        "tags": [
+            {
+                "id": "tg_full_tech"
+            }
+        ],
+        "tech_type": "Full"
+    },
+    {
+        "id": "sea-and-sky_npcf_breakfall_routines_pioneer",
+        "name": "Breakfall Routines [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Pioneer",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "While affected by a <b>Pavement Drone</b>, the Pioneer and allied characters may stand up from <b>Prone</b> as a free action, climb at normal speed, and always ignore <b>difficult terrain</b> and <b>dangerous terrain</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_greywash_scythe_reaper",
+        "name": "Greywash Scythe",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "",
+        "tags": [
+            {
+                "id": "tg_smart"
+            }
+        ],
+        "weapon_type": "Heavy Melee",
+        "range": [
+            {
+                "type": "Threat",
+                "val": 3
+            }
+        ],
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "damage": [
+            {
+                "type": "Burn",
+                "damage": [
+                    4,
+                    5,
+                    6
+                ]
+            }
+        ],
+        "on_hit": ""
+    },
+    {
+        "id": "sea-and-sky_npcf_sow_reaper",
+        "name": "Sow",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": true
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "A character within <b>Sensors</b> must pass a <b>Systems</b> save or become <b>Frightened</b>.<br><b>Frightened</b> characters make all attacks with <b>+1 Difficulty</b>, and when they take damage, the closest character allied to them that is within line of sight and <b>Range 5</b> and not already <b>Frightened</b> must pass a <b>Systems</b> save or become <b>Frightened</b>.<br>Characters clear <b>Frightened</b> by passing a <b>Systems</b> save as a quick action or by damaging a Reaper.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_reap_reaper",
+        "name": "Reap",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Reaper chooses one of the following effects. Regardless of line of sight, all <b>Frightened</b> characters within <b>Sensors</b> clear <b>Frightened</b>, then suffer the Reaper's chosen effect.<ul><li><b>Fight:</b> Targets take <b>{2/3/4} burn</b>, plus additional <b>burn</b> equal to the number of targets.</li><li><b>Flight:</b> Targets move <b>5 spaces</b> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling.</li></ul>",
+        "tags": [
+            {
+                "id": "tg_protocol"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_malaise_reaper",
+        "name": "Malaise",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>Frightened</b> characters within the Reaper's <b>Sensors</b> exude a <b>Burst 3</b> aura. While they are at least partially within the aura, other hostile characters make all checks and saves with <b>+1 Difficulty</b>. The effects from overlapping auras stack.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_morbid_curiosity_reaper",
+        "name": "Morbid Curiosity",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Reaper spikes its weapons with hypnotic memetics. The next time the Reaper makes a successful ranged or melee attack, before it deals damage, all hostile characters within <b>Range 5</b> of the target are pulled <b>3 spaces</b> towards the target.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_blight_reaper",
+        "name": "Blight",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Reaper blights a free <b>Blast 1</b> area within <b>Sensors</b>. Hostile characters that start their turn at least partially within the blighted area or move at least partially into it for the first time in a round become <b>Frightened</b>. If they are already <b>Frightened</b>, they take <b>{2/3/4} burn</b>. The area lasts until the Reaper takes this action again or this system is destroyed.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_overwhelming_presence_reaper",
+        "name": "Overwhelming Presence",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Reaper gains two additional options for <b>Reap</b>:<ul><li><b>Freeze:</b> Targets are knocked <b>Prone</b>. If they are already <b>Prone</b>, they become <b>Immobilized</b> until the end of their next turn.</li><li><b>Fawn:</b> Targets become <b>Shredded</b> and deal <b>half damage</b>, <b>burn</b>, and <b>heat</b> with attacks until the end of their next turn.</li></ul>",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_cascading_fear_reaper",
+        "name": "Cascading Fear",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Reaper makes a tech attack against a <b>Frightened</b> character within <b>Sensors</b>. On a hit, the next time they take damage while <b>Frightened</b>, all of their allies within line of sight and <b>Range 5</b> take <b>{2/3/4} burn</b>, then must pass a Systems save or become <b>Frightened</b>. As long as the target is <b>Frightened</b>, this effect refreshes at the start of each round.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 3
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_executioner_reaper",
+        "name": "Executioner [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Reaper",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>1/round</b>, when the Reaper makes a successful attack with the <b>Greywash Scythe</b>, it may use that weapon to attack a different character within <b>Threat</b>, dealing <b>half damage</b> and <b>burn</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_carnot_cycle_thermostat",
+        "name": "Carnot Cycle",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": true
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, automatically hitting allies. On a hit, the Thermostat chooses one of the following:<ul><li><b>Sap:</b> The target clears <b>{4/5/6} heat</b>.</li><li><b>Overload:</b> The target takes <b>{1/2/3} heat</b> immediately and a further <b>2 heat</b> each time they take a quick action, full action, or reaction (even if taken as a free action) until the end of their next turn.</li></ul>",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_second_law_thermostat",
+        "name": "Second Law",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": true
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, automatically hitting allies. On a hit, both the Thermostat and the target set their <b>heat</b> equal to half their current combined <b>heat</b>.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            }
+        ],
+        "tech_type": "Quick",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_heatsync_thermostat",
+        "name": "Heatsync",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": true
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character in line of sight and <b>Sensors</b> takes <b>heat</b>.",
+        "effect": "The Thermostat takes the same amount of <b>heat</b>, then uses <b>Carnot Cycle</b> against the triggering character. This reaction cannot trigger on the Thermostat's turn.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_blackbody_barrier_thermostat",
+        "name": "Blackbody Barrier",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "While the Thermostat is in the <b>Danger Zone</b> and not <b>Exposed</b>, it gains <b>+1 Accuracy</b> to all its tech attacks and <b>Resistance to all damage and burn</b>. Whenever this trait reduces damage, the Thermostat clears <b>2 heat</b>.",
+        "tags": [
+            {
+                "id": "tg_shield"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_maxwells_demon_thermostat",
+        "name": "Maxwell's Demon",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A character within <b>Sensors</b> rolls an attack.",
+        "effect": "The Thermostat increases or decreases the final roll by <b>2</b>. A roll may not be modified more than once by <b>Maxwell's Demon</b>.",
+        "tags": [
+            {
+                "id": "tg_reaction"
+            },
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_first_law_thermostat",
+        "name": "First Law",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Thermostat links with an allied character within <b>Sensors</b>. While <b>Blackbody Barrier</b> is active, it grants its <b>Resistance</b> to the linked character instead of the Thermostat. The Thermostat can only link with one character at a time, but may terminate the link as a quick action.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
+            },
+            {
+                "id": "tg_shield"
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_third_law_thermostat",
+        "name": "Third Law",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, gaining <b>+1 Accuracy</b> against targets in the <b>Danger Zone</b>. On a hit, they gain the <b>Thermostat's Mark</b>, preventing them from clearing any amount of <b>heat</b> by any means except overheating. Whenever the marked character ends their turn, they must pass a <b>Systems</b> check or take <b>energy damage</b> equal to their <b>heat</b>. Characters clear the <b>Thermostat's Mark</b> by passing a <b>Systems</b> save as a quick action or when the Thermostat marks a different character.",
+        "tags": [
+            {
+                "id": "tg_quick_tech"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 4
+            }
+        ],
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "tech_type": "Quick"
+    },
+    {
+        "id": "sea-and-sky_npcf_thermal_shock_thermostat",
+        "name": "Thermal Shock",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "Tech",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>. On a hit, they take <b>2 heat</b> and must pass a <b>Systems</b> save or become <b>Shredded</b> until the end of their next turn; on a success, they become <b>Impaired</b> until the end of their next turn instead.<br>If the target is in the <b>Danger Zone</b> when they make this save, the Thermostat may take <b>4 heat</b> to apply <b>Exposed</b> instead of <b>Shredded</b>.",
+        "tags": [
+            {
+                "id": "tg_full_tech"
+            }
+        ],
+        "tech_type": "Full",
+        "attack_bonus": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_ultraviolet_catastrophe_thermostat",
+        "name": "Ultraviolet Catastrophe",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "After the Thermostat takes damage for the first time each round, the character within line of sight and <b>Sensors</b> with the most <b>heat</b> must pass an <b>Agility</b> save or take <b>burn</b> equal to half the Thermostat's <b>heat</b> before it took damage. If multiple characters are tied, the Thermostat chooses one randomly.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_paracausal_coolant_thermostat",
+        "name": "Paracausal Coolant [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Thermostat",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "<b>Heatsync</b> also triggers when a character within <b>Sensors</b> clears any amount of <b>heat</b>, except by overheating. If <b>Heatsync</b> is triggered in this way, the Thermostat clears all <b>heat</b> instead of taking <b>heat</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_lithodynamic_movement_suite_tunneler",
+            "name": "Lithodynamic Movement Suite",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "If the Tunneler is on solid ground, it <i>goes underground</i>, gaining <b>soft cover</b> and the ability to ignore all terrain, obstructions, and engagement and <b>Boost</b> as a free action <b>1/turn</b>. While the Tunneler is underground, other characters ignore engagement with it. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <i>resurfaces</i> in the nearest free space before leaving the ground, after resolving any attack, or as a <b>free action</b>. Neither going underground nor resurfacing count as movement.",
+            "tags": [
+                {
+                    "id": "tg_quick_action"
+                },
+                {
+                    "id": "tg_heat_self",
+                    "val": 2
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_subterranean_networks_tunneler",
+            "name": "Subterranean Networks",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": true
+            },
+            "locked": false,
+            "type": "System",
+            "effect": "<b>Borehole (HP {8/10/12}, Evasion {5/5/5}, E-Defense {5/5/5})</b><br>Immediately after the Tunneler goes underground or resurfaces, it may take <b>1 heat</b> to create a borehole occupying the area it currently stands on. The borehole is <b>Height 1/2</b>, cannot be created overlapping objects or terrain, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside a borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When a borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
+            "tags": [
+                {
+                    "id": "tg_heat_self",
+                    "val": 1
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_borehead_ram_tunneler",
+            "name": "Borehead Ram",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": true
+            },
+            "locked": false,
+            "type": "Weapon",
+            "effect": "If the Tunneler is underground, this weapon gains <b>+1 Accuracy</b>, and after the attack resolves, the Tunneler may create a borehole without taking <b>heat</b>.",
+            "tags": [],
+            "weapon_type": "Main Melee",
+            "attack_bonus": [
+                1,
+                2,
+                3
+            ],
+            "damage": [
+                {
+                    "type": "explosive",
+                    "damage": [
+                        6,
+                        8,
+                        10
+                    ]
+                }
+            ],
+            "range": [
+                {
+                    "type": "Threat",
+                    "val": 1
+                }
+            ],
+            "on_hit": ""
+    },
+    {
+        "id": "sea-and-sky_npcf_explosive_emergence_tunneler",
+            "name": "Explosive Emergence",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": false
+            },
+            "locked": false,
+            "type": "System",
+            "effect": "<b>1/round</b>, after the Tunneler resurfaces adjacent to a character, they must pass an <b>Agility</b> save or be pushed back <b>3 spaces</b> and knocked <b>Prone</b>.",
+            "tags": [
+                {
+                    "id": "tg_round",
+                    "val": 1
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_earthrend_tunneler",
+            "name": "Earthrend",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": false
+            },
+            "locked": false,
+            "type": "System",
+            "effect": "The Tunneler creates a borehole where it stands, then goes underground and moves its <b>Speed</b> in a straight line without provoking reactions.",
+            "tags": [
+                {
+                    "id": "tg_quick_action"
+                },
+                {
+                    "id": "tg_heat_self",
+                    "val": 4
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_burrow_tunneler",
+            "name": "Burrow",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": false
+            },
+            "locked": false,
+            "type": "Reaction",
+            "trigger": "The Tunneler is targeted by an attack while aboveground.",
+            "effect": "Before the attack is rolled, the Tunneler goes underground and creates a borehole.",
+            "tags": [
+                {
+                    "id": "tg_reaction"
+                },
+                {
+                    "id": "tg_round",
+                    "val": 1
+                },
+                {
+                    "id": "tg_heat_self",
+                    "val": 3
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_underwatch_tunneler",
+            "name": "Underwatch",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": false
+            },
+            "locked": false,
+            "type": "Reaction",
+            "trigger": "A hostile character begins movement adjacent to or moves adjacent to a borehole while the Tunneler is underground.",
+            "effect": "The Tunneler interrupts the movement, <b>teleporting</b> to the borehole and attacking the triggering character with the <b>Borehead Ram</b>.",
+            "tags": [
+                {
+                    "id": "tg_reaction"
+                },
+                {
+                    "id": "tg_round",
+                    "val": 1
+                }
+            ]
+    },
+    {
+        "id": "sea-and-sky_npcf_sinkhole_carver_tunneler",
+            "name": "Sinkhole Carver",
+            "origin": {
+                "type": "Class",
+                "name": "Tunneler",
+                "base": false
+            },
+            "locked": false,
+            "type": "Weapon",
+            "effect": "This weapon can only be used if the Tunneler is underground. It can target spaces occupied by the Tunneler, but cannot target <b>flying</b> characters. If there are multiple targets, the Tunneler does not resurface until all attacks resolve.",
+            "tags": [],
+            "weapon_type": "Heavy Melee",
+            "attack_bonus": [
+                1,
+                2,
+                3
+            ],
+            "damage": [
+                {
+                    "type": "explosive",
+                    "damage": [
+                        4,
+                        5,
+                        6
+                    ]
+                }
+            ],
+            "range": [
+                {
+                    "type": "Burst",
+                    "val": 2
+                },
+                {
+                    "type": "Threat",
+                    "val": 2
+                }
+            ],
+            "on_hit": "Target is pulled as close as possible to the Tunneler and must make a <b>Hull</b> save. On a failure, they become <b>Immobilized</b> until they are moved involuntarily or they pass a <b>Hull</b> save as a quick action."
+    },
+    {
+        "id": "sea-and-sky_npcf_oversize_tunnels_tunneler",
+        "name": "Oversize Tunnels [Veteran]",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The Tunneler and allied characters count as standing inside a borehole as long as they are adjacent to it and not <b>flying</b>, and when standing inside a borehole, they additionally gain <b>soft cover</b> which may be used to <b>Hide</b>.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_murphys_law_loaded_die",
+            "name": "Murphy's Law",
+            "origin": {
+                "type": "Class",
+                "name": "Loaded Die",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "When hostile characters within <b>Burst 2</b> succeed on an attack, they must choose one: they take <b>{3/4/5} explosive damage</b>, or they reroll and keep the second result. This effect triggers only once per attack roll.",
+            "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_einstein_rosen_bridge_gate",
+            "name": "Einstein-Rosen Bridge",
+            "origin": {
+                "type": "Class",
+                "name": "Gate",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "The gate is <b>1 space</b> tall and has a black side and a red side, clearly indicated to all characters on the field. The gate acts as a normal piece of <b>hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if the gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules.",
+            "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_kinetic_shunt_displacement_mine",
+            "name": "Kinetic Shunt",
+            "origin": {
+                "type": "Class",
+                "name": "Displacement Mine",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "The displacement mine detonates in a <b>Burst 1</b> area when an adjacent allied character triggers it as a <b>free action</b> or a hostile character moves adjacent. Characters in the area are pushed <b>4 spaces</b> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <b>Agility</b> save or be knocked <b>Prone</b>.",
+            "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_whitewash_pavement_pavement_drone",
+            "name": "Whitewash Pavement",
+            "origin": {
+                "type": "Class",
+                "name": "Pavement Drone",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "The <b>Pavement Drone</b> continuously covers a <b>Burst 3</b> area with whitewash pavement. The pavement affects characters that are at least partially within the <b>Burst 3</b> area and not <b>flying</b>. While on the pavement, the Pioneer and allied characters gain <b>Immunity</b> to the effects of <b>Slowed</b>, and whenever they begin movement on the pavement or move onto it, they gain <b>+2 Speed</b> until the end of the turn. Hostile characters that start their turn on the pavement or move onto it for the first time in a round must pass an <b>Engineering</b> save or become <b>Slowed</b> until the start of their next turn.",
+            "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_subterranean_networks_borehole",
+            "name": "Subterranean Networks",
+            "origin": {
+                "type": "Class",
+                "name": "Borehole",
+                "base": true
+            },
+            "locked": false,
+            "type": "Trait",
+            "effect": "The borehole is <b>Height 1/2</b>, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside the borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When the borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
+            "tags": []
+    }
+]
