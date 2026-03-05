@@ -85,7 +85,7 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "The Croupier makes a tech attack against a character within <b>Sensors</b>. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack does <b>{3/4/5} less damage</b> to its target. If the attack deals multiple damage types, this effect only applies to the highest damage value.",
+        "effect": "The Croupier makes a tech attack against a character within <b>Sensors</b>. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack's highest damage value is reduced by <b>{3/4/5}</b>.",
         "tags": [
             {
                 "id": "tg_quick_tech"
@@ -180,7 +180,7 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "A character within <b>Sensors</b> must make a <b>Systems</b> save. On a failure, they emit a <b>Burst 3</b> field of warped probability until the start of the Croupier's next turn. All attacks made by or against characters at least partially within the field cannot result in critical hits.",
+        "effect": "The Croupier chooses a character within <b>Sensors</b>. Until the start of the Croupier's next turn, they emit a <b>Burst 3</b> field of warped probability; they may avoid this effect by passing a <b>Systems</b> save. All attacks made by or against characters at least partially within the field cannot result in critical hits.",
         "tags": [
             {
                 "id": "tg_quick_tech"
@@ -246,7 +246,7 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "The Gatekeeper opens two <b>Line 3</b> gates in free spaces within <b>Sensors</b> but not necessarily line of sight. Each gate is <b>1 space</b> tall and has a black side and a red side, clearly indicated to all characters on the field. Gates count as normal pieces of <b>hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if a gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules. After each action or reaction that relies on a pair of gates, any Gatekeepers that opened either of the gates take <b>1 heat</b>.<br>If there are more than two gates per Gatekeeper on the field, the oldest excess gates close immediately. The Gatekeeper may close any number of gates as a protocol or before taking this action again.",
+        "effect": "The Gatekeeper opens two <b>Line 3</b> gates in free spaces within <b>Sensors</b> but not necessarily line of sight. Each gate has a black side and a red side, clearly indicated to all characters on the field. Gates count as normal pieces of <b>Height 1 hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if a gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules. After each action or reaction that relies on a pair of gates, any Gatekeepers that opened either of the gates take <b>1 heat</b>.<br>If there are more than two gates per Gatekeeper on the field, the oldest excess gates close immediately. The Gatekeeper may close any number of gates as a protocol or before taking this action again.",
         "tags": [
             {
                 "id": "tg_quick_action"
@@ -326,14 +326,14 @@
         "effect": "The Gatekeeper <b>teleports</b> a character within <b>Range 3</b> of a gate to a space within <b>Range 3</b> of any other gate. The starting and ending spaces of the teleport must be on the same color sides of their respective gates. Hostile characters may avoid this effect by passing an <b>Engineering</b> save. The Gatekeeper may use this action on itself.",
         "tags": [
             {
-                "id": "tg_quick_tech"
+                "id": "tg_full_tech"
             },
             {
                 "id": "tg_heat_self",
-                "val": 2
+                "val": 1
             }
         ],
-        "tech_type": "Quick"
+        "tech_type": "Full"
     },
     {
         "id": "sea-and-sky_npcf_close_sesame_gatekeeper",
@@ -393,6 +393,9 @@
             {
                 "id": "tg_round",
                 "val": 1
+            },
+            {
+                "id": "tg_danger_zone"
             }
         ]
     },
@@ -615,7 +618,7 @@
         },
         "locked": false,
         "type": "Trait",
-        "effect": "The Lantern emits a <b>Burst 3</b> area of flickering light. All attacks against hostile characters within this area gain <b>+1 Accuracy</b>, and whenever they <b>critically hit</b>, the Lantern may take <b>2 heat</b> to deal <b>{3/4/5} burn</b> to the target.",
+        "effect": "The Lantern may add <b>+1 Accuracy</b> to any attack against a character within <b>Range 3</b>. If the attack then results in a critical hit, the Lantern also deals <b>{3/4/5} burn</b> to the target.",
         "tags": [
             {
                 "id": "tg_heat_self",
@@ -632,17 +635,18 @@
             "base": true
         },
         "locked": false,
-        "type": "Trait",
-        "effect": "The Lantern blazes brightly, designating a hostile character within line of sight and <b>Sensors</b> as the <i>Gnomon</i> until they end their turn outside the Lantern's line of sight or <b>Sensors</b>, or the Lantern uses this action again or is destroyed.<br>The Gnomon casts a <b>Line 5</b> shadow that is as wide and tall as their <b>Size</b> and points directly away from the Lantern, updating its direction at the end of the Lantern's and the Gnomon's turns. If the Lantern is directly above or below the Gnomon, the Lantern may choose the shadow's direction.<br>The Lantern and allied characters may choose to treat the shadow as part of the Gnomon for any purpose. Additionally, the Gnomon makes all attacks, checks, and saves against the Lantern with <b>+1 Difficulty</b>.",
+        "type": "Tech",
+        "effect": "The Lantern haunts a hostile character within <b>Sensors</b>. Until they end their turn outside the Lantern's line of sight or <b>Sensors</b>, or the Lantern becomes <b>Jammed</b> or <b>Stunned</b>, the following effects apply:<ul><li>The haunted character casts a <b>Line 5</b> shadow along the ground. The shadow is as wide and tall as their <b>Size</b>, with its tip located as far away from the Lantern as possible, and it updates its direction at the end of each turn.</li><li>While the Lantern or any allied character takes their turn, they may treat the shadow as part of the haunted character for any purpose.</li><li>The haunted character treats the Lantern as <b>Invisible</b>, and the Lantern makes all checks and saves against them with <b>+1 Accuracy</b>.</li><li>The Lantern cannot take this action again.</li></ul>",
         "tags": [
             {
-                "id": "tg_quick_action"
+                "id": "tg_quick_tech"
             },
             {
                 "id": "tg_heat_self",
-                "val": 4
+                "val": 2
             }
-        ]
+        ],
+        "tech_type": "Quick"
     },
     {
         "id": "sea-and-sky_npcf_heat_wave_lantern",
@@ -654,10 +658,13 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "The Lantern clears all <b>heat</b>. Hostile characters within <b>Burst 2</b> must pass an <b>Agility</b> save or take <b>{3/4/5} burn</b>. If the Lantern takes this action in the <b>Danger Zone</b>, characters who fail also become <b>Shredded</b> until the end of their next turn. This action must be taken before the Lantern moves or takes any non-protocol action on its turn.",
+        "effect": "This system can only be used while the Lantern is in the <b>Danger Zone</b> and before it moves or takes any non-protocol action on its turn.<br>The Lantern clears all <b>heat</b>. Hostile characters within <b>Burst 3</b> must pass an <b>Agility</b> save or take <b>heat</b> equal to half the amount the Lantern cleared and become <b>Shredded</b> until the end of their next turn.",
         "tags": [
             {
                 "id": "tg_full_action"
+            },
+            {
+                "id": "tg_danger_zone"
             }
         ]
     },
@@ -683,22 +690,17 @@
             "base": false
         },
         "locked": false,
-        "type": "Trait",
-        "effect": "Hostile characters affected by <b>Will-O-Wisp</b> cannot clear <b>burn</b>, and if they end their turn within the <b>Burst 3</b> area they must pass an <b>Agility</b> save or take <b>{3/4/5} burn</b>.",
-        "tags": []
-    },
-    {
-        "id": "sea-and-sky_npcf_night_shade_lantern",
-        "name": "Night Shade",
-        "origin": {
-            "type": "Class",
-            "name": "Lantern",
-            "base": false
-        },
-        "locked": false,
-        "type": "Trait",
-        "effect": "Hostile characters may not draw line of sight into or through spaces within, above, or below the Gnomon's shadow.",
-        "tags": []
+        "type": "System",
+        "effect": "Hostile characters within <b>Burst 3</b> must pass an <b>Agility</b> save or take <b>{3/4/5} burn</b>. Until the end of the Lantern's next turn, hostile characters within <b>Burst 3</b> cannot clear <b>burn</b> and the Lantern cannot take this action again.",
+        "tags": [
+            {
+                "id": "tg_full_action"
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_glare_lantern",
@@ -710,14 +712,28 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "The Lantern emits a blinding light. Until the start of its next turn, whenever a ranged or melee attack targets it or an allied character within <b>Range 3</b>, first roll <b>1d6</b>. If the result is lower than half the Lantern's <b>heat</b>, the attack automatically misses.",
+        "effect": "Until the start of the Lantern's next turn, whenever a ranged or melee attack targets it or any allied character within <b>Range 3</b>, first roll <b>1d6</b>. If the result is not higher than half the Lantern's <b>heat</b> and the Lantern is not <b>Exposed</b> or <b>Stunned</b>, the attack automatically misses. This effect does not stack with <b>Invisible</b>.",
         "tags": [
             {
                 "id": "tg_quick_action"
-            },
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_illuminate_lantern",
+        "name": "Illuminate",
+        "origin": {
+            "type": "Class",
+            "name": "Lantern",
+            "base": false
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "When the Lantern uses <b>Will-O-Wisp</b> on an attack, it may remove all <b>Difficulty</b> from the final roll.",
+        "tags": [
             {
                 "id": "tg_heat_self",
-                "val": 2
+                "val": 1
             }
         ]
     },
@@ -731,17 +747,18 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "A character within <b>Range 3</b> must make a <b>Systems</b> save. On a failure, until they end their turn outside <b>Range 3</b> of the Lantern, they are <b>Impaired</b> and can only draw line of sight to adjacent spaces. Each character can only suffer this effect <b>1/scene</b>.",
+        "effect": "The Lantern makes a tech attack against a character within <b>Sensors</b>. On a hit, until the end of their next turn, they cannot draw line of sight into or out of the <b>Burst 3</b> area around the Lantern, and cannot be affected by any other character hostile to the Lantern unless they have line of sight to that character. The Lantern cannot take this action again until its effects end.",
         "tags": [
             {
                 "id": "tg_quick_tech"
-            },
-            {
-                "id": "tg_heat_self",
-                "val": 4
             }
         ],
-        "tech_type": "Quick"
+        "tech_type": "Quick",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ]
     },
     {
         "id": "sea-and-sky_npcf_nightmare_lantern",
@@ -752,22 +769,21 @@
             "base": false
         },
         "locked": false,
-        "type": "Tech",
-        "effect": "Until the end of the round, allied characters always have line of sight to characters affected by <b>Will-O-Wisp</b> and ignore cover, <b>Invisible</b>, and <b>Hidden</b> when targeting them. This action cannot be taken if it was already used in this round or the previous one.",
+        "type": "System",
+        "effect": "Until the end of the round, allied characters always have line of sight to characters within <b>Burst 3</b> of the Lantern and ignore cover, <b>Invisible</b>, and <b>Hidden</b> when targeting them. This action cannot be taken if it was already used in this round or the previous one.",
         "tags": [
             {
-                "id": "tg_full_tech"
+                "id": "tg_full_action"
             },
             {
                 "id": "tg_heat_self",
-                "val": 4
+                "val": 3
             }
-        ],
-        "tech_type": "Full"
+        ]
     },
     {
-        "id": "sea-and-sky_npcf_illuminate_lantern",
-        "name": "Illuminate [Veteran]",
+        "id": "sea-and-sky_npcf_night_shade_lantern",
+        "name": "Night Shade [Veteran]",
         "origin": {
             "type": "Class",
             "name": "Lantern",
@@ -775,7 +791,7 @@
         },
         "locked": false,
         "type": "Trait",
-        "effect": "The final attack roll against any character affected by <b>Will-O-Wisp</b> can never be affected by <b>Difficulty</b>.",
+        "effect": "Hostile characters may not enter or draw line of sight into or through spaces within, above, or below the shadow of the character haunted by <b>Shadow Tag</b>.",
         "tags": []
     },
     {
@@ -903,7 +919,7 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "When the Monsoon makes an attack, it may expend any number of charges from this system to add the same amount of <b>Knockback</b> on hit. The Monsoon regains 2 charges each time it is hit by another character's ranged or melee attack.",
+        "effect": "When the Monsoon makes an attack, it may expend any number of charges from this system to push targets the same number of spaces directly away on hit. The Monsoon regains 2 charges each time it is hit by a ranged or melee attack.",
         "tags": [
             {
                 "id": "tg_limited",
@@ -920,13 +936,14 @@
             "base": false
         },
         "locked": false,
-        "type": "System",
-        "effect": "The Monsoon spreads paralytic memetics across a free <b>Blast 1</b> area within <b>Sensors</b>. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take <b>{2/3/4} AP energy damage</b> and must pass a <b>Systems</b> save or become <b>Impaired</b> and <b>Slowed</b> until the end of their next turn. The area lasts until the Monsoon takes this action again or this system is destroyed.",
+        "type": "Tech",
+        "effect": "The Monsoon spreads paralytic memetics across a free <b>Blast 1</b> area within <b>Sensors</b>. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take <b>{2/3/4} AP energy damage</b> and must pass a <b>Systems</b> save or become <b>Impaired</b> and <b>Slowed</b> until the end of their next turn. The area lasts until the Monsoon takes this action again or becomes <b>Jammed</b> or <b>Stunned</b>.",
         "tags": [
             {
-                "id": "tg_quick_action"
+                "id": "tg_quick_tech"
             }
-        ]
+        ],
+        "tech_type": "Quick"
     },
     {
         "id": "sea-and-sky_npcf_flood_targeting_monsoon",
@@ -1095,7 +1112,7 @@
         },
         "locked": false,
         "type": "Trait",
-        "effect": "As long as they are not <b>Immobilized</b>, the Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin.",
+        "effect": "The Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin. Characters cannot benefit from this trait while either they or the Paladin are <b>Immobilized</b>.",
         "tags": []
     },
     {
@@ -1171,7 +1188,7 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "Until the end of its next turn, the Paladin exudes a <b>Burst 3</b> aura. The Paladin and all allied characters within the aura count as <b>Invisible</b> against tech attacks and make saves against tech actions with <b>+2 Accuracy</b>. Each time a tech attack or tech action fails against an affected character, the attacker takes <b>{2/3/4} AP energy damage</b> and the Paladin takes <b>2 heat</b>. The Paladin cannot take this action again until its effects end.",
+        "effect": "Until the end of its next turn, the Paladin exudes a <b>Burst 3</b> aura. The Paladin and all allied characters within the aura count as <b>Invisible</b> against tech attacks and make checks and saves against tech actions with <b>+2 Accuracy</b>. Each time a tech attack or tech action fails against an affected character, the attacker takes <b>{2/3/4} AP energy damage</b> and the Paladin takes <b>2 heat</b>. The Paladin cannot take this action again until its effects end.",
         "tags": [
             {
                 "id": "tg_quick_action"
@@ -1557,7 +1574,7 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, automatically hitting allies. On a hit, the Thermostat chooses one of the following:<ul><li><b>Sap:</b> The target clears <b>{4/5/6} heat</b>.</li><li><b>Overload:</b> The target takes <b>{1/2/3} heat</b> immediately and a further <b>2 heat</b> each time they take a quick action, full action, or reaction (even if taken as a free action) until the end of their next turn.</li></ul>",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, automatically hitting allies. On a hit, the Thermostat chooses one of the following:<ul><li><b>Sap:</b> The target clears <b>{3/4/5} heat</b>.</li><li><b>Overload:</b> The target takes <b>{1/2/3} heat</b> immediately and a further <b>2 heat</b> each time they take a quick action, full action, or reaction (even if taken as a free action) until the end of their next turn.</li></ul>",
         "tags": [
             {
                 "id": "tg_quick_tech"
@@ -1633,6 +1650,9 @@
         "tags": [
             {
                 "id": "tg_shield"
+            },
+            {
+                "id": "tg_danger_zone"
             }
         ]
     },
@@ -1692,22 +1712,22 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>, gaining <b>+1 Accuracy</b> against targets in the <b>Danger Zone</b>. On a hit, they gain the <b>Thermostat's Mark</b>, preventing them from clearing any amount of <b>heat</b> by any means except overheating. Whenever the marked character ends their turn, they must pass a <b>Systems</b> check or take <b>energy damage</b> equal to their <b>heat</b>. Characters clear the <b>Thermostat's Mark</b> by passing a <b>Systems</b> save as a quick action or when the Thermostat marks a different character.",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>. On a hit, they gain the <b>Thermostat's Mark</b>, preventing them from clearing any amount of <b>heat</b> by any means except overheating. Whenever the marked character ends their turn, they must pass a <b>Systems</b> check or take <b>energy damage</b> equal to their <b>heat</b>. Characters clear the <b>Thermostat's Mark</b> when they or an adjacent character pass a <b>Systems</b> save as a full action, or when the Thermostat marks a different character.",
         "tags": [
             {
-                "id": "tg_quick_tech"
+                "id": "tg_full_tech"
             },
             {
                 "id": "tg_heat_self",
-                "val": 4
+                "val": 2
             }
         ],
         "attack_bonus": [
-            1,
             2,
-            3
+            4,
+            6
         ],
-        "tech_type": "Quick"
+        "tech_type": "Full"
     },
     {
         "id": "sea-and-sky_npcf_thermal_shock_thermostat",
@@ -1719,13 +1739,13 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>. On a hit, they take <b>2 heat</b> and must pass a <b>Systems</b> save or become <b>Shredded</b> until the end of their next turn; on a success, they become <b>Impaired</b> until the end of their next turn instead.<br>If the target is in the <b>Danger Zone</b> when they make this save, the Thermostat may take <b>4 heat</b> to apply <b>Exposed</b> instead of <b>Shredded</b>.",
+        "effect": "The Thermostat makes a tech attack against a character within <b>Sensors</b>. On a hit, they take <b>2 heat</b> and must pass a <b>Systems</b> save or become <b>Shredded</b> until the end of their next turn.",
         "tags": [
             {
-                "id": "tg_full_tech"
+                "id": "tg_quick_tech"
             }
         ],
-        "tech_type": "Full",
+        "tech_type": "Quick",
         "attack_bonus": [
             2,
             4,
@@ -1768,7 +1788,7 @@
             },
             "locked": false,
             "type": "Trait",
-            "effect": "If the Tunneler is on solid ground, it <i>goes underground</i>, gaining <b>soft cover</b> and the ability to ignore all terrain, obstructions, and engagement and <b>Boost</b> as a free action <b>1/turn</b>. While the Tunneler is underground, other characters ignore engagement with it. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <i>resurfaces</i> in the nearest free space before leaving the ground, after resolving any attack, or as a <b>free action</b>. Neither going underground nor resurfacing count as movement.",
+            "effect": "If the Tunneler is on solid ground, it may take <b>2 heat</b> to <i>go underground</i> as a <b>quick action</b>, gaining <b>+2 Speed</b> and the ability to ignore all terrain, obstructions, and engagement. While the Tunneler is underground, other characters ignore engagement with it and make ranged and melee attacks against it with <b>+1 Difficulty</b>. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <i>resurfaces</i> in the nearest free space before leaving the ground, after resolving any attack, or as a <b>free action</b>. Neither going underground nor resurfacing count as movement.",
             "tags": [
                 {
                     "id": "tg_quick_action"
@@ -1808,7 +1828,12 @@
             "locked": false,
             "type": "Weapon",
             "effect": "If the Tunneler is underground, this weapon gains <b>+1 Accuracy</b>, and after the attack resolves, the Tunneler may create a borehole without taking <b>heat</b>.",
-            "tags": [],
+            "tags": [
+                {
+                    "id": "tg_knockback",
+                    "val": 2
+                }
+            ],
             "weapon_type": "Main Melee",
             "attack_bonus": [
                 1,
@@ -1834,8 +1859,8 @@
             "on_hit": ""
     },
     {
-        "id": "sea-and-sky_npcf_explosive_emergence_tunneler",
-            "name": "Explosive Emergence",
+        "id": "sea-and-sky_npcf_explosive_excavation_tunneler",
+            "name": "Explosive Excavation",
             "origin": {
                 "type": "Class",
                 "name": "Tunneler",
@@ -1843,7 +1868,7 @@
             },
             "locked": false,
             "type": "System",
-            "effect": "<b>1/round</b>, after the Tunneler resurfaces adjacent to a character, they must pass an <b>Agility</b> save or be pushed back <b>3 spaces</b> and knocked <b>Prone</b>.",
+            "effect": "<b>1/round</b>, after the Tunneler goes underground or resurfaces adjacent to a character, they must pass an <b>Agility</b> save or be pushed back <b>3 spaces</b> and knocked <b>Prone</b>.",
             "tags": [
                 {
                     "id": "tg_round",
@@ -1864,11 +1889,11 @@
             "effect": "The Tunneler creates a borehole where it stands, then goes underground and moves its <b>Speed</b> in a straight line without provoking reactions.",
             "tags": [
                 {
-                    "id": "tg_quick_action"
+                    "id": "tg_full_action"
                 },
                 {
                     "id": "tg_heat_self",
-                    "val": 4
+                    "val": 2
                 }
             ]
     },
@@ -1996,7 +2021,7 @@
             },
             "locked": false,
             "type": "Trait",
-            "effect": "The gate is <b>1 space</b> tall and has a black side and a red side, clearly indicated to all characters on the field. The gate acts as a normal piece of <b>hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if the gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules.",
+            "effect": "The gate has a black side and a red side, clearly indicated to all characters on the field, and acts as a normal piece of <b>Height 1 hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if the gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules.",
             "tags": []
     },
     {

@@ -321,19 +321,19 @@
                 0
             ],
             "hp": [
-                10,
                 12,
-                14
+                12,
+                12
             ],
             "evade": [
-                14,
-                16,
+                12,
+                15,
                 18
             ],
             "edef": [
                 10,
-                12,
-                14
+                11,
+                12
             ],
             "heatcap": [
                 12,
@@ -342,8 +342,8 @@
             ],
             "speed": [
                 6,
-                6,
-                6
+                7,
+                8
             ],
             "sensor": [
                 5,
@@ -541,9 +541,9 @@
                 16
             ],
             "heatcap": [
-                8,
-                8,
-                8
+                10,
+                10,
+                10
             ],
             "speed": [
                 4,
@@ -619,7 +619,7 @@
         "role": "support",
         "info": {
             "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
-            "tactics": "Pioneers are support units that enhances their allies' mobility while hindering that of enemies. Unlike their Mirage colleagues, they support from the frontline, focusing their efforts on a specific area of the battlefield and providing benefits both on their own turn and on allied turns. Pioneers are durable and have few weaknesses, but cannot accomplish much on their own."
+            "tactics": "Pioneers are support units that enhance their allies' mobility while hindering that of enemies. Unlike their Mirage colleagues, they support from the frontline, focusing their efforts on a specific area of the battlefield and providing benefits both on their own turn and on allied turns. Pioneers are durable and have few weaknesses, but cannot accomplish much on their own."
         },
         "stats": {
             "armor": [
@@ -643,9 +643,9 @@
                 13
             ],
             "heatcap": [
-                10,
-                10,
-                10
+                8,
+                8,
+                8
             ],
             "speed": [
                 4,
@@ -908,9 +908,9 @@
             "sea-and-sky_npcf_blackbody_barrier_thermostat"
         ],
         "optional_features": [
+            "sea-and-sky_npcf_thermal_shock_thermostat",
             "sea-and-sky_npcf_maxwells_demon_thermostat",
             "sea-and-sky_npcf_first_law_thermostat",
-            "sea-and-sky_npcf_thermal_shock_thermostat",
             "sea-and-sky_npcf_ultraviolet_catastrophe_thermostat",
             "sea-and-sky_npcf_third_law_thermostat",
             "sea-and-sky_npcf_paracausal_coolant_thermostat"
@@ -1009,7 +1009,7 @@
             "sea-and-sky_npcf_borehead_ram_tunneler"
         ],
         "optional_features": [
-            "sea-and-sky_npcf_explosive_emergence_tunneler",
+            "sea-and-sky_npcf_explosive_excavation_tunneler",
             "sea-and-sky_npcf_earthrend_tunneler",
             "sea-and-sky_npcf_burrow_tunneler",
             "sea-and-sky_npcf_underwatch_tunneler",

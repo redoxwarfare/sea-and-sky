@@ -17,7 +17,7 @@
   CoverImg: none,
   Description: "Setting Guide",
   Dedication: [
-    _Version 1.4.2_
+    _Version 1.5.0_
     #v(1fr)
     *Special Thanks to*
 
@@ -1359,9 +1359,6 @@ In a sense, yes -- Overcharge is not itself an action and does not trigger #Keyw
 ===== Does the Tunneler change elevation when it goes underground?
 No, going underground is essentially a status effect; for targeting purposes, the Tunneler is still standing at ground level. Any characters occupying the Tunneler's space (e.g. an Atlas, Leech, or Hitchhiker) also still count as being at ground level.
 
-===== Can the Tunneler Hide while it is underground?
-Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but it doesn't really do much for the Tunneler since it wants to Boost while underground anyway. I suppose you could play it like a Size *2* discount Specter...
-
 #let VeteranTrait = [
   #text(size: 16pt)[*VETERAN TRAIT*]\
 ]
@@ -1398,7 +1395,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #TechBox(
       title: "Stack the Odds",
       title_tech: [System, Quick Tech, +2/4/6, 2#CC.Heat;(Self)],
-      body: [The Croupier makes a tech attack against a character within Sensors. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack does *3/4/5 less damage* to its target. If the attack deals multiple damage types, this effect only applies to the highest damage value.]
+      body: [The Croupier makes a tech attack against a character within Sensors. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack's highest damage value is reduced by *3/4/5*.]
     )
     #ActionBox(
       title: "Loaded Die",
@@ -1418,7 +1415,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #TechBox(
       title: "The House Always Wins",
       title_tech: "System, Quick Tech",
-      body: [A character within Sensors must make a Systems save. On a failure, they emit a #CC.Burst;*3* field of warped probability until the start of the Croupier's next turn. All attacks made by or against characters at least partially within the field cannot result in critical hits.]
+      body: [The Croupier chooses a character within Sensors. Until the start of the Croupier's next turn, they emit a #CC.Burst;*3* field of warped probability; they may avoid this effect by passing a Systems save. All attacks made by or against characters overlapping the field cannot result in critical hits.]
     )
     #pagebreak()
     #figure(
@@ -1453,7 +1450,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
       title: "Unlock Doors",
       title_tech: [System, Quick Action, 1#CC.Heat;(Self)],
       body: [
-        The Gatekeeper opens two #CC.Line;*3* gates in free spaces within Sensors but not necessarily line of sight. Each gate is *1 space* tall and has a black side and a red side, clearly indicated to all characters on the field. Gates count as normal pieces of *hard cover*.
+        The Gatekeeper opens two #CC.Line;*3* gates in free spaces within Sensors but not necessarily line of sight. Each gate has a black side and a red side, clearly indicated to all characters on the field. Gates count as normal pieces of *Height 1 hard cover*.
         
         Whenever a character uses an ability that can target another character within line of sight and *X spaces*, if a gate is within their line of sight and *X spaces*, they can target any character within line of sight and *X spaces* of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within *X spaces* of the target. Reactions can also be triggered using the same rules. After each action or reaction that relies on a pair of gates, any Gatekeepers that opened either of the gates take *1*#CC.Heat.
         
@@ -1479,7 +1476,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     )
     #TechBox(
       title: "Summon",
-      title_tech: [System, Quick Tech, 2#CC.Heat;(Self)],
+      title_tech: [System, Full Tech, 1#CC.Heat;(Self)],
       body: [The Gatekeeper *teleports* a character within #CC.Range;*3* of a gate to a space within #CC.Range;*3* of any other gate. The starting and ending spaces of the teleport must be on the same color sides of their respective gates. Hostile characters may avoid this effect by passing an Engineering save. The Gatekeeper may use this action on itself.]
     )
     #ReactionBox(
@@ -1518,7 +1515,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
 #VeteranTrait
 #PassiveBox(
   title: "Almighty Janitor",
-  title_tech: "Trait",
+  title_tech: "Trait, Danger Zone",
   body: [
     *1/round*, when the Gatekeeper is in the Danger Zone and uses the #Keyword[Skeleton Key] to Skirmish, its attack becomes #CC.Line;*8*.
   ],
@@ -1613,26 +1610,34 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
 #PlaceNPC(
   FindNPC(lcp, "Lantern") + ("role": "support/defender"),
   [
-    #ActionBox(
+    #TechBox(
       title: "Shadow Tag",
-      title_tech: [Trait, Quick Action, 4#CC.Heat;(Self)],
+      title_tech: [Trait, Quick Tech, 2#CC.Heat;(Self)],
       body: [
-        The Lantern blazes brightly, designating a hostile character within line of sight and Sensors as the _Gnomon_ until they end their turn outside the Lantern's line of sight or Sensors, or the Lantern uses this action again or is destroyed.
+        The Lantern haunts a hostile character within Sensors. Until they end their turn outside the Lantern's line of sight or Sensors, or the Lantern becomes Jammed or Stunned, the following effects apply:
         
-        The Gnomon casts a #CC.Line;*5* shadow that is as wide and tall as their Size and points directly away from the Lantern, updating its direction at the end of the Lantern's and the Gnomon's turns. If the Lantern is directly above or below the Gnomon, the Lantern may choose the shadow's direction.
+        - The haunted character casts a #CC.Line;*5* shadow along the ground. The shadow is as wide and tall as their Size, with its tip located as far away from the Lantern as possible, and it updates its direction at the end of each turn.
         
-        The Lantern and allied characters may choose to treat the shadow as part of the Gnomon for any purpose. Additionally, the Gnomon makes all attacks, checks, and saves against the Lantern with *+1*#CC.Difficulty.
+        - While the Lantern or any allied character takes their turn, they may treat the shadow as part of the haunted character for any purpose.
+        
+        - The haunted character treats the Lantern as Invisible, and the Lantern makes all checks and saves against them with *+1*#CC.Accuracy. 
+        
+        - The Lantern cannot take this action again.
       ]
     )
     #PassiveBox(
       title: "Will-O-Wisp",
-      title_tech: "Trait",
-      body: [The Lantern emits a #CC.Burst;*3* area of flickering light. All attacks against hostile characters within this area gain *+1*#CC.Accuracy, and whenever they critically hit, the Lantern may take *2*#CC.Heat to deal *3/4/5*#CC.Burn to the target.],
+      title_tech: [Trait, 2#CC.Heat;(Self)],
+      body: [The Lantern may add *+1*#CC.Accuracy to any attack against a character within #CC.Range;*3*. If the attack then results in a critical hit, the Lantern also deals *3/4/5*#CC.Burn to the target.],
     )
     #ActionBox(
       title: "Heat Wave",
-      title_tech: "System, Full Action",
-      body: [The Lantern clears all Heat. Hostile characters within #CC.Burst;*2* must pass an Agility save or take *3/4/5*#CC.Burn. If the Lantern takes this action in the Danger Zone, characters who fail also become Shredded until the end of their next turn. This action must be taken before the Lantern moves or takes any non-protocol action on its turn.]
+      title_tech: "System, Full Action, Danger Zone",
+      body: [
+        This system can only be used while the Lantern is in the Danger Zone and before it moves or takes any non-protocol action on its turn.
+        
+        The Lantern clears all Heat. Hostile characters within #CC.Burst;*3* must pass an Agility save or take Heat equal to half the amount the Lantern cleared and become Shredded until the end of their next turn.
+      ]
     )
     #PassiveBox(
       title: "Levitate",
@@ -1645,8 +1650,8 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
   [
     #ActionBox(
       title: "Glare",
-      title_tech: [System, Quick Action, 2#CC.Heat;(Self)],
-      body: [The Lantern emits a blinding light. Until the start of its next turn, whenever a ranged or melee attack targets it or an allied character within #CC.Range;*3*, first roll *1d6*. If the result is lower than half the Lantern's Heat, the attack automatically misses.]
+      title_tech: "System, Quick Action",
+      body: [Until the start of the Lantern's next turn, whenever a ranged or melee attack targets it or any allied character within #CC.Range;*3*, first roll *1d6*. If the result is not higher than half the Lantern's Heat and the Lantern is not Exposed or Stunned, the attack automatically misses. This effect does not stack with Invisible.]
     )
     #pagebreak()
     #figure(
@@ -1655,34 +1660,36 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
       none
     )
     #PassiveBox(
-      title: "Night Shade",
-      title_tech: "Trait",
-      body: [Hostile characters may not draw line of sight into or through spaces within, above, or below the Gnomon's shadow.]
+      title: "Illuminate",
+      title_tech: [Trait, 1#CC.Heat;(Self)],
+      body: [When the Lantern uses #Keyword[Will-O-Wisp] on an attack, it may remove all #CC.Difficulty from the final roll.]
     )
     #TechBox(
       title: "Confuse Ray",
-      title_tech: [System, Quick Tech, 4#CC.Heat;(Self)],
-      body: [A character within #CC.Range;*3* must make a Systems save. On a failure, until they end their turn outside #CC.Range;*3* of the Lantern, they are Impaired and can only draw line of sight to adjacent spaces. Each character can only suffer this effect *1/scene*.]
+      title_tech: "System, Quick Tech, +1/2/3",
+      body: [
+        The Lantern makes a tech attack against a character within Sensors. On a hit, until the end of their next turn, they cannot draw line of sight into or out of the #CC.Burst;*3* area around the Lantern, and cannot be affected by any other character hostile to the Lantern unless they have line of sight to that character. The Lantern cannot take this action again until its effects end.
+      ]
     )
     #colbreak()
-    #PassiveBox(
+    #ActionBox(
       title: "Mystical Fire",
-      title_tech: "Trait",
-      body: [Hostile characters affected by #Keyword[Will-O-Wisp] cannot clear Burn, and if they end their turn within the #CC.Burst;*3* area they must pass an Agility save or take *3/4/5*#CC.Burn.]
+      title_tech: [System, Full Action, 2#CC.Heat;(Self)],
+      body: [Hostile characters within #CC.Burst;*3* must pass an Agility save or take *3/4/5*#CC.Burn. Until the end of the Lantern's next turn, hostile characters within #CC.Burst;*3* cannot clear Burn and the Lantern cannot take this action again.]
     )
-    #TechBox(
+    #ActionBox(
       title: "Nightmare",
-      title_tech: [System, Full Tech, 4#CC.Heat;(Self)],
-      body: [Until the end of the round, allied characters always have line of sight to characters affected by #Keyword[Will-O-Wisp] and ignore cover, Invisible, and Hidden when targeting them. This action cannot be taken if it was already used in this round or the previous one.]
+      title_tech: [System, Full Action, 3#CC.Heat;(Self)],
+      body: [Until the end of the round, allied characters always have line of sight to characters within #CC.Burst;*3* of the Lantern and ignore cover, Invisible, and Hidden when targeting them. This action cannot be taken if it was already used in this round or the previous one.]
     )
   ]
 )
 
 #VeteranTrait
 #PassiveBox(
-  title: "Illuminate",
+  title: "Night Shade",
   title_tech: "Trait",
-  body: [The final attack roll against any character affected by #Keyword[Will-O-Wisp] can never be affected by #CC.Difficulty.]
+  body: [Hostile characters may not enter or draw line of sight into or through spaces within, above, or below the shadow of the character haunted by #Keyword[Shadow Tag].]
 )
 
 #PlaceNPC(
@@ -1724,12 +1731,12 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #PassiveBox(
       title: "Kinetic Reservoir",
       title_tech: "System, Limited 4",
-      body: [When the Monsoon makes an attack, it may expend any number of charges from this system to add the same amount of Knockback on hit. The Monsoon regains *2* charges each time it is hit by a ranged or melee attack.]
+      body: [When the Monsoon makes an attack, it may expend any number of charges from this system to push targets the same number of spaces directly away on hit. The Monsoon regains *2* charges each time it is hit by a ranged or melee attack.]
     )
-    #ActionBox(
+    #TechBox(
       title: "Memetic Caltrops",
-      title_tech: "System, Quick Action",
-      body: [The Monsoon spreads paralytic memetics across a free #CC.Blast;*1* area within Sensors. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take *2/3/4#CC.Energy;AP* damage and must pass a Systems save or become Impaired and Slowed until the end of their next turn. The area lasts until the Monsoon takes this action again or this system is destroyed.]
+      title_tech: "System, Quick Tech",
+      body: [The Monsoon spreads paralytic memetics across a free #CC.Blast;*1* area within Sensors. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take *2/3/4#CC.Energy;AP* damage and must pass a Systems save or become Impaired and Slowed until the end of their next turn. The area lasts until the Monsoon takes this action again or becomes Jammed or Stunned.]
     )
     #pagebreak()
     #figure(
@@ -1788,7 +1795,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #PassiveBox(
       title: "Lean on Me",
       title_tech: "Trait",
-      body: [As long as they are not Immobilized, the Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin.]
+      body: [The Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin. Characters cannot benefit from this trait while either they or the Paladin are Immobilized.]
     )
     #PassiveBox(
       title: "Pure Will",
@@ -1832,7 +1839,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #ActionBox(
       title: "Rallying Cry",
       title_tech: "System, Quick Action",
-      body: [Until the end of its next turn, the Paladin exudes a #CC.Burst;*3* aura. The Paladin and allied characters within the aura count as Invisible against tech attacks and make saves against tech actions with *+2*#CC.Accuracy. Each time a tech attack or tech action fails against an affected character, the attacker takes *2/3/4#CC.Energy;AP* damage and the Paladin takes *2*#CC.Heat. The Paladin cannot take this action again until its effects end.]
+      body: [Until the end of its next turn, the Paladin exudes a #CC.Burst;*3* aura. The Paladin and allied characters within the aura count as Invisible against tech attacks and make checks and saves against tech actions with *+2*#CC.Accuracy. Each time a tech attack or tech action fails against an affected character, the attacker takes *2/3/4#CC.Energy;AP* damage and the Paladin takes *2*#CC.Heat. The Paladin cannot take this action again until its effects end.]
     )
     
   ]
@@ -2006,7 +2013,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
       title_tech: [System, Quick Tech, +1/2/3, 2#CC.Heat;(Self)],
       body: [
         The Thermostat makes a tech attack against a character within Sensors, automatically hitting allies. On a hit, the Thermostat chooses one of the following:
-        - *Sap:* The target clears *4/5/6*#CC.Heat.
+        - *Sap:* The target clears *3/4/5*#CC.Heat.
         - *Overload:* The target takes *1/2/3*#CC.Heat immediately and a further *2*#CC.Heat after each quick action, full action, or reaction they take (even as a free action) until the end of their next turn.
       ]
     )
@@ -2023,7 +2030,8 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     )
     #PassiveBox(
       title: "Blackbody Barrier",
-      title_tech: "Trait, Shield",
+      title_tech: "Trait, Danger Zone, Shield",
+      one_line_title: false,
       body: [
         While the Thermostat is in the Danger Zone and not Exposed, it gains *+1*#CC.Accuracy to all its tech attacks and *Resistance to all damage and #CC.Burn*. Whenever this trait reduces damage, the Thermostat clears *2*#CC.Heat.
       ]
@@ -2032,16 +2040,16 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     \
   ],
   [
+    #TechBox(
+      title: "Thermal Shock",
+      title_tech: "System, Quick Tech, +2/4/6",
+      body: [The Thermostat makes a tech attack against a character within Sensors. On a hit, they take *2*#CC.Heat and must pass a Systems save or become Shredded until the end of their next turn.]
+    )
     #ReactionBox(
       title: "Maxwell's Demon",
       title_tech: [System, Reaction, 1/round, 2#CC.Heat;(Self)],
       trigger: [A character within Sensors rolls an attack.],
       body: [The Thermostat increases or decreases the final roll by *2*. A roll may not be modified more than once by any copy of #Keyword[Maxwell's Demon].]
-    )
-    #ActionBox(
-      title: "First Law",
-      title_tech: [System, Quick Action, Shield],
-      body: [The Thermostat links with an allied character within Sensors. While #Keyword[Blackbody Barrier] is active, it grants its Resistance to the linked character instead of the Thermostat. The Thermostat can only link with one character at a time, but may terminate the link as a quick action.]
     )
     #pagebreak()
     #figure(
@@ -2049,10 +2057,10 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
       scope: "parent",
       none
     )
-    #TechBox(
-      title: "Thermal Shock",
-      title_tech: "System, Full Tech, +2/4/6",
-      body: [The Thermostat makes a tech attack against a character within Sensors. On a hit, they take *2*#CC.Heat and must pass a Systems save or become Shredded until the end of their next turn; on a success, they become Impaired until the end of their next turn instead. If the target is in the Danger Zone when they make this save, the Thermostat may take *4*#CC.Heat to apply Exposed instead of Shredded.]
+    #ActionBox(
+      title: "First Law",
+      title_tech: [System, Quick Action, Shield],
+      body: [The Thermostat links with an allied character within Sensors. While #Keyword[Blackbody Barrier] is active, it grants its Resistance to the linked character instead of the Thermostat. The Thermostat can only link with one character at a time, but may terminate the link as a quick action.]
     )
     #PassiveBox(
       title: "Ultraviolet Catastrophe",
@@ -2064,8 +2072,8 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #colbreak()
     #TechBox(
       title: "Third Law",
-      title_tech: [System, Quick Tech, +1/2/3, 4#CC.Heat;(Self)],
-      body: [The Thermostat makes a tech attack against a character within Sensors, gaining *+1*#CC.Accuracy against targets in the Danger Zone. On a hit, they gain the #Keyword[Thermostat's Mark], preventing them from clearing any amount of Heat by any means except overheating. Whenever the marked character ends their turn, they must pass a Systems check or take #CC.Energy equal to their Heat. Characters clear the #Keyword[Thermostat's Mark] by passing a Systems save as a quick action or when the Thermostat marks a different character.]
+      title_tech: [System, Full Tech, +2/4/6, 2#CC.Heat;(Self)],
+      body: [The Thermostat makes a tech attack against a character within Sensors. On a hit, they gain the #Keyword[Thermostat's Mark], preventing them from clearing any amount of Heat by any means except overheating. Whenever the marked character ends their turn, they must pass a Systems check or take #CC.Energy equal to their Heat. Characters clear the #Keyword[Thermostat's Mark] when they or an adjacent character pass a Systems save as a full action, or when the Thermostat marks a different character.]
     )
   ]
 )
@@ -2084,7 +2092,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
       title: "Lithodynamic Movement Suite",
       title_tech: "Trait",
       body: [
-        If the Tunneler is on solid ground, it may take *2*#CC.Heat to _go underground_ as a *quick action*, gaining *soft cover* and the ability to ignore all terrain, obstructions, and engagement and Boost as a free action *1/turn*. While the Tunneler is underground, other characters ignore engagement with it. Otherwise, the Tunneler interacts with other characters and objects normally.
+        If the Tunneler is on solid ground, it may take *2*#CC.Heat to _go underground_ as a *quick action*, gaining *+2* Speed and the ability to ignore all terrain, obstructions, and engagement. While the Tunneler is underground, other characters ignore engagement with it and make ranged and melee attacks against it with *+1*#CC.Difficulty. Otherwise, the Tunneler interacts with other characters and objects normally.
         
         If underground, the Tunneler _resurfaces_ in the nearest free space before leaving the ground, after resolving any attack, or as a *free action*. Neither going underground nor resurfacing count as movement.
       ]
@@ -2105,7 +2113,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     #WeaponBox(
       title: "Borehead Ram",
       title_tech: [
-        Main Melee, +1/2/3\
+        Main Melee, +1/2/3, Knockback 2\
         \[#CC.Threat;1\]\[6/8/10#CC.Explosive\]
       ],
       body: [If the Tunneler is underground, this weapon gains *+1*#CC.Accuracy, and after the attack resolves, the Tunneler may create a borehole without taking Heat.]
@@ -2115,9 +2123,9 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
   ],
   [
     #PassiveBox(
-      title: "Explosive Emergence",
+      title: "Explosive Excavation",
       title_tech: "System",
-      body: [*1/round*, when the Tunneler resurfaces adjacent to a character, they must pass an Agility save or be pushed back *3 spaces* and knocked Prone.]
+      body: [*1/round*, after the Tunneler goes underground or resurfaces adjacent to a character, they must pass an Agility save or be pushed back *3 spaces* and knocked Prone.]
     )
     #pagebreak()
     #figure(
@@ -2127,7 +2135,7 @@ Yes, the soft cover from being underground is sufficient to #Keyword[Hide], but 
     )
     #ActionBox(
       title: "Earthrend",
-      title_tech: [System, Quick Action, 4#CC.Heat;(Self)],
+      title_tech: [System, Full Action, 2#CC.Heat;(Self)],
       body: [The Tunneler creates a borehole where it stands, then goes underground and moves its Speed in a straight line without provoking reactions.]
     )
     #ReactionBox(
