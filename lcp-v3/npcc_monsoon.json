@@ -1,0 +1,331 @@
+[
+  {
+    "id": "sea-and-sky_npcc_monsoon",
+    "name": "Monsoon",
+    "role": "artillery",
+    "info": {
+      "flavor": "Monsoon-class frames date back to the Maguayan civil war and were first developed by Flue for the defense of Opal's capital city. The archetype's defining characteristics are the use of advanced e-warfare systems to secure a defensive perimeter and bursts of overwhelming firepower to pre-empt approach. Modern incarnations incorporate technology from IPS-N's Raleigh platform to smoothly transition between shielded and firing stances.",
+      "tactics": "True to its namesake, the Monsoon alternates between wielding long-range firepower and shielding itself from close-quarters fire. It can protect nearby allies by granting them hard cover and redirecting attacks towards itself. Clever foes will exploit its inability to control when its shields are down, as well as its reliance on offense to handle ranged attackers.",
+      "terse": "Dual artillery-defender that switches between offensive and defensive stances each turn."
+    },
+    "stats": {
+      "armor": [2, 2, 2],
+      "hp": [14, 17, 20],
+      "evade": [7, 8, 9],
+      "edef": [12, 14, 16],
+      "heatcap": [8, 8, 8],
+      "speed": [3, 3, 3],
+      "sensor": [15, 15, 15],
+      "save": [11, 13, 15],
+      "hull": [2, 3, 4],
+      "agility": [-2, -2, -2],
+      "systems": [2, 3, 4],
+      "engineering": [0, 0, 0],
+      "size": [[2], [2], [2]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_typhoon_flechette_launcher_monsoon",
+    "name": "Typhoon Flechette Launcher",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": true,
+    "weapon_type": "Superheavy Launcher",
+    "attack_bonus": [2, 4, 6],
+    "damage": [
+      {
+        "type": "Kinetic",
+        "val": [7, 10, 13]
+      }
+    ],
+    "range": [
+      {
+        "type": "Range",
+        "val": 20
+      },
+      {
+        "type": "Blast",
+        "val": 1
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_ap"
+      },
+      {
+        "id": "tg_loading"
+      },
+      {
+        "id": "tg_ordnance"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_habagat_oscillatory_shields_monsoon",
+    "name": "Habagat Oscillatory Shields",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": true,
+    "effect": "At the start of the Monsoon's turn, if it is unable to attack any hostile characters with the <strong>Typhoon Flechette Launcher</strong>, it gains <strong>Resistance to all damage</strong> from attacks that originate within <strong>Range 5</strong> until the end of the round. At the end of the Monsoon's turn, if it did not attack with the <strong>Typhoon Flechette Launcher</strong>, it automatically reloads that weapon.",
+    "actions": [
+      {
+        "name": "Raise Shields",
+        "activation": "Free",
+        "trigger": "You start your turn unable to attack any hostile characters with the <strong>Typhoon Flechette Launcher</strong>.",
+        "detail": "Gain <strong>Resistance to all damage</strong> from attacks that originate within <strong>Range 5</strong> until the end of the round.",
+        "active_effects": [
+          {
+            "name": "Habagat Oscillatory Shields",
+            "detail": "Until the end of the round, you have <strong>Resistance to all damage</strong> from attacks that originate within <strong>Range 5</strong>.",
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "Reload Launcher",
+        "activation": "Free",
+        "trigger": "You end your turn without having attacked with the <strong>Typhoon Flechette Launcher</strong>.",
+        "detail": "You automatically reload the <strong>Typhoon Flechette Launcher</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_shield"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_guardian_monsoon",
+    "name": "Guardian",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": true,
+    "effect": "Adjacent allied characters can use the Monsoon for <strong>hard cover</strong>.",
+    "active_effects": [
+      {
+        "name": "Guardian",
+        "detail": "Allied characters can use you for hard cover."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_sturdy_frame_monsoon",
+    "name": "Sturdy Frame",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": true,
+    "effect": "If the Monsoon is not <strong>Immobilized</strong>, when it is pushed, pulled, or knocked back, its movement is halved.",
+    "active_effects": [
+      {
+        "name": "Sturdy Frame",
+        "condition": "You are not Immobilized and you are pushed, pulled, or knocked back.",
+        "detail": "Your involuntary movement is halved."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_rain_shadow_monsoon",
+    "name": "Rain Shadow",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": true,
+    "actions": [
+      {
+        "name": "Rain Shadow",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character within <strong>Sensors</strong> attacks an allied character within <strong>Range 5</strong>.",
+        "detail": "You hijack the attacker's systems, forcing them to instead target you even if they normally could not. If the attack is part of an area of effect, the area must be repositioned to include you, which may change its targets."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_kinetic_reservoir_monsoon",
+    "name": "Kinetic Reservoir",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "effect": "When the Monsoon makes an attack, it may expend any number of charges from this system to push targets the same number of spaces directly away on hit. The Monsoon regains <strong>2</strong> charges each time it is hit by a ranged or melee attack.",
+    "actions": [
+      {
+        "name": "Release Kinetic Reservoir",
+        "activation": "Free",
+        "trigger": "You make an attack.",
+        "detail": "Expend any number of charges from <strong>Kinetic Reservoir</strong> to push targets the same number of spaces directly away on hit.",
+        "cost": 1
+      }
+    ],
+    "active_effects": [
+      {
+        "name": "Fill Kinetic Reservoir",
+        "condition": "You are hit by a ranged or melee attack.",
+        "detail": "Regain <strong>2</strong> charges of <strong>Kinetic Reservoir</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_limited",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_memetic_caltrops_monsoon",
+    "name": "Memetic Caltrops",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "actions": [
+      {
+        "name": "Memetic Caltrops",
+        "activation": "Quick Tech",
+        "detail": "You spread paralytic memetics across a free <strong>Blast 1</strong> area within <strong>Sensors</strong>. Hostile characters that start their turn at least partially within the area or move at least partially into it for the first time in a round take <strong>{2/3/4} AP Energy</strong> damage and must pass a <strong>Systems</strong> save or become <strong>Impaired</strong> and <strong>Slowed</strong> until the end of their next turn. The area lasts until you take this action again or become <strong>Jammed</strong> or <strong>Shredded</strong>.",
+        "damage": [
+          {
+            "type": "Energy",
+            "val": [2, 3, 4],
+            "ap": true
+          }
+        ],
+        "add_status": [
+          {
+            "id": "impaired",
+            "duration": "next_turn_end_target",
+            "save": "sys"
+          },
+          {
+            "id": "slow",
+            "duration": "next_turn_end_target",
+            "save": "sys"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_flood_targeting_monsoon",
+    "name": "Flood Targeting",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "actions": [
+      {
+        "name": "Flood Targeting",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a hostile character within <strong>Sensors</strong>. On a hit, until the start of your next turn, the target takes <strong>{2/3/4} AP Energy</strong> damage each time they make an attack roll that does not target you.",
+        "add_special": [
+          {
+            "attribute": "Flood Targeting",
+            "detail": "When you make an attack roll that does not target the Monsoon, take {2/3/4} AP Energy damage.",
+            "duration": "next_turn_start_self"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_galeforce_repulsor_monsoon",
+    "name": "Galeforce Repulsor",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "effect": "At the start of the Monsoon's turn, if it is unable to attack any hostile characters with the <strong>Typhoon Flechette Launcher</strong>, it may wreathe itself in a whirling energy field. While the field is active, when a ranged or melee attack hits the Monsoon, all damage is reduced to <strong>0</strong>, and the field dissipates. All characters always know whether the field is active.",
+    "actions": [
+      {
+        "name": "Charge Galeforce Repulsor",
+        "activation": "Free",
+        "trigger": "Your start your turn unable to attack any hostile characters with the <strong>Typhoon Flechette Launcher</strong>.",
+        "detail": "Wreathe yourself in a whirling energy field that reduces all damage from the next successful ranged or melee attack against you to <strong>0</strong>.",
+        "active_effects": [
+          {
+            "name": "Galeforce Repulsor",
+            "condition": "You are hit by a ranged or melee attack.",
+            "detail": "All damage is reduced to <strong>0</strong> and this effect deactivates."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_hailstone_rounds",
+    "name": "Hailstone Rounds",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "actions": [
+      {
+        "name": "Load Hailstone Rounds",
+        "activation": "Full",
+        "detail": "Load a special servo-crippling round. The next time you use the <strong>Typhoon Flechette Launcher</strong> to <strong>Barrage</strong>, choose one of the following on-hit effects:<ul><li><strong>Halt:</strong> Targets must make an <strong>Engineering</strong> save. On a failure, they become <strong>Immobilized</strong> until the end of their next turn; on a success, they become <strong>Slowed</strong> instead.</li><li><strong>Disable:</strong> Targets must make a <strong>Systems</strong> save. On a failure, they become <strong>Jammed</strong> until the end of their next turn; on a success, they become <strong>Impaired</strong> instead.</li></ul>",
+        "active_effects": [
+          {
+            "name": "Halter Rounds",
+            "detail": "Targets hit by the <strong>Typhoon Flechette Launcher</strong> must make an <strong>Engineering</strong> save. On a failure, they become <strong>Immobilized</strong> until the end of their next turn; on a success, they become <strong>Slowed</strong> instead.",
+            "add_status": [
+              {
+                "id": "immobilized",
+                "duration": "next_turn_end_target",
+                "aoe": "blast 1",
+                "save": "eng"
+              }
+            ]
+          },
+          {
+            "name": "Disabler Rounds",
+            "detail": "Targets hit by the <strong>Typhoon Flechette Launcher</strong> must make a <strong>Systems</strong> save. On a failure, they become <strong>Jammed</strong> until the end of their next turn; on a success, they become <strong>Impaired</strong> instead.",
+            "add_status": [
+              {
+                "id": "jammed",
+                "duration": "next_turn_end_target",
+                "aoe": "blast 1",
+                "save": "sys"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_amihan_interdiction_routines",
+    "name": "Amihan Interdiction Routines [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_monsoon",
+    "base": false,
+    "mod": "sea-and-sky_npcf_rain_shadow_monsoon",
+    "effect": "<strong>Rain Shadow</strong> also triggers when a character within <strong>Sensors</strong> forces an allied character within <strong>Range 5</strong> to make a save. If <strong>Rain Shadow</strong> is triggered in this way, the Monsoon makes the save instead and receives all effects."
+  }
+]

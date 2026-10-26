@@ -1,0 +1,270 @@
+[
+  {
+    "id": "sea-and-sky_npcc_croupier",
+    "name": "Croupier",
+    "role": "controller",
+    "info": {
+      "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+      "tactics": "The Croupier is a tricky mid-range fighter that forces enemies to choose between their attack rolls and their health. Croupiers work especially well against enemies that make many attacks, but they have fewer options against armor, control effects, and forced saves.",
+      "terse": "Tricky mid-range striker that punishes attack rolls."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [12, 14, 16],
+      "evade": [10, 13, 16],
+      "edef": [10, 11, 12],
+      "heatcap": [7, 7, 7],
+      "speed": [5, 5, 5],
+      "sensor": [10, 10, 10],
+      "save": [11, 13, 15],
+      "hull": [-2, -2, -2],
+      "agility": [2, 3, 4],
+      "systems": [2, 3, 4],
+      "engineering": [0, 0, 0],
+      "size": [[1], [1], [1]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_bandits_arm_croupier",
+    "name": "Bandit's Arm",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": true,
+    "on_crit": {
+      "detail": "Target becomes <strong>Impaired</strong> until the end of their next turn.",
+      "add_status": [
+        {
+          "id": "impaired",
+          "duration": "next_turn_end_target"
+        }
+      ]
+    },
+    "weapon_type": "Main Rifle",
+    "attack_bonus": [1, 2, 3],
+    "accuracy": [1, 1, 1],
+    "damage": [
+      {
+        "type": "Kinetic",
+        "val": [5, 7, 9]
+      }
+    ],
+    "range": [
+      {
+        "type": "Range",
+        "val": 10
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_jinx_croupier",
+    "name": "Jinx",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_",
+    "base": true,
+    "actions": [
+      {
+        "name": "Jinx",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>. On a hit, until the end of the target's next turn, when they succeed on an attack, they must choose one: they take <strong>{3/4/5} Explosive</strong>, or they reroll and keep the second result.",
+        "attack": "tech",
+        "add_special": [
+          {
+            "attribute": "Jinxed",
+            "detail": "When you succeed on an attack, choose one: take {3/4/5} Explosive, or reroll and keep the second result. This effect triggers only once per attack roll.",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_fifty_fifty_croupier",
+    "name": "Fifty-Fifty",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": true,
+    "effect": "The Croupier is <strong>Invisible</strong> until it takes damage. It regains <strong>Invisible</strong> at the start of the next round.",
+    "active_effects": [
+      {
+        "name": "Fifty-Fifty",
+        "detail": "You are <strong>Invisible</strong> until you take damage. You regain <strong>Invisible</strong> at the start of the next round.",
+        "add_status": [
+          {
+            "id": "invisible",
+            "target": "self"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_stack_the_odds_croupier",
+    "name": "Stack the Odds",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": false,
+    "actions": [
+      {
+        "name": "Stack the Odds",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>. On a hit, until the end of the target's next turn, whenever they make an attack and the final result of their roll is odd, the attack's highest damage value is reduced by {3/4/5}.",
+        "attack": "tech",
+        "add_special": [
+          {
+            "attribute": "Stacked Odds",
+            "detail": "When you make an attack and the final result of your roll is odd, the attack's highest damage value is reduced by {3/4/5}.",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_loaded_die_croupier",
+    "name": "Loaded Die",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": false,
+    "deployables": [
+      {
+        "name": "Loaded Die",
+        "activation": "Quick",
+        "size": 0.5,
+        "hp": [5, 8, 10],
+        "evasion": 10,
+        "edef": 10,
+        "type": "Drone",
+        "detail": "Toss a loaded die onto a free space within <strong>Sensors</strong>. Hostile characters within <strong>Burst 2</strong> of the die suffer the effect of <strong>Jinx</strong> until they leave the area.",
+        "add_special": [
+          {
+            "attribute": "Jinxed",
+            "aoe": "burst 2",
+            "detail": "When you succeed on an attack, choose one: take {3/4/5} Explosive, or reroll and keep the second result. This effect triggers only once per attack roll."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_drone"
+      },
+      {
+        "id": "tg_limited",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_big_blind_croupier",
+    "name": "Big Blind",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": false,
+    "actions": [
+      {
+        "name": "Big Blind",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character within <strong>Range 10</strong> takes a free action or reaction.",
+        "detail": "You interrupt the triggering character, attacking them with the <strong>Bandit's Arm</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_trait"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_the_house_always_wins_croupier",
+    "name": "The House Always Wins",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": false,
+    "actions": [
+      {
+        "name": "The House Always Wins",
+        "activation": "Quick Tech",
+        "detail": "Choose a character within <strong>Sensors</strong>. Until the start of your next turn, they emit a <strong>Burst 3</strong> field of warped probability; they may avoid this effect by passing a <strong>Systems</strong> save. All attacks made by or against characters overlapping the field cannot result in critical hits.",
+        "add_special": [
+          {
+            "attribute": "The House Always Wins",
+            "detail": "All attacks made by or against you or characters within Burst 3 of you cannot result in critical hits.",
+            "duration": "next_turn_start_self"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_gamblers_fallacy_croupier",
+    "name": "Gambler's Fallacy",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_croupier",
+    "base": false,
+    "actions": [
+      {
+        "name": "Gambler's Fallacy",
+        "activation": "Free",
+        "frequency": "1/round",
+        "trigger": "A character within <strong>Sensors</strong> rolls an attack, check, or save.",
+        "cost": 1,
+        "detail": "You may expend any number of charges from this system to add the same amount of <strong>Accuracy</strong> or <strong>Difficulty</strong> to the roll. Take <strong>2 Heat</strong> for every charge spent. You regain a charge every time you or an allied character within <strong>Sensors</strong> fails an attack, check, or save."
+      }
+    ],
+    "active_effects": [
+      {
+        "name": "Gambler's Fallacy",
+        "condition": "You or an allied character within Sensors fails an attack, check, or save.",
+        "detail": "Regain a charge of <strong>Gambler's Fallacy</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_limited",
+        "val": 3
+      },
+      {
+        "id": "tg_round",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_fate_weave_croupier",
+    "name": "Fate Weave [Veteran]",
+    "origin": "sea-and-sky_npcc_croupier",
+    "type": "trait",
+    "effect": "When the Croupier triggers a hostile character's reaction, they must make a <strong>Systems</strong> save. On a failure, the Croupier ignores all effects of their reaction.",
+    "active_effects": [
+      {
+        "name": "Fate Weave",
+        "condition": "You trigger a hostile character's reaction.",
+        "detail": "The triggering character must pass a <strong>Systems</strong> save, or you ignore all effects of their reaction.",
+        "save": "sys"
+      }
+    ]
+  }
+]

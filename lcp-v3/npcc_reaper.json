@@ -1,0 +1,236 @@
+[
+  {
+    "id": "sea-and-sky_npcc_reaper",
+    "name": "Reaper",
+    "role": "defender",
+    "info": {
+      "flavor": "Makaptan's blackwash wranglers are known for their bravado, but there are those notorious few who actively cultivate a menacing aura. These self-styled \"reapers\" flaunt their mastery over nanites by wielding them in combat, and many moonlight as mercenaries in addition to their usual wrangling gigs. The psychological threat of being consumed by greywash is by itself often enough to erode even the most experienced pilot's composure.",
+      "tactics": "Reapers are melee defenders that use their signature debuff, <strong>Frightened</strong>, to force nearby enemies to pay attention to them or suffer debilitating effects. Though strong against stationary and grouped opponents, Reapers are slow for their short range and benefit from allies that provide reliable damage, mobility, and ways to deal with long-range attackers.",
+      "terse": "Melee defender that forces nearby enemies to focus on itself or suffer delibitating control effects."
+    },
+    "stats": {
+      "armor": [2, 2, 2],
+      "hp": [16, 20, 24],
+      "evade": [7, 8, 9],
+      "edef": [10, 12, 14],
+      "heatcap": [6, 6, 6],
+      "speed": [4, 4, 4],
+      "sensor": [5, 5, 5],
+      "save": [12, 15, 18],
+      "hull": [2, 3, 4],
+      "agility": [-1, -1, -1],
+      "systems": [2, 3, 4],
+      "engineering": [0, 0, 0],
+      "size": [[1], [1], [1]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_greywash_scythe_reaper",
+    "name": "Greywash Scythe",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": true,
+    "weapon_type": "Heavy Melee",
+    "attack_bonus": [1, 2, 3],
+    "damage": [
+      {
+        "type": "Burn",
+        "val": [4, 5, 6]
+      }
+    ],
+    "range": [
+      {
+        "type": "Threat",
+        "val": 3
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_smart"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_sow_reaper",
+    "name": "Sow",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": true,
+    "actions": [
+      {
+        "name": "Sow",
+        "activation": "Quick Tech",
+        "detail": "A character within <strong>Sensors</strong> must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>.<br><strong>Frightened</strong> characters make all attacks with <strong>+1 Difficulty</strong>, and when they take damage, the closest character allied to them that is within line of sight and <strong>Range 5</strong> and not already <strong>Frightened</strong> must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>.<br>Characters clear <strong>Frightened</strong> by passing a <strong>Systems</strong> save as a quick action or by damaging a Reaper.",
+        "add_special": [
+          {
+            "attribute": "Frightened",
+            "detail": "You make all attacks with +1 Difficulty. When you take damage, the closest allied character within line of sight and Range 5 who is not already Frightened must pass a Systems save or become Frightened."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_reap_reaper",
+    "name": "Reap",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": true,
+    "effect": "The Reaper chooses one of the following effects. Regardless of line of sight, all <strong>Frightened</strong> characters within <strong>Sensors</strong> clear <strong>Frightened</strong>, then suffer the Reaper's chosen effect.",
+    "actions": [
+      {
+        "name": "Fight",
+        "activation": "Protocol",
+        "detail": "Targets take <strong>{2/3/4} Burn</strong>, plus additional <strong>Burn</strong> equal to the number of targets.",
+        "damage": [
+          {
+            "type": "Burn",
+            "val": [2, 3, 4],
+            "aoe": true
+          }
+        ]
+      },
+      {
+        "name": "Flight",
+        "activation": "Protocol",
+        "detail": "Targets move <strong>5 spaces</strong> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_malaise_reaper",
+    "name": "Malaise",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "effect": "<strong>Frightened</strong> characters within the Reaper's <strong>Sensors</strong> exude a <strong>Burst 3</strong> aura. While they are at least partially within the aura, other hostile characters make all checks and saves with <strong>+1 Difficulty</strong>. The effects from overlapping auras stack.",
+    "active_effects": [
+      {
+        "name": "Malaise",
+        "detail": "<strong>Frightened</strong> characters within your <strong>Sensors</strong> exude a <strong>Burst 3</strong> aura. While they are at least partially within the aura, other hostile characters make all checks and saves with <strong>+1 Difficulty</strong>. The effects from overlapping auras stack."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_morbid_curiosity_reaper",
+    "name": "Morbid Curiosity",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Morbid Curiosity",
+        "activation": "Quick",
+        "detail": "You spike your weapons with hypnotic memetics. The next time you make a successful ranged or melee attack, before it deals damage, all hostile characters within <strong>Range 5</strong> of the target are pulled <strong>3 spaces</strong> towards the target.",
+        "active_effects": [
+          {
+            "name": "Morbid Curiosity",
+            "detail": "The next time you make a successful ranged or melee attack, before it deals damage, all hostile characters within <strong>Range 5</strong> of the target are pulled <strong>3 spaces</strong> towards the target.",
+            "target": "self"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_blight_reaper",
+    "name": "Blight",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Blight",
+        "activation": "Quick",
+        "detail": "Blight a free <strong>Blast 1</strong> area within <strong>Sensors</strong>. Hostile characters that start their turn at least partially within the blighted area or move at least partially into it for the first time in a round become <strong>Frightened</strong>. If they are already <strong>Frightened</strong>, they take <strong>{2/3/4} Burn</strong>. The area lasts until you take this action again or this system is destroyed."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_overwhelming_presence_reaper",
+    "name": "Overwhelming Presence",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "mod": "sea-and-sky_npcf_reap_reaper",
+    "effect": "The Reaper gains two additional options for <strong>Reap</strong>.",
+    "actions": [
+      {
+        "name": "Freeze",
+        "activation": "Protocol",
+        "detail": "Targets are knocked <strong>Prone</strong>. If they are already <strong>Prone</strong>, they become <strong>Immobilized</strong> until the end of their next turn.",
+        "add_status": [
+          {"id": "prone", "aoe": "true"},
+          {"id": "immobilized", "aoe": "true", "duration": "next_turn_end_target"}
+        ]
+      },
+      {
+        "name": "Fawn",
+        "activation": "Protocol",
+        "detail": "Targets become <strong>Shredded</strong> and deal <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong> with attacks until the end of their next turn.",
+        "add_status": [
+          {"id": "shredded", "aoe": true, "duration": "next_turn_end_target"}
+        ],
+        "add_special": [
+          {
+            "attribute": "Fawning",
+            "detail": "You deal half damage, Burn, and Heat with attacks.",
+            "aoe": true,
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_cascading_fear_reaper",
+    "name": "Cascading Fear",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Cascading Fear",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a <strong>Frightened</strong> character within <strong>Sensors</strong>. On a hit, the next time they take damage while <strong>Frightened</strong>, all of their allies within line of sight and <strong>Range 5</strong> take <strong>{2/3/4} Burn</strong>, then must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>. As long as the target is <strong>Frightened</strong>, this effect refreshes at the start of each round.",
+        "add_special": [
+          {
+            "attribute": "Cascading Fear",
+            "detail": "The first time each round you take damage while Frightened, all allies within line of sight and Range 5 take {2/3/4} Burn, then must pass a Systems save against the Reaper or become Frightened."
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_executioner_reaper",
+    "name": "Executioner [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_reaper",
+    "base": false,
+    "mod": "sea-and-sky_npcf_greywash_scythe_reaper",
+    "effect": "<strong>1/round</strong>, when the Reaper makes a successful attack with the <strong>Greywash Scythe</strong>, it may use that weapon to attack a different character within <strong>Threat</strong>, dealing <strong>half damage</strong> and <strong>Burn</strong>.",
+    "tags": [
+      {
+        "id": "tg_round",
+        "val": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "id": "sea-and-sky_npcc_paladin",
+    "name": "Paladin",
+    "role": "support",
+    "info": {
+      "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+      "tactics": "Paladins protect nearby allied characters from control effects. Interpose and Pure Will allow them to absorb debilitating conditions that would otherwise shut down their allies, while Lean on Me prevents forced movement. Paladins work well alongside allies who are typically vulnerable to tech actions, but they cannot mitigate damage.",
+      "terse": "Frontline support that protects allies from control effects."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [20, 24, 28],
+      "evade": [6, 7, 8],
+      "edef": [12, 14, 16],
+      "heatcap": [10, 10, 10],
+      "speed": [4, 4, 4],
+      "sensor": [10, 10, 10],
+      "save": [11, 13, 15],
+      "hull": [3, 4, 5],
+      "agility": [-2, -2, -2],
+      "systems": [0, 0, 0],
+      "engineering": [2, 3, 4],
+      "size": [[2], [2], [2]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_pathos_shotgun_paladin",
+    "name": "Pathos Shotgun",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": true,
+    "weapon_type": "Main CQB",
+    "attack_bonus": [1, 2, 3],
+    "damage": [
+      {
+        "type": "Energy",
+        "val": [6, 8, 10]
+      }
+    ],
+    "range": [
+      {
+        "type": "Range",
+        "val": 5
+      },
+      {
+        "type": "Threat",
+        "val": 3
+      }
+    ],
+    "effect": "This weapon gains <strong>+1 Accuracy</strong> if the Paladin or an allied character within <strong>Range 3</strong> is suffering from a hostile condition."    
+  },
+  {
+    "id": "sea-and-sky_npcf_interpose_paladin",
+    "name": "Interpose",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": true,
+    "actions": [
+      {
+        "name": "Interpose",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A hostile character inflicts any number of conditions on an allied character within <strong>Range 5</strong> of you.",
+        "detail": "You may interrupt the triggering character, moving your <strong>Speed</strong> towards your ally by the most direct route possible. If you are adjacent to your ally before the triggering action or reaction resolves, you receive the conditions instead."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_trait"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_lean_on_me",
+    "name": "Lean on Me",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": true,
+    "effect": "The Paladin and adjacent allied characters cannot be moved involuntarily by characters smaller than the Paladin. Characters cannot benefit from this trait while either they or the Paladin are <strong>Immobilized</strong>.",
+    "active_effects": [
+      {
+        "name": "Lean on Me",
+        "detail": "You and adjacent allied characters cannot be moved involuntarily by characters smaller than you. Characters cannot benefit from this trait while either you or they are <strong>Immobilized</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_pure_will_paladin",
+    "name": "Pure Will",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": true,
+    "effect": "When another character would inflict <strong>Jammed</strong> or <strong>Stunned</strong> on the Paladin, it may make a <strong>Hull</strong> save against them. On a success, the triggering character instead inflicts <strong>Impaired</strong> on the Paladin for the same duration they would have inflicted <strong>Jammed</strong> or <strong>Stunned</strong>.",
+    "active_effects": [
+      {
+        "name": "Pure Will",
+        "condition": "Another character would inflict Jammed or Stunned on you.",
+        "detail": "You may make a <strong>Hull</strong> save against the triggering character. On a success, they instead inflict <strong>Impaired</strong> on you for the same duration they would have inflicted <strong>Jammed</strong> or <strong>Stunned</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_indignation_paladin",
+    "name": "Indignation",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "effect": "<strong>1/round</strong>, the Paladin or an allied character within <strong>Range 3</strong> may take a quick action or reaction that would normally prevented by their hostile conditions. This trait cannot be used if it would cause the Paladin to exceed its <strong>Heat Cap</strong>.",
+    "active_effects": [
+      {
+        "name": "Indignation",
+        "frequency": "1/round",
+        "condition": "You are able to take 4 Heat without exceeding your Heat Cap.",
+        "detail": "You or an allied character within <strong>Range 3</strong> may take a quick action or reaction that would normally be prevented by hostile conditions."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_fiery_rebuke_paladin",
+    "name": "Fiery Rebuke",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "mod": "sea-and-sky_npcf_interpose_paladin",
+    "effect": "After using <strong>Interpose</strong>, even if it can no longer take reactions, the Paladin may rebuke the triggering character. Until the end of the next round, they cannot use the action or reaction that triggered <strong>Interpose</strong>. Different <strong>Invade</strong> options are considered separate actions for this effect's purposes.",
+    "actions": [
+      {
+        "name": "Fiery Rebuke",
+        "activation": "Free",
+        "trigger": "A hostile character triggers <strong>Interpose</strong>.",
+        "detail": "You rebuke the triggering character. Until the end of the next round, they cannot use the action or reaction that triggered <strong>Interpose</strong>. Different <strong>Invade</strong> options are considered separate actions for this effect's purposes.",
+        "add_special": [
+          {
+            "attribute": "Rebuked",
+            "detail": "You cannot use the action or reaction that triggered the Paladin's Interpose. Different Invade options are considered separate actions for this effect's purposes."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_fortify_paladin",
+    "name": "Fortify",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "actions": [
+      {
+        "name": "Fortify",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "An allied character within line of sight and <strong>Range 5</strong> is pushed, pulled, knocked back, or knocked <strong>Prone</strong>.",
+        "detail": "The movement or status is prevented, and the triggering character gains <strong>Immunity</strong> to all the above effects until the start of their next turn.",
+        "add_special": [
+          {
+            "attribute": "Fortified",
+            "detail": "You are Immune to pushing, pulling, knockback, and Prone.",
+            "target": "ally",
+            "duration": "next_turn_start_target"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_share_burdens",
+    "name": "Share Burdens",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "actions": [
+      {
+        "name": "Share Burdens",
+        "activation": "Quick",
+        "detail": "If you are not suffering any hostile conditions, transfer one hostile condition from an allied character within <strong>Sensors</strong> to yourself. You suffer the condition as if it had originally been inflicted on you, while the allied character instead becomes <strong>Impaired</strong> until the end of their next turn.",
+        "add_status": [
+          {
+            "id": "impaired",
+            "duration": "next_turn_end_target",
+            "target": "ally"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_rallying_cry_paladin",
+    "name": "Rallying Cry",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "actions": [
+      {
+        "name": "Rallying Cry",
+        "activation": "Quick",
+        "detail": "Until the end of your next turn, you exude a <strong>Burst 3</strong> aura. You and allied characters within the aura count as <strong>Invisible</strong> against tech attacks and make checks and saves against tech actions with <strong>+2 Accuracy</strong>. Each time a tech attack or tech action fails against an affected character, the attacker takes <strong>{2/3/4} AP Energy</strong> damage and you take <strong>2 Heat</strong>. You cannot take this action again until its effects end.",
+        "active_effects": [
+          {
+            "name": "Rallying Cry",
+            "duration": "next_turn_end_self",
+            "condition": "A character makes a tech attack or tech action against you or an allied character within Burst 3.",
+            "detail": "The target counts as <strong>Invisible</strong> against tech attacks and makes any checks or saves with <strong>+2 Accuracy</strong>. If the tech attack or tech action fails, the triggering character takes <strong>{2/3/4} AP Energy</strong> damage and you take <strong>2 Heat</strong>."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_lay_on_hands_paladin",
+    "name": "Lay on Hands [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_paladin",
+    "base": false,
+    "effect": "When the Paladin <strong>Stabilizes</strong>, it may additionally clear one hostile condition from itself or an adjacent character.",
+    "active_effects": [
+      {
+        "name": "Lay on Hands",
+        "condition": "You Stabilize.",
+        "detail": "You may additionally clear one hostile condition from yourself or an adjacent allied character."
+      }
+    ]
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "sea-and-sky_npcc_pioneer",
+    "name": "Pioneer",
+    "role": "support",
+    "info": {
+      "flavor": "",
+      "tactics": "Pioneers are support units that enhance their allies' mobility while hindering that of enemies. Unlike their Mirage colleagues, they support from the frontline, focusing their efforts on a specific area of the battlefield and providing benefits both on their own turn and on allied turns. Pioneers are durable and have few weaknesses, but cannot accomplish much on their own.",
+      "terse": "Frontline support that enhances allies' mobility and hinders that of enemies."
+    },
+    "stats": {
+      "armor": [1, 1, 1],
+      "hp": [15, 18, 21],
+      "evade": [8, 10, 12],
+      "edef": [9, 11, 13],
+      "heatcap": [8, 8, 8],
+      "speed": [4, 4, 4],
+      "sensor": [10, 10, 10],
+      "save": [10, 12, 14],
+      "hull": [1, 1, 1],
+      "agility": [-1, -1, -1],
+      "systems": [1, 2, 3],
+      "engineering": [1, 2, 3],
+      "size": [[2], [2], [2]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_pavement_drone_pioneer",
+    "name": "Pavement Drone",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": true,
+    "deployables": [
+      {
+        "name": "Pavement Drone",
+        "activation": "Quick",
+        "size": 0.5,
+        "hp": [5, 8, 10],
+        "evasion": 10,
+        "edef": 10,
+        "type": "Drone",
+        "detail": "This drone can be attached to a free space or vertical surface within <strong>Range 5</strong>, where it covers a <strong>Burst 3</strong> area with whitewash pavement. The pavement affects characters that are at least partially within the <strong>Burst 3</strong> area and not <strong>flying</strong>. While on the pavement, the Pioneer and allied characters gain <strong>Immunity</strong> to the effects of <strong>Slowed</strong>, and whenever they begin movement on the pavement or move onto it, they gain <strong>+2 Speed</strong> until the end of the turn. Hostile characters that start their turn on the pavement or move onto for the first time in a round must pass an <strong>Engineering</strong> save or become <strong>Slowed</strong> until the start of their next turn.<br>The Pioneer can deploy only one <strong>Pavement Drone</strong> at a time, but may redeploy an existing drone by taking this action again. The pavement lasts until the drone is redeployed or destroyed.",
+        "add_status": [
+          {
+            "id": "slow",
+            "duration": "next_turn_start_target",
+            "save": "eng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_reconnoiter_pioneer",
+    "name": "Reconnoiter",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": true,
+    "actions": [
+      {
+        "name": "Reconnoiter",
+        "activation": "Quick Tech",
+        "detail": "Survey the battlefield, enabling up to two allied characters within <strong>Sensors</strong> to <strong>Boost</strong> as a reaction."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_all_terrain_treads_pioneer",
+    "name": "All-Terrain Treads",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": true,
+    "effect": "The Pioneer ignores <strong>difficult terrain</strong>. When it makes an <strong>Engineering</strong> check against <strong>dangerous terrain</strong> or <strong>Burn</strong>, it may take <strong>2 Heat</strong> to automatically succeed.",
+    "active_effects": [
+      {
+        "name": "All-Terrain Treads",
+        "detail": "You ignore <strong>difficult terrain</strong>. When you make an <strong>Engineering</strong> check against <strong>dangerous terrain</strong> or <strong>Burn</strong>, you may take <strong>2 Heat</strong> to automatically succeed."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_expansionist_pioneer",
+    "name": "Expansionist",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "mod": "sea-and-sky_npcf_pavement_drone_pioneer",
+    "effect": "The Pioneer may have up to two <strong>Pavement Drones</strong> deployed at a time, but each drone only affects a <strong>Burst 2</strong> area. As a protocol, the Pioneer can move all <strong>Pavement Drones</strong> up to <strong>3 spaces</strong> in any direction.",
+    "actions": [
+      {
+        "name": "Move Pavement Drones",
+        "activation": "Protocol",
+        "detail": "Move all <strong>Pavement Drones</strong> up to <strong>3 spaces</strong> in any direction."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_sensor_relays_pioneer",
+    "name": "Sensor Relays",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "effect": "When the Pioneer or an allied character uses a non-attack action or reaction, they may draw line of sight and measure distance starting from any <strong>Pavement Drone</strong> instead of themselves.",
+    "active_effects": [
+      {
+        "name": "Sensor Relays",
+        "condition": "You or an allied character use a non-attack action or reaction.",
+        "detail": "The triggering character may draw line of sight and measure distance starting from any <strong>Pavement Drone</strong> instead of themselves."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_map_territory_misalignment",
+    "name": "Map-Territory Misalignment",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "actions": [
+      {
+        "name": "Map-Territory Misalignment",
+        "activation": "Quick Tech",
+        "detail": "A hostile character within <strong>Sensors</strong> must pass a <strong>Systems</strong> save with <strong>+1 Difficulty</strong> or choose one: they only have line of sight within <strong>Range 3</strong> until the end of their next turn, or they immediately move up to <strong>4 spaces</strong> in a direction of your choice. This movement ignores engagement and does not provoke reactions.",
+        "add_special": [
+          {
+            "attribute": "Lost",
+            "detail": "You only have line of sight within Range 3.",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_displacement_mine_pioneer",
+    "name": "Displacement Mine",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "effect": "The Pioneer deploys a displacement mine in a free space within <strong>Range 3</strong>. The mine detonates in a <strong>Burst 1</strong> area when an adjacent allied character triggers it as a free action or when a hostile character moves adjacent. Characters in the area are pushed <strong>4 spaces</strong> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <strong>Agility</strong> save or be knocked <strong>Prone</strong>. The Pioneer regains a charge of this system whenever a mine detonates.",
+    "deployables": [
+      {
+        "name": "Displacement Mine",
+        "activation": "Quick",
+        "type": "Mine",
+        "range": [
+          {
+            "type": "Range",
+            "val": 3
+          },
+          {
+            "type": "Burst",
+            "val": 1
+          }
+        ],
+        "detail": "Characters in the area are pushed <strong>4 spaces</strong> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <strong>Agility</strong> save or be knocked <strong>Prone</strong>.",
+        "add_status": [
+          {
+            "id": "prone",
+            "aoe": true,
+            "save": "agi"          
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_limited",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_manifest_destiny_pioneer",
+    "name": "Manifest Destiny",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "actions": [
+      {
+        "name": "Manifest Destiny",
+        "activation": "Full Tech",
+        "detail": "Convert your intel into a decisive advantage. While this system is active, no other copy of it can be activated, and the following effects apply:<ul><li>You take <strong>4 Heat</strong> at the end of each round before all other end-of-round effects.</li><li>While you are adjacent to an <strong>Objective</strong> or in a <strong>Control Zone</strong>, hostile characters cannot <strong>Interact</strong> with, contest, or score that <strong>Objective</strong> or <strong>Control Zone</strong>.</li></ul>This system remains active until you deactivate it as a protocol, become <strong>Jammed</strong>, <strong>Exposed</strong>, or <strong>Stunned</strong>, break adjacency with an <strong>Objective</strong>, or leave a <strong>Control Zone</strong>.",
+        "active_effects": [
+          {
+            "name": "Manifest Destiny",
+            "detail": "Take <strong>4 Heat</strong> at the end of each round before all other end-of-round effects. While you are adjacent to an <strong>Objective</strong> or in a <strong>Control Zone</strong>, hostile characters cannot <strong>Interact</strong> with, contest, or score that <strong>Objective</strong> or <strong>Control Zone</strong>."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_breakfall_routines_pioneer",
+    "name": "Breakfall Routines [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_pioneer",
+    "base": false,
+    "mod": "sea-and-sky_npcf_pavement_drone_pioneer",
+    "effect": "While affected by a <strong>Pavement Drone</strong>, the Pioneer and allied characters may stand up from <strong>Prone</strong> as a free action, climb at normal speed, and always ignore <strong>difficult terrain</strong> and <strong>dangerous terrain</strong>."
+  }
+]

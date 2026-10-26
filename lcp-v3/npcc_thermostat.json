@@ -1,0 +1,277 @@
+[
+  {
+    "id": "sea-and-sky_npcc_thermostat",
+    "name": "Thermostat",
+    "role": "controller",
+    "info": {
+      "flavor": "Advanced climate-control technology, originally developed for life support systems in Makaptan's most extreme environments, is the basis for the Thermostat archetype. Remote-effect liturgicode allows the Thermostat to effectively control other mechs' reactor temperatures in apparent violation of the laws of thermodynamics. Once a rarity outside of the Kahilwayan system, Thermostat chassis are gaining popularity across Union space, much to the chagrin of Harrison Armory designers.",
+      "tactics": "Thermostats manipulate <strong>Heat</strong> – both their own and that of other mechs – to fuel powerful systems. They can punish <strong>Danger Zone</strong>-abusing enemies by either overloading them with <strong>Heat</strong> or sapping it away. Thermostats themselves achieve peak performance and durability in the <strong>Danger Zone</strong>, but peppering them with repeated attacks will force them out.",
+      "terse": "Heat-manipulating controller that becomes stronger in the <strong>Danger Zone</strong>."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [16, 18, 20],
+      "evade": [8, 9, 10],
+      "edef": [10, 12, 14],
+      "heatcap": [10, 11, 12],
+      "speed": [4, 4, 4],
+      "sensor": [15, 15, 15],
+      "save": [12, 14, 16],
+      "hull": [-1, -1, -1],
+      "agility": [-1, -1, -1],
+      "systems": [2, 2, 2],
+      "engineering": [2, 2, 2],
+      "size": [[1], [1], [1]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_carnot_cycle_thermostat",
+    "name": "Carnot Cycle",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": true,
+    "actions": [
+      {
+        "name":"Carnot Cycle",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>, automatically hitting allies. On a hit, choose one of the following:<ul><li><strong>Sap:</strong> The target clears <strong>{3/4/5} Heat</strong>.</li><li><strong>Overload:</strong> The target takes <strong>{1/2/3} Heat</strong> immediately and a further <strong>2 Heat</strong> after each quick action, full action, or reaction they take (even as a free action) until the end of their next turn.</li></ul>",
+        "damage": [
+          {
+            "type": "Heat",
+            "val": [1, 2, 3]
+          }
+        ],
+        "add_special": [
+          {
+            "attribute": "Carnot Cycle",
+            "detail": "You take 2 Heat after each quick action, full action, or reaction you take (even as a free action).",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [1, 2, 3],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_heatsync_thermostat",
+    "name": "Heatsync",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": true,
+    "actions": [
+      {
+        "name": "Heatsync",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character within line of sight and <strong>Sensors</strong> takes <strong>Heat</strong>.",
+        "detail": "You take the same amount of <strong>Heat</strong>, then use <strong>Carnot Cycle</strong> against the triggering character. This reaction cannot trigger on your turn."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_second_law_thermostat",
+    "name": "Second Law",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": true,
+    "actions": [
+      {
+        "name": "Second Law",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>, automatically hitting allies. On a hit, both you and the target set your <strong>Heat</strong> equal to half your current combined <strong>Heat</strong>."
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_blackbody_barrier_thermostat",
+    "name": "Blackbody Barrier",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": true,
+    "effect": "While the Thermostat is in the <strong>Danger Zone</strong> and not <strong>Exposed</strong>, it gains <strong>+1 Accuracy</strong> to all its tech attacks and <strong>Resistance to all damage and Burn</strong>. Whenever this trait reduces damage, the Thermostat clears <strong>2 Heat</strong>.",
+    "active_effects": [
+      {
+        "name": "Blackbody Barrier",
+        "condition": "You are in the Danger Zone and not Exposed.",
+        "detail": "You gain <strong>+1 Accuracy</strong> to all tech attacks and <strong>Resistance to all damage and Burn</strong>. Whenever this trait reduces damage, clear <strong>2 Heat</strong>.",
+        "bonuses": [
+          {"id": "tech_attack", "accuracy": 1},
+          {"id": "resistance", "val": ["kinetic", "explosive", "energy", "burn"]}
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_danger_zone"
+      },
+      {
+        "id": "tg_shield"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_thermal_shock",
+    "name": "Thermal Shock",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "actions": [
+      {
+        "name": "Thermal Shock",
+        "activation":"Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>. On a hit, they take <strong>2 Heat</strong> and must pass a <strong>Systems</strong> save or become <strong>Shredded</strong> until the end of their next turn.",
+        "damage": [
+          {
+            "type": "Heat",
+            "val": 2
+          }
+        ],
+        "add_status": [
+          {
+            "id": "shredded",
+            "save": "sys",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_maxwells_demon",
+    "name": "Maxwell's Demon",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "actions": [
+      {
+        "name": "Maxwell's Demon",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character within <strong>Sensors</strong> rolls an attack.",
+        "detail": "Increase or decrease the final roll by <strong>2</strong>. A roll may not be modified more than once by any copy of <strong>Maxwell's Demon</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_first_law_thermostat",
+    "name": "First Law",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "mod": "sea-and-sky_npcf_blackbody_barrier_thermostat",
+    "actions": [
+      {
+        "name": "First Law",
+        "activation": "Quick",
+        "detail": "Link with an allied character within <strong>Sensors</strong>. While <strong>Blackbody Barrier</strong> is active, it grants its <strong>Resistance</strong> to the linked character instead of you. You can only link with one character at a time, but may terminate the link as a quick action.",
+        "add_resist": [
+          {"resistance": "kinetic", "target": "ally"},
+          {"resistance": "explosive", "target": "ally"},
+          {"resistance": "energy", "target": "ally"},
+          {"resistance": "burn", "target": "ally"}
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_shield"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_ultraviolet_catastrophe_thermostat",
+    "name": "Ultraviolet Catastrophe",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "effect": "After the Thermostat takes damage for the first time each round, the character within line of sight and <strong>Sensors</strong> with the most <strong>Heat</strong> must pass an <strong>Agility</strong> save or take <strong>Burn</strong> equal to half the Thermostat's <strong>Heat</strong> before it took damage. If multiple characters are tied, the Thermostat chooses one randomly.",
+    "active_effects": [
+      {
+        "name": "Ultraviolet Catastrophe",
+        "detail": "After you take damage for the first time each round, the character within line of sight and <strong>Sensors</strong> with the most <strong>Heat</strong> must pass an <strong>Agility</strong> save or take <strong>Burn</strong> equal to half your <strong>Heat</strong> before you took damage. If multiple characters are tied, choose one randomly.",
+        "damage": [
+          {
+            "type": "Burn",
+            "val": 1,
+            "save": "agi"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_third_law_thermostat",
+    "name": "Third Law",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "actions": [
+      {
+        "name": "Third Law",
+        "activation": "Full Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>. On a hit, they gain the <strong>Thermostat's Mark</strong>, preventing them from clearing any amount of <strong>Heat</strong> by any means except overheating. Whenever the marked character ends their turn, they must pass a <strong>Systems</strong> check or take <strong>Energy</strong> damage equal to their <strong>Heat</strong>. Characters clear the <strong>Thermostat's Mark</strong> when they or an adjacent character pass a <strong>Systems</strong> save as a full action, or when you mark a different character.",
+        "add_special": [
+          {
+            "attribute": "Thermostat's Mark",
+            "detail": "You cannot clear Heat by any means except overheating. At the end of your turn, you must pass a Systems check or take Energy damage equal to your Heat."
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [2, 4, 6],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_paracausal_coolant_thermostat",
+    "name": "Paracausal Coolant [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_thermostat",
+    "base": false,
+    "mod": "sea-and-sky_npcf_heatsync_thermostat",
+    "effect": "<strong>Heatsync</strong> also triggers when a character within <strong>Sensors</strong> clears any amount of <strong>Heat</strong>, except by overheating. If <strong>Heatsync</strong> is triggered in this way, the Thermostat clears all <strong>Heat</strong> instead of taking <strong>Heat</strong>."
+  }
+]

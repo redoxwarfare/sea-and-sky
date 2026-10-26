@@ -1,0 +1,183 @@
+[
+  {
+    "id": "sea-and-sky_npcc_gatekeeper",
+    "name": "Gatekeeper",
+    "role": "artillery",
+    "info": {
+      "flavor": "Explicabo culpa eos soluta quod consectetur id. Sapiente sit ratione placeat ipsa similique minus dolorem. Et error amet necessitatibus sed maiores soluta. Vero molestias rerum velit eos quod tenetur mollitia.",
+      "tactics": "The Gatekeeper is an unusual artillery unit that compensates for its poor range by warping the very definition of <strong>Range</strong> with its gates, which allow the Gatekeeper and its allies to extend their reach and attack from otherwise impossible angles. However, the Gatekeeper builds <strong>Heat</strong> the more its gates are used, and its enemies are perfectly capable of exploiting gates themselves.",
+      "terse": "Unusual artillery that uses portals to attack from impossible angles."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [10, 12, 14],
+      "evade": [10, 12, 14],
+      "edef": [10, 12, 14],
+      "heatcap": [8, 8, 8],
+      "speed": [4, 4, 4],
+      "sensor": [20, 20, 20],
+      "save": [10, 12, 14],
+      "hull": [-2, -2, -2],
+      "agility": [0, 0, 0],
+      "systems": [2, 3, 4],
+      "engineering": [2, 3, 4],
+      "size": [[0.5, 1], [0.5, 1], [0.5, 1]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_unlock_doors_gatekeeper",
+    "name": "Unlock Doors",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": true,
+    "actions": [
+      {
+        "name": "Unlock Doors",
+        "activation": "Quick",
+        "detail": "Open two <strong>Line 3</strong> gates in free spaces within <strong>Sensors</strong> but not necessarily line of sight. Each gate has a black side and a red side, clearly indicated to all characters on the field, and counts as a normal piece of <strong>Height 1 hard cover</strong>.<br>Whenever a character uses an ability that can target another character within line of sight and <strong>X spaces</strong>, if a gate is within their targeting range, they can target any character within line of sight and <strong>X spaces</strong> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <strong>X spaces</strong> of the target. Reactions can also be triggered using the same rules. After each action or reaction that relies on a pair of gates, any Gatekeepers that opened either of the gates take <strong>1 Heat</strong>.<br>If there are more than two gates per Gatekeeper on the field, the oldest excess gates close immediately. You may close any number of gates as a protocol or before taking this action again."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_skeleton_key_gatekeeper",
+    "name": "Skeleton Key",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": true,
+    "weapon_type": "Heavy Rifle",
+    "attack_bonus": [1, 2, 3],
+    "damage": [
+      {
+        "type": "Energy",
+        "val": [7, 9, 11]
+      }
+    ],
+    "range": [
+      {
+        "type": "Range",
+        "val": 8
+      }
+    ],
+    "effect": "This weapon gains <strong>+1 Accuracy</strong> against targets that do not have <strong>cover</strong>."
+  },
+  {
+    "id": "sea-and-sky_npcf_eversion_gatekeeper",
+    "name": "Eversion",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Evert",
+        "activation": "Protocol",
+        "detail": "Choose any number of gates within <strong>Sensors</strong> and flip their orientations (i.e. the black side becomes red and vice versa)."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_summon_gatekeeper",
+    "name": "Summon",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Summon",
+        "activation": "Full Tech",
+        "detail": "Teleport a character within <strong>Range 3</strong> of a gate to a space within <strong>Range 3</strong> of any other gate. The starting and ending spaces of the teleport must be on the same color sides of their respective gates. Hostile characters may avoid this effect by passing an <strong>Engineering</strong> save. You may use this action on yourself.",
+        "save": "eng"
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_watchman_gatekeeper",
+    "name": "Watchman",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Watchman",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character begins movement within <strong>Range 3</strong> of any gate.",
+        "detail": "You may attack the triggering character with <strong>Overwatch</strong> as long as they are a valid target for one of your weapons, dealing <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_slam_shut_gatekeeper",
+    "name": "Slam Shut",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Slam Shut",
+        "activation": "Quick",
+        "detail": "Choose a gate within <strong>Sensors</strong> (but not necessarily line of sight) that was not opened this turn. You may use the <strong>Skeleton Key</strong> to attack a character within line of sight and <strong>Range 5</strong> of that gate, then immediately close it."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_close_sesame_gatekeeper",
+    "name": "Close Sesame",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "actions": [
+      {
+        "name": "Close Sesame",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character makes a ranged or melee attack using a pair of gates.",
+        "detail": "You suspend part of the attack in space and time. The triggering attack deals <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong>, and you gain the <strong>Open Sesame</strong> quick action until the end of your next turn. If the attacker is hostile, they may negate these effects by passing a <strong>Systems</strong> save.",
+        "save": "sys"
+      },
+      {
+        "name": "Open Sesame",
+        "activation": "Quick",
+        "detail": "Release the suspended attack. The original attacker must repeat the attack roll against a target of your choice within <strong>Range</strong> or <strong>Threat</strong> of any gate, dealing <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong>. Line of sight and cover are determined as if the gate were the origin of the attack. Take <strong>3 Heat</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_almighty_janitor_gatekeeper",
+    "name": "Almighty Janitor [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_gatekeeper",
+    "base": false,
+    "mod": "sea-and-sky_npcf_skeleton_key_gatekeeper",
+    "effect": "<strong>1/round</strong>, when the Gatekeeper is in the <strong>Danger Zone</strong> and uses the <strong>Skeleton Key</strong> to <strong>Skirmish</strong>, its attack becomes <strong>Line 8</strong>.",
+    "active_effects": [
+      {
+        "name": "Almighty Janitor",
+        "frequency": "1/round",
+        "condition": "You Skirmish with the Skeleton Key while in the Danger Zone.",
+        "detail": "The attack becomes <strong>Line 8</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_danger_zone"
+      },
+      {
+        "id": "tg_round",
+        "val": 1
+      }
+    ]
+  }
+]

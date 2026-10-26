@@ -1,0 +1,267 @@
+[
+  {
+    "id": "sea-and-sky_npcc_hitchhiker",
+    "name": "Hitchhiker",
+    "role": "defender",
+    "info": {
+      "flavor": "In the early days of the Makaptan labor conflict, logistical issues on both sides limited the number of chassis that could be fielded at once. As a workaround, fighters would train in the perilous art of mech jockeying, enabling them to multiply force at a much lower material cost. Although advances in infrastructure have removed the need for these so-called \"hitchikers\", a few dauntless individuals continue to swear by the technique's effectiveness.",
+      "tactics": "The Hitchhiker clings to an ally to passively agument its own defenses while providing support fire and interfering with nearby enemies' attacks. Its optionals can grant its partner a variety of offensive and defensive buffs. Hitchhikers function best when enabling frontliners and are less durable and effective if isolated.",
+      "terse": "Rides on allies to augment their offense and defense."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [12, 15, 18],
+      "evade": [10, 12, 14],
+      "edef": [8, 9, 10],
+      "heatcap": [6, 6, 6],
+      "speed": [4, 4, 4],
+      "sensor": [5, 5, 5],
+      "save": [10, 12, 14],
+      "hull": [-1, -1, -1],
+      "agility": [2, 3, 4],
+      "systems": [2, 3, 4],
+      "engineering": [-1, -1, -1],
+      "size": [[0.5], [0.5], [0.5]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_black_thumb_hitchhiker",
+    "name": "Black Thumb",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": true,
+    "effect": "The Hitchhiker may initiate a <emph>ride</emph> with an adjacent allied character, or deploy already riding with any allied character. The allied character is designated as the <emph>Driver</emph> for the duration of the ride.<br>During a ride, the Hitchhiker gains <strong>+4 Evasion</strong> to a maximum of <strong>20</strong>, occupies the Driver's space, and is moved with the Driver whenever they move. The ride ends when the Hitchhiker would move away from the Driver or the Driver is destroyed. Before a ride ends, the Hitchhiker first moves into a free space of the triggering character's choice adjacent to the Driver.",
+    "actions": [
+      {
+        "name": "Black Thumb",
+        "activation": "Quick",
+        "detail": "If you are not <strong>Immobilized</strong>, start a <emph>ride</emph> with an adjacent allied character.",
+        "active_effects": [
+          {
+            "name": "Black Thumb",
+            "detail": "While riding with an ally, you gain <strong>+4 Evasion</strong> to a maximum of <strong>20</strong>, occupy their space, and are moved with them whenever they move.",
+            "bonuses": [{"id": "evade", "val": 4}]
+          }
+        ]
+      }   
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_blown_kiss_pistol_hitchhiker",
+    "name": "\"Blown Kiss\" Pistol",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": true,
+    "weapon_type": "Auxiliary CQB",
+    "attack_bonus": [0, 1, 2],
+    "damage": [
+      {
+        "type": "Kinetic",
+        "val": [1, 2, 3],
+        "ap": true
+      }
+    ],
+    "range": [
+      {
+        "type": "Range",
+        "val": 5
+      },
+      {
+        "type": "Threat",
+        "val": 3
+      }
+    ],
+    "effect": "This weapon gains <strong>+1 Accuracy</strong> when used during a reaction.",
+    "on_hit": {
+      "detail": "Target's next successful attack deals <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong>.",
+      "add_special": [
+        {
+          "name": "Weakened",
+          "detail": "Your next successful attack deals <strong>half damage</strong>, <strong>Burn</strong>, and <strong>Heat</strong>."
+        }
+      ]
+    },
+    "tags": [
+      {
+        "id": "tg_ap"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_im_helping_hitchhiker",
+    "name": "I'm Helping!",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": true,
+    "actions": [
+      {
+        "name": "I'm Helping!",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "The Driver makes a successful attack roll.",
+        "detail": "You attack the same target with the <strong>\"Blown Kiss\" Pistol</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_slow_down_buckaroo_hitchhiker",
+    "name": "Slow Down, Buckaroo",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": true,
+    "actions": [
+      {
+        "name": "Slow Down, Buckaroo",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A character within <strong>Range 5</strong> makes an attack roll that does not target you.",
+        "detail": "You interrupt the triggering character, attacking them with the <strong>\"Blown Kiss\" Pistol</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_go_get_em_tiger_hitchhiker",
+    "name": "Go Get 'Em, Tiger",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "effect": "The Driver gains the ability to <strong>Overcharge</strong> if they do not already have it. Instead of the standard cost, the Driver and all Hitchhikers riding with them take <strong>1d3 Heat</strong>."
+  },
+  {
+    "id": "sea-and-sky_npcf_on_your_six_hitchhiker",
+    "name": "On Your Six",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "actions": [
+      {
+        "name": "On Your Six",
+        "activation": "Quick Tech",
+        "detail": "You enter a state of hypervigilance. All your weapons and the Driver's weapons gain <strong>+2 Threat</strong> until the start of your next turn. If your ride ends or you become <strong>Jammed</strong>, <strong>Exposed</strong>, or <strong>Stunned</strong>, this effect ends immediately.",
+        "active_effects": [
+          {
+            "name": "On Your Six",
+            "detail": "All your weapons gain +2 Threat.",
+            "bonuses": [
+              {"id": "range", "val": 2, "range_types": ["Threat"]}
+            ],
+            "duration": "next_turn_start_self"
+          }
+        ],
+        "add_special": [
+          {
+            "attribute": "On Your Six",
+            "detail": "All your weapons gain +2 Threat.",
+            "target": "ally",
+            "duration": "next_turn_start_self"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_thisll_patch_ya_up_hitchhiker",
+    "name": "This'll Patch Ya Up",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "actions": [
+      {
+        "name": "This'll Patch Ya Up",
+        "activation": "Quick",
+        "detail": "You spray a protective coating onto the Driver. They gain <strong>+2 Armor</strong> up to a maximum of <strong>4</strong> until the end of your next turn or until your ride ends. You cannot take this action again until its effect ends.",
+        "add_special": [
+          {
+            "attribute": "Shieldspray (This'll Patch Ya Up)",
+            "detail": "You gain +2 Armor up to a maximum of 4.",
+            "bonuses": [{"id": "armor", "val": 2}]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_shield"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_that_was_too_close_hitchhiker",
+    "name": "That Was Too Close",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "actions": [
+      {
+        "name": "That Was Too Close",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "Either you or the Driver are targeted by a ranged attack.",
+        "effect": "Before the triggering attack is rolled, make an attack roll with the <strong>\"Blown Kiss\" Pistol</strong>. If the result is higher than the triggering attack roll, the triggering attack automatically misses. This reaction cannot be taken if it would cause you to exceed your <strong>Heat Cap</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_get_dunked_on_hitchhiker",
+    "name": "Get Dunked On!",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "actions": [
+      {
+        "name": "Get Dunked On!",
+        "activation": "Full Tech",
+        "detail": "A character within <strong>Sensors</strong> gains the <strong>Hitchhiker's Mark</strong>. Whenever they make an attack that does not include you as a target, they must pass a <strong>Systems</strong> save afterwards or become <strong>Jammed</strong> until the end of their next turn. On a success, they become <strong>Impaired</strong> instead, but clear the <strong>Hitchhiker's Mark</strong>.<br>A character cannot be marked by more than one Hitchhiker at a time. You can mark only one character at a time, but can transfer the <strong>Hitchhiker's Mark</strong> to another character by repeating this action.",
+        "add_special": [
+          {
+            "attribute": "Hitchhiker's Mark",
+            "detail": "Whenever you make an attack that does not include the Hitchhiker as a target, you must pass a Systems save afterwards or become Jammed until the end of your next turn. On a success, you become Impaired instead, but clear this mark."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_my_lucky_day_hitchhiker",
+    "name": "My Lucky Day [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_hitchhiker",
+    "base": false,
+    "effect": "<strong>1/round</strong>, during a ride, either the Hitchhiker or the Driver may roll an attack, check, or save twice and choose the higher result.",
+    "active_effects": [
+      {
+        "name": "My Lucky Day",
+        "frequency": "1/round",
+        "condition": "You are riding with an ally and either you or they roll an attack, check, or save.",
+        "detail": "The triggering character may roll twice and choose the higher result."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_round",
+        "val": 1
+      }
+    ]
+  }
+]

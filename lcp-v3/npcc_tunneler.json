@@ -1,0 +1,263 @@
+[
+  {
+    "id": "sea-and-sky_tunneler",
+    "name": "Tunneler",
+    "role": "striker",
+    "info": {
+      "flavor": "The first mechs fielded in the Makaptan labor conflict were repurposed excavators previously used to create space for tunnel boring machines. Today's Tunneler-class frames are the culmination of that technology, boasting full maneuverability underground and independent tunnel-boring capability. However, they come with steep maintenance costs and the tendency to max out cooling systems.",
+      "tactics": "Tunnelers dive into the earth to bypass obstacles, then strike from below with increased accuracy. They excel at punching through defensive lines and can leave behind tunnels to allow their allies easy access to objectives. Although tough, Tunnelers are slow aboveground, and they are susceptible to control effects and having their tunnels turned against them.",
+      "terse": "Melee striker that attacks from underground and can leave tunnels for allies to use."
+    },
+    "stats": {
+      "armor": [1, 1, 1],
+      "hp": [16, 19, 22],
+      "evade": [9, 11, 13],
+      "edef": [6, 7, 8],
+      "heatcap": [8, 8, 8],
+      "speed": [3, 3, 3],
+      "sensor": [5, 5, 5],
+      "save": [10, 12, 14],
+      "hull": [2, 3, 4],
+      "agility": [0, 0, 0],
+      "systems": [-1, -1, -1],
+      "engineering": [1, 2, 3],
+      "size": [[2], [2], [2]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_lithodynamic_movement_suite",
+    "name": "Lithodynamic Movement Suite",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": true,
+    "effect": "If the Tunneler is on solid ground, it may take <strong>2 Heat</strong> to <emph>go underground</emph> as a <strong>quick action</strong>, gaining <strong>+2 Speed</strong> and the ability to ignore all terrain, obstructions, and engagement. While the Tunneler is underground, other characters ignore engagement with it and make ranged and melee attacks against it with <strong>+1 Difficulty</strong>. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <emph>resurfaces</emph> in the nearest free space before leaving the ground, after resolving any attack, or as a <strong>free action</strong>. Neither going underground nor resurfacing count as movement.",
+    "actions": [
+      {
+        "name": "Go Underground",
+        "activation": "Quick",
+        "detail": "Gain <strong>+2 Speed</strong> and the ability to ignore all terrain, obstructions, and engagement. While you are underground, other characters ignore engagement with you and make ranged and melee attacks against you with <strong>+1 Difficulty</strong>.",
+        "active_effects": [
+          {
+            "name": "Underground",
+            "detail": "You gain <strong>+2 Speed</strong> and the ability to ignore all terrain, obstructions, and engagement. Other characters ignore engagement with you and make ranged and melee attacks against you with <strong>+1 Difficulty</strong>.",
+            "bonuses": [
+              {"id": "speed", "val": 2}
+            ]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_subterranean_networks",
+    "name": "Subterranean Networks",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": true,
+    "effect": "Immediately after the Tunneler goes underground or resurfaces, it may take <strong>1 Heat</strong> to create a borehole occupying the area it currently stands on. Boreholes cannot be created overlapping objects or other terrain.",
+    "deployables": [
+      {
+        "name": "Borehole",
+        "activation": "Free",
+        "size": 2,
+        "hp": [8, 10, 12],
+        "evasion": 5,
+        "edef": 5,
+        "type": "Deployable",
+        "detail": "The borehole is <strong>Height 1/2</strong>, does not obstruct movement or line of sight, and cannot interact with <strong>flying</strong> characters.<br><strong>1/turn</strong>, when standing completely inside a borehole, characters may <strong>teleport</strong> to any other borehole as a <strong>free action</strong> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When a borehole is destroyed, it collapses and deals <strong>{4/5/6} Kinetic</strong> to all characters and objects within, as well as to all Tunnelers that are underground."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_borehead_ram_tunneler",
+    "name": "Borehead Ram",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": true,
+    "weapon_type": "Main Melee",
+    "attack_bonus": [1, 2, 3],
+    "damage": [
+      {
+        "type": "Explosive",
+        "val": [6, 8, 10]
+      }
+    ],
+    "range": [
+      {
+        "type": "Threat",
+        "val": 1
+      }
+    ],
+    "effect": "If the Tunneler is underground, this weapon gains <strong>+1 Accuracy</strong>, and after the attack resolves, the Tunneler may create a borehole without taking <strong>Heat</strong>.",
+    "tags": [
+      {
+        "id": "tg_knockback",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_explosive_excavation_tunneler",
+    "name": "Explosive Excavation",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "effect": "<strong>1/round</strong>, after the Tunneler goes underground or resurfaces adjacent to a character, they must pass an <strong>Agility</strong> save or be pushed back <strong>3 spaces</strong> and knocked <strong>Prone</strong>.",
+    "active_effects": [
+      {
+        "name": "Explosive Excavation",
+        "condition": "You go underground or resurface adjacent to a character.",
+        "frequency": "1/round",
+        "detail": "They must pass an <strong>Agility</strong> save or be pushed back <strong>3 spaces</strong> and knocked <strong>Prone</strong>.",
+        "add_status": [
+          {"id": "prone", "save": "agi"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_earthrend_tunneler",
+    "name": "Earthrend",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "actions": [
+      {
+        "name": "Earthrend",
+        "activation": "Full",
+        "detail": "Create a borehole where you stand, then go underground and move your <strong>Speed</strong> in a straight line without provoking reactions.",
+        "active_effects": [
+          {
+            "name": "Underground",
+            "detail": "You gain <strong>+2 Speed</strong> and the ability to ignore all terrain, obstructions, and engagement. Other characters ignore engagement with you and make ranged and melee attacks against you with <strong>+1 Difficulty</strong>.",
+            "bonuses": [
+              {"id": "speed", "val": 2}
+            ]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_burrow_tunneler",
+    "name": "Burrow",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "actions": [
+      {
+        "name": "Burrow",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "You are targeted by an attack while aboveground.",
+        "detail": "Before the attack is rolled, you go underground and create a borehole.",
+        "active_effects": [
+          {
+            "name": "Underground",
+            "detail": "You gain <strong>+2 Speed</strong> and the ability to ignore all terrain, obstructions, and engagement. Other characters ignore engagement with you and make ranged and melee attacks against you with <strong>+1 Difficulty</strong>.",
+            "bonuses": [
+              {"id": "speed", "val": 2}
+            ]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_trait"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_underwatch_tunneler",
+    "name": "Underwatch",
+    "type": "reaction",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "actions": [
+      {
+        "name": "Underwatch",
+        "activation": "Reaction",
+        "frequency": "1/round",
+        "trigger": "A hostile character begins movement adjacent to or moves adjacent to a borehole while you are underground.",
+        "detail": "You interrupt the movement, <strong>teleporting</strong> to the borehole and attacking the triggering character with the <strong>Borehead Ram</strong>."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_sinkhole_carver",
+    "name": "Sinkhole Carver",
+    "type": "weapon",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "weapon_type": "Heavy Melee",
+    "attack_bonus": [1, 2, 3],
+    "damage": [
+      {
+        "type": "Explosive",
+        "val": [4, 5, 6]
+      }
+    ],
+    "range": [
+      {
+        "type": "Burst",
+        "val": 2
+      },
+      {
+        "type": "Threat",
+        "val": 2
+      }
+    ],
+    "effect": "This weapon can only be used if the Tunneler is underground. It can target spaces occupied by the Tunneler, but cannot target <strong>flying</strong> characters. If there are multiple targets, the Tunneler does not resurface until all attacks resolve.",
+    "on_hit": {
+      "detail": "Target is pulled as close as possible to the Tunneler and must make a <strong>Hull</strong> save. On a failure, they become <strong>Immobilized</strong> until they are moved involuntarily or they pass a <strong>Hull</strong> save as a quick action.",
+      "add_status": [
+        {"id": "immobilized", "save": "hull"}
+      ]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_oversize_tunnels_tunneler",
+    "name": "Oversize Tunnels [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_tunneler",
+    "base": false,
+    "mod": "sea-and-sky_npcf_subterranean_networks",
+    "effect": "The Tunneler and allied characters count as standing inside a borehole as long as they are adjacent to it and not <strong>flying</strong>, and when standing inside a borehole, they additionally gain <strong>soft cover</strong> which may be used to <strong>Hide</strong>.",
+    "active_effects": [
+      {
+        "name": "Oversize Tunnels",
+        "condition": "You are standing inside a borehole.",
+        "detail": "You gain <strong>soft cover</strong> which may be used to <strong>Hide</strong>.",
+        "add_other": [
+          {
+            "type": "cover",
+            "val": "soft"
+          }
+        ]
+      }
+    ]
+  }
+]

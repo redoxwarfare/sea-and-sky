@@ -1,0 +1,269 @@
+[
+  {
+    "id": "sea-and-sky_npcc_lantern",
+    "name": "Lantern",
+    "role": "support",
+    "info": {
+      "flavor": "For centuries, folktales on Maguayan have warned of pale spirits that roam the wilderness, cursing those who trespass on their territory with ill fortune. These stories, once dismissed by outsiders as the superstition of a backwater planet, have only grown more vivid and widespread with time. Theorists agree the mysterious entities must be paracausal in nature, but more specific conclusions require further data.",
+      "tactics": "The Lantern is a highly mobile support that makes nearby enemies easier to attack and liable to taking additional damage. It can mark an individual character with a targetable shadow that effectively increases their hurtbox, denying them cover. Lanterns can close distance easily but pose little threat on their own; they work best with allies that can reliably output damage and keep them alive.",
+      "terse": "Fast-flying support that makes nearby enemies easier to attack and damage."
+    },
+    "stats": {
+      "armor": [0, 0, 0],
+      "hp": [12, 12, 12],
+      "evade": [12, 15, 18],
+      "edef": [10, 11, 12],
+      "heatcap": [12, 12, 12],
+      "speed": [6, 7, 8],
+      "sensor": [5, 5, 5],
+      "save": [12, 14, 16],
+      "hull": [-2, -2, -2],
+      "agility": [2, 4, 6],
+      "systems": [0, 0, 0],
+      "engineering": [2, 3, 4],
+      "size": [[0.5], [0.5], [0.5]],
+      "activations": [1, 1, 1]
+    }
+  },
+  {
+    "id": "sea-and-sky_npcf_shadow_tag_lantern",
+    "name": "Shadow Tag",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": true,
+    "actions": [
+      {
+        "name": "Shadow Tag",
+        "activation": "Quick Tech",
+        "detail": "Haunt a hostile character within <strong>Sensors</strong>. Until they end their turn outside your line of sight or <strong>Sensors</strong>, or you become <strong>Jammed</strong> or <strong>Stunned</strong>, the following effects apply:<ul><li>The haunted character casts a <strong>Line 5</strong> shadow along the ground. The shadow is as wide and tall as their <strong>Size</strong>, with its tip located as far away from you as possible, and it updates its direction at the end of each turn.</li><li>While you or any allied character takes a turn, you or they may treat the shadow as part of the haunted character for any purpose.</li><li>The haunted character treats you as <strong>Invisible</strong>, and you make all checks and saves against them with <strong>+1 Accuracy</strong>.</li><li>You cannot take this action again.</li></ul>",
+        "apply_special": [
+          {
+            "attribute": "Haunted (Shadow Tag)",
+            "detail": "You cast a <strong>Line 5</strong> shadow along the ground. It is as wide and tall as your <strong>Size</strong>, with its tip located as far away from the Lantern as possible, and it updates its direction at the end of each turn.<br>While the Lantern or any allied character takes their turn, they may treat the shadow as part of you for any purpose.<br>You treat the Lantern as <strong>Invisible</strong>, and they make all checks and saves against you with <strong>+1 Accuracy</strong>."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_npc_trait"
+      },
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_will_o_wisp_lantern",
+    "name": "Will-O-Wisp",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": true,
+    "effect": "The Lantern may add <strong>+1 Accuracy</strong> to any attack against a character within <strong>Range 3</strong>. If the attack then results in a critical hit, the Lantern also deals <strong>{3/4/5} Burn</strong> to the target.",
+    "actions": [
+      {
+        "name": "Will-O-Wisp",
+        "activation": "Free",
+        "trigger": "An attack is rolled against a character within <strong>Range 3</strong>.",
+        "detail": "You may add <strong>+1 Accuracy</strong> to the attack. If it results in a critical hit, you also deal <strong>{3/4/5} Burn</strong> to the target.",
+        "damage": [
+          {
+            "type": "Burn",
+            "val": [3, 4, 5]
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_heat_wave_lantern",
+    "name": "Heat Wave",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": true,
+    "actions": [
+      {
+        "name": "Heat Wave",
+        "activation": "Full",
+        "detail": "This system can only be used while you are in the <strong>Danger Zone</strong> and before you move or take any non-protocol action on your turn.<br>Clear all <strong>Heat</strong>. Hostile characters within <strong>Burst 3</strong> must pass an <strong>Agility</strong> save or take <strong>Heat</strong> equal to half the amount you cleared and become <strong>Shredded</strong> until the end of their next turn.",
+        "damage": [
+          {
+            "type": "Heat",
+            "val": [3, 3, 3],
+            "aoe": "burst 3"
+          }
+        ],
+        "add_status": [
+          {
+            "id": "shredded",
+            "duration": "next_turn_end_target",
+            "aoe": "burst 3"
+          }
+        ],
+        "save": "agi"
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_danger_zone"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_levitate_lantern",
+    "name": "Levitate",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": true,
+    "effect": "The Lantern can count any and all of its movement as <strong>flying</strong>. <strong>1/round</strong>, when it would make a <strong>Hull</strong> check or save, it may roll with its <strong>Agility</strong> instead.",
+    "active_effects": [
+      {
+        "name": "Fly (Levitate)",
+        "detail": "You can count any and all of your movement as <strong>flying</strong>."
+      },
+      {
+        "name": "Bounce (Levitate)",
+        "frequency": "1/round",
+        "condition": "You would make a Hull check or save.",
+        "detail": "You may roll with your <strong>Agility</strong> instead of your <strong>Hull</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_glare_lantern",
+    "name": "Glare",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "actions": [
+      {
+        "name": "Glare",
+        "activation": "Quick",
+        "detail": "Until the start of your next turn, whenever a ranged or melee attack targets you or any allied character within <strong>Range 3</strong>, first roll <strong>1d6</strong>. If the result is not higher than half your <strong>Heat</strong> and your are not <strong>Exposed</strong> or <strong>Stunned</strong>, the attack automatically misses. This effect does not stack with <strong>Invisible</strong>.",
+        "add_special": [
+          {
+            "attribute": "Glare",
+            "detail": "Whenever a ranged or melee attack targets you or any allied character within Range 3, first roll 1d6. If the result is not higher than half your Heat and you are not Exposed or Stunned, the attack automatically misses. This effect does not stack with Invisible.",
+            "target": "self",
+            "duration": "next_turn_start_self"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_illuminate_lantern",
+    "name": "Illuminate",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "mod": "sea-and-sky_npcf_will_o_wisp_lantern",
+    "effect": "When the Lantern uses <strong>Will-O-Wisp</strong> on an attack, it may remove all <strong>Difficulty</strong> from the final roll.",
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_confuse_ray_lantern",
+    "name": "Confuse Ray",
+    "type": "tech",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "actions": [
+      {
+        "name": "Confuse Ray",
+        "activation": "Quick Tech",
+        "detail": "Make a tech attack against a character within <strong>Sensors</strong>. On a hit, until the end of their next turn, they cannot draw line of sight into or out of the <strong>Burst 3</strong> area around you, and cannot be affected by any other character hostile to you unless they have line of sight to that character. You cannot take this action again until its effects end.",
+        "attack": "tech",
+        "add_special": [
+          {
+            "attribute": "Confused",
+            "detail": "You cannot draw line of sight into or out of the Burst 3 area around the Lantern, and cannot be affected by any other character hostile to the Lantern unless you have line of sight to that character.",
+            "duration": "next_turn_end_target"
+          }
+        ]
+      }
+    ],
+    "attack_bonus": [1, 2, 3],
+    "tags": [
+      {
+        "id": "tg_npc_system"
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_mystical_fire_lantern",
+    "name": "Mystical Fire",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "actions": [
+      {
+        "name": "Mystical Fire",
+        "activation": "Full",
+        "detail": "Hostile characters within <strong>Burst 3</strong> must pass an <strong>Agility</strong> save or take <strong>{3/4/5} Burn</strong>. Until the end of your next turn, hostile characters within <strong>Burst 3</strong> cannot clear <strong>Burn</strong> and you cannot take this action again.",
+        "damage": [
+          {
+            "type": "Burn",
+            "val": [3, 4, 5],
+            "aoe": "burst 3",
+            "save": "agi"
+          }
+        ],
+        "add_special": [
+          {
+            "attribute": "Mystical Fire",
+            "detail": "Hostile characters within Burst 3 cannot clear Burn.",
+            "target": "self",
+            "duration": "next_turn_end_self"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_nightmare_lantern",
+    "name": "Nightmare",
+    "type": "system",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "actions": [
+      {
+        "name": "Nightmare",
+        "activation": "Full",
+        "detail": "Until the end of the round, allied characters always have line of sight to characters within <strong>Burst 3</strong> of you and ignore <strong>cover</strong>, <strong>Invisible</strong>, and <strong>Hidden</strong> when targeting them. This action cannot be taken if it was already used in this round or the previous one."
+      }
+    ],
+    "tags": [
+      {
+        "id": "tg_heat_self",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_night_shade_lantern",
+    "name": "Night Shade [Veteran]",
+    "type": "trait",
+    "origin": "sea-and-sky_npcc_lantern",
+    "base": false,
+    "mod": "sea-and-sky_npcf_shadow_tag_lantern",
+    "effect": "Hostile characters may not enter or draw line of sight into or through spaces within, above, or below the shadow of the character haunted by <strong>Shadow Tag</strong>."
+  }
+]

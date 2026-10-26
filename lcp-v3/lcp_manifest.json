@@ -1,0 +1,15 @@
+{
+  "name": "Sea and Sky",
+  "author": "redox",
+  "description": "NPC classes from the Sea and Sky supplement.",
+  "version": "1.5.1",
+  "item_prefix": "sea-and-sky",
+  "v3": true,
+  "version_history": [
+    {
+      "version": "1.5.1",
+      "date": "2026-10-22",
+      "changes": ["Updated LCP to v3."]
+    }
+  ]
+}
