@@ -995,8 +995,8 @@ Whether or not the PCs have a water tank, they may leave this area of Sriracha F
   ],
   (
     [
-      2x #Keyword[Sentinels] (Bodyguard, Impaler)\
-      2x #Keyword[Veteran Breachers]\
+      1x #Keyword[Sentinel] (Bodyguard, Impaler)\
+      1x #Keyword[Veteran Breacher]\
       - Follower Count, Painmaker
       - Slippery
       - Veterancy \[+#NoKeyword[Hull]\]
@@ -1004,6 +1004,11 @@ Whether or not the PCs have a water tank, they may leave this area of Sriracha F
       - Covering Fire
       - Quick March
     ], [
+      1x #Keyword[Sentinel] (Bodyguard, Impaler)\
+      1x #Keyword[Veteran Breacher]\
+      - Follower Count, Painmaker
+      - Slippery
+      - Veterancy \[+#NoKeyword[Hull]\]
     ]
   ),
   (
@@ -1026,9 +1031,9 @@ Whether or not the PCs have a water tank, they may leave this area of Sriracha F
 ==== Holdout
 The PCs must defend Pastil's hangar from destruction for *6 rounds*, after which Olivia comes to extract them. 
 
-Create a filled clock named #clock_name("Hangar Integrity") with one segment for each PC. As a *quick action only*, a mech adjacent to the hangar may Interact with it (#link_to_label(<interact>)); on a success, untick #clock_name("Hangar Integrity") if they are an NPC and tick it if they are a PC. A hostile mech may contest the Interact action by rolling a skill of their choice against the initiating mech's Hull, but the hostile mech must be adjacent to the initiating mech rather than the hangar.
+Create a filled clock named #clock_name("Hangar Integrity") with two more segments than the number of PCs. As a *quick action only*, a mech adjacent to the hangar may Interact with it (#link_to_label(<interact>)); on a success, untick #clock_name("Hangar Integrity") if they are an NPC and tick it if they are a PC. A hostile mech may contest the Interact action by rolling a skill of their choice against the initiating mech's Hull, but the hostile mech must be adjacent to the initiating mech rather than the hangar.
 
-The PCs automatically lose if #clock_name("Hangar Integrity") is empty at the end of two consecutive rounds. Otherwise, at the end of the last round, the PCs partially win if #clock_name("Hangar Integrity") is empty and win otherwise.
+The PCs lose if #clock_name("Hangar Integrity") becomes empty before the end of the last round and win otherwise.
 
 ==== Gauntlet
 The PCs must break into Pastil's hangar and rescue the mole within *6 rounds*, or be forced to extract without them.
@@ -1097,7 +1102,8 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
 #Sitrep(
   sitrep: [modified Recon (_Lancer_ p. 273, see below)],
   rebake: [
-    - #Keyword[Assault]: replace High-Impact Rounds, Underslung Grenade Launcher, and Headshot with Fix and Flank, Rank Discipline, and Commando
+    - #Keyword[Assault]: replace High-Impact Rounds, #NoKeyword[Underslung Grenade Launcher], and Headshot with Fix and Flank, Rank Discipline, and Commando
+    - #Keyword[Engineer]: replace Shepherd Field with Perimeter Defense
   ],
   homebrew: [
     - #Keyword[Sentinels]: replace with #Keyword[Paladins] (Fortify)
@@ -1105,10 +1111,10 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
   ],
   (
     [
-      1x #Keyword[Aegis] (Guardian)\
+      1x #Keyword[Transport] #Keyword[Aegis] (Ring of Fire, Eternal Engine)\
       1x #Keyword[Hornet] (Lock/Hold Javelins)\
       1x #Keyword[Veteran Engineer]
-      - Mobile Turrets
+      - Shepherd Field
       - #NoKeyword[Self-Repair]
       - Veterancy \[#NoKeyword[+Systems]\]
       1x #Keyword[Elite Sentinel] (Punisher Ammunition)
@@ -1144,12 +1150,12 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
   ],
   homebrew: [
     - #Keyword[Bombards]: replace with #Keyword[Monsoons] (#NoKeyword[Kinetic Reservoir], Flood Targeting, Amihan Interdiction Routines, Veterancy \[#NoKeyword[+Hull]\])
-    - #Keyword[Barricades]: replace with #Keyword[Reapers] (Blight)
+    - #Keyword[Pyros]: replace with #Keyword[Reapers] (Blight)
   ],
   (
     [
-      1x #Keyword[Barricade] (Drag Down, #NoKeyword[Titan-Snare Drone])\
-      1x #Keyword[Priest] (Fractal Assault)\
+      1x #Keyword[Pyro] (#NoKeyword[Explosive Jet])\
+      1x #Keyword[Commander] #Keyword[Priest] (Fractal Assault, Military Discipline)\
       1x #Keyword[Veteran Bombard]
       - High-Impact Shells
       - Headshot
@@ -1160,20 +1166,18 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
   ),
   (
     [
-      #Keyword[Priest]: add #Keyword[Commander] template (Military Discipline)\
-      +1x #Keyword[Specter] (Step)
+      #Keyword[Specter]: add #Keyword[Elite] template\
     ], [
-      +1x #Keyword[Barricade] (Drag Down, #NoKeyword[Titan-Snare Drone])
+      +1x #Keyword[Pyro] (#NoKeyword[Explosive Jet])
     ]
   ),
   (
-    [
+    [], [
       +1x #Keyword[Commander Priest] (Fractal Assault, Military Discipline)\
       +1x #Keyword[Veteran Bombard]
       - High-Impact Shells
       - Headshot
       - Veterancy \[#NoKeyword[+Hull]\]
-    ], [
     ]
   )
 )
