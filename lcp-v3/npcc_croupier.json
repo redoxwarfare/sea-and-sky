@@ -46,7 +46,7 @@
     "damage": [
       {
         "type": "Kinetic",
-        "val": [5, 7, 9]
+        "val": [4, 6, 8]
       }
     ],
     "range": [
@@ -90,11 +90,11 @@
     "type": "trait",
     "origin": "sea-and-sky_npcc_croupier",
     "base": true,
-    "effect": "The Croupier is <strong>Invisible</strong> until it takes damage. It regains <strong>Invisible</strong> at the start of the next round.",
+    "effect": "The first time the Croupier takes damage each round, it becomes <strong>Invisible</strong> until the end of the round.",
     "active_effects": [
       {
         "name": "Fifty-Fifty",
-        "detail": "You are <strong>Invisible</strong> until you take damage. You regain <strong>Invisible</strong> at the start of the next round.",
+        "detail": "The first time you take damage each round, you become <strong>Invisible</strong> until the end of the round.",
         "add_status": [
           {
             "id": "invisible",

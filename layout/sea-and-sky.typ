@@ -2,12 +2,6 @@
 #import "@preview/hydra:0.6.2": hydra
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
-#let lcp = ImportLCP(
-  "../lcp",
-  npc_classes: true,
-  npc_features: true
-)
-
 #let title = "Sea and Sky"
 #let author = "redox"
 
@@ -1364,14 +1358,16 @@ No, going underground is essentially a status effect; for targeting purposes, th
 ]
 #let PassiveBox = PassiveBox.with(one_line_title: true)
 
+#let FindNPC(name) = json("../lcp-v3/npcc_" + name + ".json").at(0)
+
 #PlaceNPC(
-  FindNPC(lcp, "Croupier") + ("role": "controller/striker"),
+  FindNPC("croupier") + ("role": "controller/striker"),
   [
     #WeaponBox(
       title: "Bandit's Arm",
       title_tech: [
         Main Rifle, +1/2/3, +1#CC.Accuracy\
-        \[#CC.Range;10\]\[5/7/9#CC.Kinetic\]
+        \[#CC.Range;10\]\[4/6/8#CC.Kinetic\]
       ],
       body: [
         *On Critical Hit:* Target becomes Impaired until the end of their next turn.
@@ -1387,7 +1383,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
     #PassiveBox(
       title: "Fifty-Fifty",
       title_tech: "Trait",
-      body: [The Croupier is Invisible until it takes damage. It regains Invisible at the start of the next round.],
+      body: [The first time the Croupier takes damage each round, it becomes Invisible until the end of the round.],
     )
     #colbreak()
   ],
@@ -1444,7 +1440,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Gatekeeper") + ("role": "artillery/support"),
+  FindNPC("gatekeeper") + ("role": "artillery/support"),
   [
     #ActionBox(
       title: "Unlock Doors",
@@ -1522,7 +1518,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Hitchhiker") + ("role": "defender/support"),
+  FindNPC("hitchhiker") + ("role": "defender/support"),
   [
     #PassiveBox(
       title: "Black Thumb",
@@ -1608,7 +1604,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Lantern") + ("role": "support/defender"),
+  FindNPC("lantern") + ("role": "support/defender"),
   [
     #TechBox(
       title: "Shadow Tag",
@@ -1679,8 +1675,8 @@ No, going underground is essentially a status effect; for targeting purposes, th
     )
     #ActionBox(
       title: "Nightmare",
-      title_tech: [System, Full Action, 3#CC.Heat;(Self)],
-      body: [Until the end of the round, allied characters always have line of sight to characters within #CC.Burst;*3* of the Lantern and ignore cover, Invisible, and Hidden when targeting them. This action cannot be taken if it was already used in this round or the previous one.]
+      title_tech: [System, Full Action, 3#CC.Heat;(Self), Limited 1],
+      body: [Until the start of the Lantern's next turn, allied characters always have line of sight to characters within #CC.Burst;*3* of the Lantern and ignore cover, Invisible, and Hidden when targeting them.]
     )
   ]
 )
@@ -1693,7 +1689,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Monsoon") + ("role": "artillery/defender"),
+  FindNPC("monsoon") + ("role": "artillery/defender"),
   [
     #WeaponBox(
       title: "Typhoon Flechette Launcher",
@@ -1776,7 +1772,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Paladin") + ("role": "support/striker"),
+  FindNPC("paladin") + ("role": "support/striker"),
   [
     #WeaponBox(
       title: "Pathos Shotgun",
@@ -1853,7 +1849,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Pioneer") + ("role": "support/controller"),
+  FindNPC("pioneer") + ("role": "support/controller"),
   [
     #ActionBox(
       title: "Pavement Drone",
@@ -1926,7 +1922,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Reaper") + ("role": "defender/controller"),
+  FindNPC("reaper") + ("role": "defender/controller"),
   [
     #WeaponBox(
       title: "Greywash Scythe",
@@ -2006,7 +2002,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Thermostat") + ("role": "controller/support"),
+  FindNPC("thermostat") + ("role": "controller/support"),
   [
     #TechBox(
       title: "Carnot Cycle",
@@ -2086,7 +2082,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
 )
 
 #PlaceNPC(
-  FindNPC(lcp, "Tunneler") + ("role": "striker/support"),
+  FindNPC("tunneler") + ("role": "striker/support"),
   [
     #PassiveBox(
       title: "Lithodynamic Movement Suite",

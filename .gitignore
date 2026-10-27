@@ -1,6 +1,9 @@
 rebake-lcp/
 core-npc-lcp/
 
+*.pdf
+!sea-and-sky.pdf
+
 # Visual Studio Code
 .vscode/*
 

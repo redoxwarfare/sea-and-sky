@@ -2015,7 +2015,7 @@
     text(size: 16pt)[*MECH SKILLS*]
     v(-1em)
     columns(2)[
-      #set text(size: 10pt, font: "Ubuntu Mono")
+      #set text(size: 9pt, font: "Ubuntu Mono")
       *Hull:* #stats.hull.at(tier)\
       *Agility:* #stats.agility.at(tier)
       #colbreak()
@@ -2026,7 +2026,7 @@
     text(size: 16pt)[*CORE STATS*]
     v(-2em)
     columns(2)[
-      #set text(size: 10pt, font: "Ubuntu Mono")
+      #set text(size: 9pt, font: "Ubuntu Mono")
       *HP:* #stats.hp.at(tier)\
       *Evasion:* #stats.evade.at(tier)\
       *Speed:* #stats.speed.at(tier)\
@@ -2067,9 +2067,9 @@
         #text(size: 30pt, fill: red)[
           *#upper(frame.name)* #if (frame.at("variant", default: none) != none) { [*(#frame.variant Alt)*] }
         ]\
-        #text(fill: red, font: "Ubuntu Mono", [#v(-0.5em) #role.join("/")])
+        #text(fill: red, font: "Ubuntu Mono", size: 9pt, [#v(-0.5em) #role.join("/")])
         #v(-1em)
-        #align(left, text(font: "Ubuntu Mono", NoKeyword([
+        #align(left, text(font: "Ubuntu Mono", size: 9pt, NoKeyword([
           #set par(spacing: 1.2em)
           #show regex("(<br>)+"): [#linebreak()#linebreak()]
           #frame.info.flavor
@@ -2119,7 +2119,10 @@
   f //Place it immediately
   text(size: 16pt)[*TACTICS*]
   linebreak()
-  frame.info.tactics
+  {
+    show regex("<\/?strong>"): ""
+    frame.info.tactics
+  }
   linebreak()
   linebreak()
 

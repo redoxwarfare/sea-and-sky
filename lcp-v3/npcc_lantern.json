@@ -247,13 +247,24 @@
       {
         "name": "Nightmare",
         "activation": "Full",
-        "detail": "Until the end of the round, allied characters always have line of sight to characters within <strong>Burst 3</strong> of you and ignore <strong>cover</strong>, <strong>Invisible</strong>, and <strong>Hidden</strong> when targeting them. This action cannot be taken if it was already used in this round or the previous one."
+        "detail": "Until the start of your next turn, allied characters always have line of sight to characters within <strong>Burst 3</strong> of you and ignore <strong>cover</strong>, <strong>Invisible</strong>, and <strong>Hidden</strong> when targeting them.",
+        "active_effects": [
+          {
+            "name": "Nightmare",
+            "detail": "Allied characters always have line of sight to characters within <strong>Burst 3</strong> of you and ignore <strong>cover</strong>, <strong>Invisible</strong>, and <strong>Hidden</strong> when targeting them.",
+            "duration": "next_turn_start_self"
+          }
+        ]
       }
     ],
     "tags": [
       {
         "id": "tg_heat_self",
         "val": 3
+      },
+      {
+        "id": "tg_limited",
+        "val": 1
       }
     ]
   },

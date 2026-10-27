@@ -2,13 +2,22 @@
   "name": "Sea and Sky",
   "author": "redox",
   "description": "NPC classes from the Sea and Sky supplement.",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "item_prefix": "sea-and-sky",
   "v3": true,
   "version_history": [
     {
+      "version": "1.6.0",
+      "date": "2026-10-xx",
+      "changes": [
+        "Added Transport template",
+        "Croupier: reduced Bandit's Arm damage, changed Fifty-Fifty",
+        "Lantern: changed Nightmare duration and added Limited 1 tag"
+      ]
+    },
+    {
       "version": "1.5.1",
-      "date": "2026-10-22",
+      "date": "2026-10-26",
       "changes": ["Updated LCP to v3."]
     }
   ]
