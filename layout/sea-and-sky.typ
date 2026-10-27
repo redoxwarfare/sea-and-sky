@@ -11,7 +11,7 @@
   CoverImg: none,
   Description: "Setting Guide",
   Dedication: [
-    _Version 1.5.0_
+    _Version 1.6.0_
     #v(1fr)
     *Special Thanks to*
 
