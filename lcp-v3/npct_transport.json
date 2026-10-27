@@ -1,0 +1,131 @@
+[
+  {
+    "id": "sea-and-sky_npct_transport",
+    "template": true,
+    "name": "Transport",
+    "description": "The <strong>Transport</strong> template is a reimagining of the <strong>Vehicle</strong> template focused on ferrying allies around the battlefield.",
+    "forceTag": "Vehicle",
+    "prohibitTemplates": ["Vehicle", "Ship"]
+  },
+  {
+    "id": "sea-and-sky_npcf_enhanced_capacity_transport",
+    "name": "Enhanced Capacity",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": true,
+    "effect": "The Transport gains <strong>+5 HP</strong> and <strong>+1 Speed</strong> and is at least <strong>1 Size</strong> larger than normal, up to a maximum of <strong>Size 4</strong>. However, it cannot split its movement and must move in straight lines.",
+    "active_effects": [
+      {
+        "name": "Enhanced Capacity",
+        "detail": "You cannot split your movement and must move in straight lines.",
+        "bonuses": [
+          {"id": "hp", "val": 5},
+          {"id": "speed", "val": 1},
+          {"id": "size", "val": 1}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_rapid_redeployer",
+    "name": "Rapid Redeployer",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": true,
+    "effect": "If they are not <strong>Immobilized</strong>, adjacent allied characters may board the Transport as a <strong>quick action</strong>, starting a <emph>ride</emph>. Allied characters (including drones) may also deploy already riding with the Transport.<br>During the ride, passengers occupy the Transport's spaces and are moved with the Transport whenever it moves. A passenger's ride ends when they move away from the Transport or the Transport is destroyed. Before the ride ends, they first move into a free space of the triggering character's choice adjacent to the Transport.<br>The Transport can carry one Squad or characters whose combined <strong>Size</strong> is less than its own.",
+    "active_effects": [
+      {
+        "name": "Rapid Redeployer",
+        "detail": "If they are not <strong>Immobilized</strong>, adjacent allied characters may board you as a <strong>quick action</strong>, starting a <emph>ride</emph>.<br>During the ride, passengers occupy your spaces and are moved with you whenever you move. A passenger's ride ends when they move away from you or you are destroyed. Before the ride ends, they first move into a free space of the triggering character's choice adjacent to you.<br>You can carry one Squad or characters whose combined <strong>Size</strong> is less than your own."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_no_manipulators_transport",
+    "name": "No Manipulators",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": true,
+    "effect": "The Transport can't <strong>Interact</strong> with objects or the environment or make melee attacks other than <strong>Ram</strong>.",
+    "active_effects": [
+      {
+        "name":"No Manipulators",
+        "detail": "You can't <strong>Interact</strong> with objects or the environment or make melee attacks other than <strong>Ram</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_all_terrain_transport",
+    "name": "All-Terrain",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": false,
+    "effect": "The Transport climbs at normal speed and ignores <strong>difficult terrain</strong>.",
+    "active_effects": [
+      {
+        "name": "All-Terrain",
+        "detail": "You climb at normal speed and ignore <strong>difficult terrain</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_amphibious_transport",
+    "name": "Amphibious",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": false,
+    "effect": "The Transport moves normally in water.",
+    "active_effects": [
+      {
+        "name": "Amphibious",
+        "detail": "You move normally in water."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_airborne_transport",
+    "name": "Airborne",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": false,
+    "effect": "The Transport may treat any and all of its movement as <strong>flying</strong>.",
+    "active_effects": [
+      {
+        "name": "Airborne",
+        "detail": "You may treat any and all of your movement as <strong>flying</strong>."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_spaceborne_transport",
+    "name": "Spaceborne",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": false,
+    "effect": "The Transport moves normally in zero-g environments.",
+    "active_effects": [
+      {
+        "name": "Spaceborne",
+        "detail": "You move normally in zero-g environments."
+      }
+    ]
+  },
+  {
+    "id": "sea-and-sky_npcf_eternal_engine_transport",
+    "name": "Eternal Engine",
+    "type": "trait",
+    "origin": "sea-and-sky_npct_transport",
+    "base": false,
+    "effect": "Whenever the Transport would become <strong>Immobilized</strong> or <strong>Stunned</strong>, it instead becomes <strong>Slowed</strong> for the same duration. This cannot be bypassed by <strong>Immunity</strong> to <strong>Slowed</strong> or the effects of <strong>Slowed</strong>.",
+    "active_effects": [
+      {
+        "name": "Eternal Engine",
+        "detail": "Whenever you would become <strong>Immobilized</strong> or <strong>Stunned</strong>, you instead become <strong>Slowed</strong> for the same duration. This cannot be bypassed by <strong>Immunity</strong> to <strong>Slowed</strong> or the effects of <strong>Slowed</strong>.",
+        "add_resist": [
+          {"immunity": "immobilized", "target": "self"},
+          {"immunity": "stunned", "target": "self"}
+        ]
+      }
+    ]
+  }
+]
