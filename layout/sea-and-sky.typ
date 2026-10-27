@@ -2168,3 +2168,62 @@ No, going underground is essentially a status effect; for targeting purposes, th
   title_tech: "Trait",
   body: [The Tunneler and allied characters count as standing inside a borehole as long as they are adjacent to it and not *flying*, and when standing inside a borehole, they additionally gain *soft cover* which may be used to #Keyword[Hide].]
 )
+
+== NPC Templates
+#show heading.where(level: 3): set text(fill: red)
+
+=== Transport
+The *Transport* template is a reimagining of the *Vehicle* template focused on ferrying allies around the battlefield.
+
+==== Template Features
+#PassiveBox(
+  title: "Enhanced Capacity",
+  title_tech: "Trait",
+  body: [The Transport gains *+5* HP and *+1* Speed and is at least *1* Size larger than normal, up to a maximum of Size *4*. However, it cannot split its movement and must move in straight lines.]
+)
+#PassiveBox(
+  title: "Rapid Redeployer",
+  title_tech: "Trait",
+  body: [
+    If they are not Immobilized, adjacent allied characters may board the Transport as a *quick action*, starting a _ride_. Allied characters (including drones) may also deploy already riding with the Transport. \
+    During the ride, passengers occupy the Transport's spaces and are moved with the Transport whenever it moves. A passenger's ride ends when they move away from the Transport or the Transport is destroyed. Before the ride ends, they first move into a free space of the triggering character's choice adjacent to the Transport. \
+    The Transport can carry one Squad or characters whose combined Size is less than its own.
+  ]
+)
+#PassiveBox(
+  title: "No Manipulators",
+  title_tech: "Trait",
+  body: [The Transport can't Interact with objects or the environment or make melee attacks other than Ram.]
+)
+#PassiveBox(
+  title: "Mobility Suite",
+  title_tech: "Trait",
+  body: [The Transport may choose one or more options from the *Transport Traits* list.]
+)
+
+==== Transport Traits
+#PassiveBox(
+  title: "All-Terrain",
+  title_tech: "Trait",
+  body: [The Transport climbs at normal speed and ignores *difficult terrain*.]
+)
+#PassiveBox(
+  title: "Amphibious",
+  title_tech: "Trait",
+  body: [The Transport moves normally in water.]
+)
+#PassiveBox(
+  title: "Airborne",
+  title_tech: "Trait",
+  body: [The Transport may treat any and all of its movement as *flying*.]
+)
+#PassiveBox(
+  title: "Spaceborne",
+  title_tech: "Trait",
+  body: [The Transport moves normally in zero-g environments.]
+)
+#PassiveBox(
+  title: "Eternal Engine",
+  title_tech: "Trait",
+  body: [Whenever the Transport would become Immobilized or Stunned, it instead becomes Slowed for the same duration. This cannot be bypassed by Immunity to Slowed or the effects of Slowed.]
+)
