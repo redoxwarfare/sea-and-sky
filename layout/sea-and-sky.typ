@@ -11,7 +11,7 @@
   CoverImg: none,
   Description: "Setting Guide",
   Dedication: [
-    _Version 1.6.0_
+    _Version 1.6.1_
     #v(1fr)
     *Special Thanks to*
 
@@ -836,7 +836,7 @@ Additionally, if the PCs fill #clock_name("Alert") before making it to Pastil, t
     "Worst part is those scumbags were *waiting* for us. They could've reached the swarm first with their headstart, but nooo, they just had to go out of their way to put down the little guys! _Hay nako_, some people have absolutely no shame!"
   ]
 
-  *Engage*: Freeing Marlene from the wreckage of her mech is #Keyword[Risky] -- PCs that take consequences strain their mechs' servos and start the next combat Impaired and Slowed until the end of their turn. On a success, the grateful wrangler gifts the PCs her *Synthetic Muscle Netting* (_Lancer_ p. 130), which one PC may immediately equip for the rest of the mission.
+  *Engage*: Freeing Marlene from the wreckage of her mech is #Keyword[Risky] -- PCs that take consequences strain their mechs' servos and start the next combat Impaired and Slowed until the end of their turn. On a success, the grateful wrangler gifts the PCs her *Synthetic Muscle Netting* (_Lancer_ p. 130), which one PC may immediately equip as #Keyword[Exotic Gear].
 
   ==== Siomai
   #read_aloud[The delivery convoy's destination, Siomai, is a town that remains loyal to the Bulalacao Group. As a reward for their productivity, the conglomerate has installed a long-distance communications array.]
@@ -850,7 +850,7 @@ Additionally, if the PCs fill #clock_name("Alert") before making it to Pastil, t
 
   The tower holds valuable equipment, but trying to extract it will cause the structure to collapse. The PCs may *Engage* with one of the following:
 
-  - *Thermal Batteries*: The tower contains thermal batteries and heat exchangers that could be jury-rigged to either power a mech's core systems or augment its heat management. On a success, one PC obtains either one *Core Battery* (_Lancer_ p. 51) or one *Heatsink Enhancement*. On a critical success, the PCs obtain both reserves and may allocate them to the same PC or two different PCs.
+  - *Thermal Batteries*: The tower contains thermal batteries and heat exchangers that could be jury-rigged to either power a mech's core systems or augment its heat management. On a success, one PC obtains either one *Core Battery* (_Lancer_ p. 51) or one *Enhanced Heatsink*. On a critical success, the PCs obtain both reserves and may allocate them to the same PC or two different PCs.
   
   - *Feedwater*: The tower's boiler contains just enough feedwater to let Pastil scrape by, but it needs to be extracted and treated first. On a success, the PCs obtain another water tank, allowing them to ignore the consequences of losing #link_to_label(<milk-run-ambush>, show_page: false).
 
@@ -860,10 +860,10 @@ Additionally, if the PCs fill #clock_name("Alert") before making it to Pastil, t
     body: [You may expend this reserve to activate your mech's #Keyword[Core System], even if you do not have *CP*.]
   )
 
-  #GearBox(
-    title: "Heatsink Enhancement",
-    title_tech: "Reserve",
-    body: [When you rest, you may expend this reserve to reset your mech's Overcharge cost to *1*.]
+  #PassiveBox(
+    title: "Enhanced Heatsink",
+    title_tech: "1 SP, Exotic Gear, Unique",
+    body: [*1/scene*, when you would take any amount of Heat, you may activate this system to take half instead. You take the remaining Heat at the start of your next turn.]
   )
 
   ==== #text(fill: red)[Sriracha Fluctus]
@@ -888,36 +888,44 @@ Additionally, if the PCs fill #clock_name("Alert") before making it to Pastil, t
 
   The PCs may *Engage* in one of the following activities:
   
-  - *Salvage Parts*: The mining equipment can be scrapped for parts. On a success, each PC receives *+1* Repair that can exceed their Repair Cap. On a critical success, the PCs collectively receive a pool of #Keyword[Repairs] equal to the number of PCs, that may be divided among PCs as they see fit.
+  - *Salvage Parts*: The mining equipment can be scrapped for parts. On a success, the PCs collectively receive a pool of #Keyword[Repairs] equal to the number of PCs, which may be divided among PCs as they see fit.
   
-  - *Salvage Explosives*: On a success, one PC may immediately equip #NoKeyword[*BB Breach/Blast Charges*] (_Lancer_ p. 146) for the rest of the mission.
+  - *Salvage Explosives*: On a success, one PC may immediately equip #NoKeyword[*BB Breach/Blast Charges*] (_Lancer_ p. 146) as #Keyword[Exotic Gear].
 
   The PCs may attempt both, but each activity requires a separate *Engage* action.
 
   ==== Roti Mensa
   #read_aloud[A tall plateau overlooks the desert surrounding Pastil. Recent local blackwash alerts reported an ongoing encounter between a swarm and a party of wranglers atop the summit.]
 
-  Strange glassy formations jut out of the ground, growing more and more complex as one approaches the plateau. Upon the caprock, the formations encircle and encase the partially eroded husk of a mech. No life signs are detectable, but the material from the formations could be used to construct makeshift armor.
+  Strange glassy formations jut out of the ground, growing more and more complex as one approaches the plateau. Upon the caprock, the formations encircle and encase the partially eroded husk of a mech. No life signs are detectable, but the material from the formations could be used to construct self-healing armor.
 
-  *Engage*: On a success, one PC obtains #NoKeyword[*Blackglass Armor Plating*]. On a critical success, each PC obtains a copy of this reserve.
+  *Engage*: On a success, one PC may immediately equip #NoKeyword[*Blackglass Armor Plating*] as #Keyword[Exotic Gear].
 
-  #GearBox(
+  #PassiveBox(
     title: "Blackglass Armor Plating",
-    title_tech: "Reserve",
+    title_tech: "2 SP, Exotic Gear, Unique",
     body: [
-      Start each combat with an additional use of the #Keyword[Brace] reaction (see #link_to_label(<brace>)). The next time you #Keyword[Brace] this mission, the plating shatters and this reserve is immediately expended.
+      When you #Keyword[Brace], destroy this system to ignore the 1/scene limit (see #link_to_label(<brace>)). When you lose a Structure, automatically repair this system. This system is not a valid target for destruction otherwise.
     ]
   )
 
   ==== Laksa Undae
-  #read_aloud[Brisk winds shape the sand in this field into long parallel dunes. The silhouettes of Pastil's buildings are faintly visible against the horizon.]
+  #read_aloud[Brisk winds shape the sand in this field into long parallel dunes. A shimmering swarm of blackwash lazily hovers above.]
 
-  A shimmering swarm of blackwash hovers lazily over the dune field. The PCs can ignore it or attempt to reprogram the nanites.
+  The PCs can ignore the nanite swarm or attempt to reprogram it.
 
-  *Engage*: Reprogramming the nanites is #Keyword[Risky], but can be done with *+1*#CC.Accuracy if the PCs talked to the wranglers in Laab Labes. All PCs taking consequences start the next combat with *4*#CC.Burn. On a success, one PC may immediately equip a single-use copy of *Razor Swarms* (_Lancer_ p. 302) for the rest of the mission. (Replace the *Recharge 4+* tag with *Limited 1* and use the #Keyword[T1] profile.)
+  *Engage*: Reprogramming the nanites is #Keyword[Risky], but can be done with *+1*#CC.Accuracy if the PCs talked to the wranglers in Laab Labes. All PCs taking consequences start the next combat with *4*#CC.Burn. On a success, one PC may immediately equip *Blackwash Spike* as #Keyword[Exotic Gear].
+
+  #PassiveBox(
+    title: "Blackwash Spike",
+    title_tech: "2 SP, Limited 3, Mod, Exotic Gear, Unique",
+    body: [
+      Choose a weapon: when it hits a target that has *no cover* from you, expend a charge as a *free action* to deal *+2 #CC.Burn bonus damage*.
+    ]
+  )
 
   ==== Pastil
-  When the PCs arrive, they can deliver any water tanks they brought with them, but they won't have time to *Rest*.
+  When the PCs arrive, they can deliver any water tanks they brought, but they won't have time to *Rest*.
   
   If #clock_name("Alert") is not full, the PCs can hastily organize an evacuation. The mole stays behind and takes shelter in the town's most defensible building -- the hangar. Go to #link_to_label(<high-noon>) and run the *Holdout* sitrep.
 
