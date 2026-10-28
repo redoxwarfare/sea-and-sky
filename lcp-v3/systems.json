@@ -5,7 +5,7 @@
     "source": "EXOTIC",
     "license": "",
     "license_level": 0,
-    "effect": "<strong>1/scene</strong>, when you would take any amount of <strong>Heat</strong>, you may activate this system to take half instead. You take the remaining <strong>Heat</strong> at the start of your next turn.",
+    "effect": "<strong>1/scene</strong>, when you would take any amount of <strong>Heat</strong>, you may activate this system to take half instead. You take the remaining <strong>Heat</strong> at the end of your next turn.",
     "type": "System",
     "sp": 1,
     "tags": [

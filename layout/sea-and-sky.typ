@@ -863,7 +863,7 @@ Additionally, if the PCs fill #clock_name("Alert") before making it to Pastil, t
   #PassiveBox(
     title: "Enhanced Heatsink",
     title_tech: "1 SP, Exotic Gear, Unique",
-    body: [*1/scene*, when you would take any amount of Heat, you may activate this system to take half instead. You take the remaining Heat at the start of your next turn.]
+    body: [*1/scene*, when you would take any amount of Heat, you may activate this system to take half instead. You take the remaining Heat at the end of your next turn.]
   )
 
   ==== #text(fill: red)[Sriracha Fluctus]
