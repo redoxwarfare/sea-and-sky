@@ -2,10 +2,17 @@
   "name": "Sea and Sky",
   "author": "redox",
   "description": "NPC classes from the Sea and Sky supplement.",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "item_prefix": "sea-and-sky",
   "v3": true,
   "version_history": [
+    {
+      "version": "1.6.1",
+      "date": "2026-10-28",
+      "changes": [
+        "Added Exotic Gear: Enhanced Heatsink, Blackglass Armor Plating, and Blackwash Spike"
+      ]
+    },
     {
       "version": "1.6.0",
       "date": "2026-10-26",
