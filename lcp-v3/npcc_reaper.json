@@ -16,7 +16,7 @@
       "heatcap": [6, 6, 6],
       "speed": [4, 4, 4],
       "sensor": [5, 5, 5],
-      "save": [12, 15, 18],
+      "save": [11, 13, 15],
       "hull": [2, 3, 4],
       "agility": [-1, -1, -1],
       "systems": [2, 3, 4],
@@ -61,11 +61,11 @@
       {
         "name": "Sow",
         "activation": "Quick Tech",
-        "detail": "A character within <strong>Sensors</strong> must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>.<br><strong>Frightened</strong> characters make all attacks with <strong>+1 Difficulty</strong>, and when they take damage, the closest character allied to them that is within line of sight and <strong>Range 5</strong> and not already <strong>Frightened</strong> must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>.<br>Characters clear <strong>Frightened</strong> by passing a <strong>Systems</strong> save as a quick action or by damaging a Reaper.",
+        "detail": "A character within <strong>Sensors</strong> must pass a <strong>Systems</strong> save with <strong>+1 Difficulty</strong> or become <strong>Frightened</strong>.<br><strong>Frightened</strong> characters make all attacks with <strong>+1 Difficulty</strong>, and when they take damage, the closest character allied to them that is within line of sight and <strong>Range 3</strong> and not already <strong>Frightened</strong> becomes <strong>Frightened</strong>.<br>Characters clear <strong>Frightened</strong> by passing a <strong>Systems</strong> save as a quick action or by dealing any amount of damage to a Reaper.",
         "add_special": [
           {
             "attribute": "Frightened",
-            "detail": "You make all attacks with +1 Difficulty. When you take damage, the closest allied character within line of sight and Range 5 who is not already Frightened must pass a Systems save or become Frightened."
+            "detail": "You make all attacks with +1 Difficulty. When you take damage, the closest allied character within line of sight and Range 3 who is not already Frightened becomes Frightened."
           }
         ]
       }
@@ -99,7 +99,7 @@
       {
         "name": "Flight",
         "activation": "Protocol",
-        "detail": "Targets move <strong>5 spaces</strong> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling."
+        "detail": "Targets move <strong>4 spaces</strong> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling."
       }
     ]
   },
@@ -198,11 +198,11 @@
       {
         "name": "Cascading Fear",
         "activation": "Quick Tech",
-        "detail": "Make a tech attack against a <strong>Frightened</strong> character within <strong>Sensors</strong>. On a hit, the next time they take damage while <strong>Frightened</strong>, all of their allies within line of sight and <strong>Range 5</strong> take <strong>{2/3/4} Burn</strong>, then must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>. As long as the target is <strong>Frightened</strong>, this effect refreshes at the start of each round.",
+        "detail": "Make a tech attack against a <strong>Frightened</strong> character within <strong>Sensors</strong>. On a hit, the next time they take damage while <strong>Frightened</strong>, all of their allies within line of sight and <strong>Range 3</strong> take <strong>{2/3/4} Burn</strong>, then must pass a <strong>Systems</strong> save or become <strong>Frightened</strong>. As long as the target is <strong>Frightened</strong>, this effect refreshes at the start of each round.",
         "add_special": [
           {
             "attribute": "Cascading Fear",
-            "detail": "The first time each round you take damage while Frightened, all allies within line of sight and Range 5 take {2/3/4} Burn, then must pass a Systems save against the Reaper or become Frightened."
+            "detail": "The first time each round you take damage while Frightened, all allies within line of sight and Range 3 take {2/3/4} Burn, then must pass a Systems save against the Reaper or become Frightened."
           }
         ]
       }

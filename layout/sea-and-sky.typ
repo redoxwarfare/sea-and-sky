@@ -1157,12 +1157,13 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
     - #Keyword[Bombard]: replace Headshot with Danger Close
   ],
   homebrew: [
-    - #Keyword[Bombards]: replace with #Keyword[Monsoons] (#NoKeyword[Kinetic Reservoir], Flood Targeting, Amihan Interdiction Routines, Veterancy \[#NoKeyword[+Hull]\])
-    - #Keyword[Pyros]: replace with #Keyword[Reapers] (Blight)
+    - #Keyword[Bombards]: replace with #Keyword[Monsoons] (Flood Targeting, Amihan Interdiction Routines, Veterancy \[#NoKeyword[+Hull]\])
+    - #Keyword[Pyro]: replace with #Keyword[Reaper] (Blight)
   ],
   (
     [
-      1x #Keyword[Pyro] (#NoKeyword[Explosive Jet])\
+      1x #Keyword[Pyro] (Superhot)\
+      1x #Keyword[Barricade] (Drag Down, #NoKeyword[Titan-Snare Drone])
       1x #Keyword[Commander] #Keyword[Priest] (Fractal Assault, Military Discipline)\
       1x #Keyword[Veteran Bombard]
       - High-Impact Shells
@@ -1174,19 +1175,20 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
   ),
   (
     [
-      #Keyword[Specter]: add #Keyword[Elite] template\
+      #Keyword[Pyro]: add #Keyword[Elite] template\
+      +1x #Keyword[Barricade] (Drag Down, #NoKeyword[Titan-Snare Drone])
     ], [
-      +1x #Keyword[Pyro] (#NoKeyword[Explosive Jet])
+      +1x #Keyword[Specter] (Step)
     ]
   ),
   (
-    [], [
+    [
       +1x #Keyword[Commander Priest] (Fractal Assault, Military Discipline)\
       +1x #Keyword[Veteran Bombard]
       - High-Impact Shells
       - Headshot
       - Veterancy \[#NoKeyword[+Hull]\]
-    ]
+    ], []
   )
 )
 
@@ -1208,23 +1210,27 @@ If the PCs completed at least one objective, UMAMI is open to hiring them again 
       1x _Firedog_ - #Keyword[Ultra Exotic Mirage]
       - Metafold Shove, Grind Maniple (#Keyword[Hive])
       - Ravager Turret, Chronotorus, Blinkspace Carver
-      1x #Keyword[Pyro]
+      1x #Keyword[Scourer]
     ], [
       1x #Keyword[Witch] (Chain, Pain Transference)
     ]
   ),
   (
     [
-      +1x #Keyword[Pyro]\
+      #Keyword[Scourer]: add #Keyword[Elite] template
+    ], [
       +1x #Keyword[Veteran Hive]
       - Electro-Nanite Cloud
       - Parting Gift
       - Veterancy \[#NoKeyword[+Engineering]\]
-    ], [
     ]
   ),
   (
     [
+      +1x #Keyword[Veteran Hive]
+      - Electro-Nanite Cloud
+      - Parting Gift
+      - Veterancy \[#NoKeyword[+Engineering]\]
     ], [
       #Keyword[Witch]: add #Keyword[Elite] template
     ]
@@ -1947,11 +1953,11 @@ No, going underground is essentially a status effect; for targeting purposes, th
       title: "Sow",
       title_tech: "System, Quick Tech",
       body: [
-        A character within Sensors must pass a Systems save or become Frightened.
+        A character within Sensors must pass a Systems save with *+1*#CC.Difficulty or become Frightened.
 
-        Frightened characters make all attacks with *+1*#CC.Difficulty, and when they take damage, the closest character allied to them that is within line of sight and #CC.Range;*5* and not already Frightened must pass a Systems save or become Frightened.
+        Frightened characters make all attacks with *+1*#CC.Difficulty, and when they take damage, the closest character allied to them that is within line of sight and #CC.Range;*3* and not already Frightened becomes Frightened.
 
-        Characters clear Frightened by passing a Systems save as a quick action or by damaging a Reaper.
+        Characters clear Frightened by passing a Systems save as a quick action or by dealing any amount of damage to a Reaper.
       ]
     )
     #ProtocolBox(
@@ -1960,7 +1966,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
       body: [
         The Reaper chooses one of the following effects. Regardless of line of sight, all Frightened characters within Sensors clear Frightened, then suffer the Reaper's chosen effect.
 		    - *Fight:* Targets take *2/3/4*#CC.Burn, plus additional #CC.Burn equal to the number of targets.
-		    - *Flight:* Targets move *5 spaces* in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling.
+		    - *Flight:* Targets move *4 spaces* in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling.
       ]
     )
     \
@@ -2001,7 +2007,7 @@ No, going underground is essentially a status effect; for targeting purposes, th
     #TechBox(
       title: "Cascading Fear",
       title_tech: [System, Quick Tech, +2/4/6, 3#CC.Heat;(Self)],
-      body: [The Reaper makes a tech attack against a Frightened character within Sensors. On a hit, the next time they take damage while Frightened, all of their allies within line of sight and #CC.Range;*5* take *2/3/4*#CC.Burn, then must pass a Systems save or become Frightened. As long as the target is Frightened, this effect refreshes at the start of each round.]
+      body: [The Reaper makes a tech attack against a Frightened character within Sensors. On a hit, the next time they take damage while Frightened, all of their allies within line of sight and #CC.Range;*3* take *2/3/4*#CC.Burn, then must pass a Systems save or become Frightened. As long as the target is Frightened, this effect refreshes at the start of each round.]
     )
   ]
 )

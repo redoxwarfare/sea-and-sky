@@ -10,7 +10,8 @@
       "version": "1.6.1",
       "date": "2026-10-28",
       "changes": [
-        "Added Exotic Gear: Enhanced Heatsink, Blackglass Armor Plating, and Blackwash Spike"
+        "Added Exotic Gear: Enhanced Heatsink, Blackglass Armor Plating, and Blackwash Spike",
+        "Reaper: reduced save target and range of certain effects; Frightened now spreads automatically on damage"
       ]
     },
     {
