@@ -1,0 +1,25 @@
+[
+  {
+    "id": "sea-and-sky_ms_blackwash_spike",
+    "name": "Blackwash Spike",
+    "source": "EXOTIC",
+    "license": "",
+    "license_level": 0,
+    "effect": "When the weapon this mod is applied to hits a target that has <strong>no cover</strong> from you, expend a charge as a <strong>free action</strong> to deal <strong>+2 Burn bonus damage</strong>.",
+    "type": "Mod",
+    "sp": 2,
+    "on_hit": {
+      "detail": "When the weapon this mod is applied to hits a target that has <strong>no cover</strong> from you, expend a charge as a <strong>free action</strong> to deal <strong>+2 Burn bonus damage</strong>.",
+      "damage": [
+        {"type": "Burn", "val": 2}
+      ],
+      "activation": "Free"
+    },
+    "cost": 1,
+    "tags": [
+      {"id": "tg_exotic"},
+      {"id": "tg_limited", "val": 3},
+      {"id": "tg_unique"}
+    ]
+  }
+]

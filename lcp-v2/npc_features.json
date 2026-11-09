@@ -26,9 +26,9 @@
             {
                 "type": "Kinetic",
                 "damage": [
-                    5,
-                    7,
-                    9
+                    4,
+                    6,
+                    8
                 ]
             }
         ],
@@ -72,7 +72,7 @@
         },
         "locked": false,
         "type": "Trait",
-        "effect": "The Croupier is <b>Invisible</b> until it takes damage. It regains <b>Invisible</b> at the start of the next round.",
+        "effect": "The first time the Croupier takes damage each round, it becomes <strong>Invisible</strong> until the end of the round.",
         "tags": []
     },
     {
@@ -770,7 +770,7 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "Until the end of the round, allied characters always have line of sight to characters within <b>Burst 3</b> of the Lantern and ignore cover, <b>Invisible</b>, and <b>Hidden</b> when targeting them. This action cannot be taken if it was already used in this round or the previous one.",
+        "effect": "Until the start of the Lantern's next turn, allied characters always have line of sight to characters within <b>Burst 3</b> of the Lantern and ignore cover, <b>Invisible</b>, and <b>Hidden</b> when targeting them.",
         "tags": [
             {
                 "id": "tg_full_action"
@@ -778,6 +778,10 @@
             {
                 "id": "tg_heat_self",
                 "val": 3
+            },
+            {
+                "id": "tg_limited",
+                "val": 1
             }
         ]
     },
@@ -1434,7 +1438,7 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "A character within <b>Sensors</b> must pass a <b>Systems</b> save or become <b>Frightened</b>.<br><b>Frightened</b> characters make all attacks with <b>+1 Difficulty</b>, and when they take damage, the closest character allied to them that is within line of sight and <b>Range 5</b> and not already <b>Frightened</b> must pass a <b>Systems</b> save or become <b>Frightened</b>.<br>Characters clear <b>Frightened</b> by passing a <b>Systems</b> save as a quick action or by damaging a Reaper.",
+        "effect": "A character within <strong>Sensors</strong> must pass a <strong>Systems</strong> save with <strong>+1 Difficulty</strong> or become <strong>Frightened</strong>.<br><strong>Frightened</strong> characters make all attacks with <strong>+1 Difficulty</strong>, and when they take damage, the closest character allied to them that is within line of sight and <strong>Range 3</strong> and not already <strong>Frightened</strong> becomes <strong>Frightened</strong>.<br>Characters clear <strong>Frightened</strong> by passing a <strong>Systems</strong> save as a quick action or by dealing any amount of damage to a Reaper.",
         "tags": [
             {
                 "id": "tg_quick_tech"
@@ -1452,7 +1456,7 @@
         },
         "locked": false,
         "type": "System",
-        "effect": "The Reaper chooses one of the following effects. Regardless of line of sight, all <b>Frightened</b> characters within <b>Sensors</b> clear <b>Frightened</b>, then suffer the Reaper's chosen effect.<ul><li><b>Fight:</b> Targets take <b>{2/3/4} burn</b>, plus additional <b>burn</b> equal to the number of targets.</li><li><b>Flight:</b> Targets move <b>5 spaces</b> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling.</li></ul>",
+        "effect": "The Reaper chooses one of the following effects. Regardless of line of sight, all <b>Frightened</b> characters within <b>Sensors</b> clear <b>Frightened</b>, then suffer the Reaper's chosen effect.<ul><li><b>Fight:</b> Targets take <b>{2/3/4} burn</b>, plus additional <b>burn</b> equal to the number of targets.</li><li><b>Flight:</b> Targets move <b>4 spaces</b> in directions of the Reaper's choice. This movement is involuntary but provokes reactions and engagement as normal and doesn't count as pushing or pulling.</li></ul>",
         "tags": [
             {
                 "id": "tg_protocol"
@@ -1529,7 +1533,7 @@
         },
         "locked": false,
         "type": "Tech",
-        "effect": "The Reaper makes a tech attack against a <b>Frightened</b> character within <b>Sensors</b>. On a hit, the next time they take damage while <b>Frightened</b>, all of their allies within line of sight and <b>Range 5</b> take <b>{2/3/4} burn</b>, then must pass a Systems save or become <b>Frightened</b>. As long as the target is <b>Frightened</b>, this effect refreshes at the start of each round.",
+        "effect": "The Reaper makes a tech attack against a <b>Frightened</b> character within <b>Sensors</b>. On a hit, the next time they take damage while <b>Frightened</b>, all of their allies within line of sight and <b>Range 3</b> take <b>{2/3/4} burn</b>, then must pass a Systems save or become <b>Frightened</b>. As long as the target is <b>Frightened</b>, this effect refreshes at the start of each round.",
         "tags": [
             {
                 "id": "tg_quick_tech"
@@ -1780,210 +1784,210 @@
     },
     {
         "id": "sea-and-sky_npcf_lithodynamic_movement_suite_tunneler",
-            "name": "Lithodynamic Movement Suite",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": true
+        "name": "Lithodynamic Movement Suite",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "If the Tunneler is on solid ground, it may take <b>2 heat</b> to <i>go underground</i> as a <b>quick action</b>, gaining <b>+2 Speed</b> and the ability to ignore all terrain, obstructions, and engagement. While the Tunneler is underground, other characters ignore engagement with it and make ranged and melee attacks against it with <b>+1 Difficulty</b>. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <i>resurfaces</i> in the nearest free space before leaving the ground, after resolving any attack, or as a <b>free action</b>. Neither going underground nor resurfacing count as movement.",
+        "tags": [
+            {
+                "id": "tg_quick_action"
             },
-            "locked": false,
-            "type": "Trait",
-            "effect": "If the Tunneler is on solid ground, it may take <b>2 heat</b> to <i>go underground</i> as a <b>quick action</b>, gaining <b>+2 Speed</b> and the ability to ignore all terrain, obstructions, and engagement. While the Tunneler is underground, other characters ignore engagement with it and make ranged and melee attacks against it with <b>+1 Difficulty</b>. Otherwise, the Tunneler interacts with other characters and objects normally.<br>If underground, the Tunneler <i>resurfaces</i> in the nearest free space before leaving the ground, after resolving any attack, or as a <b>free action</b>. Neither going underground nor resurfacing count as movement.",
-            "tags": [
-                {
-                    "id": "tg_quick_action"
-                },
-                {
-                    "id": "tg_heat_self",
-                    "val": 2
-                }
-            ]
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_subterranean_networks_tunneler",
-            "name": "Subterranean Networks",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": true
-            },
-            "locked": false,
-            "type": "System",
-            "effect": "<b>Borehole (HP {8/10/12}, Evasion {5/5/5}, E-Defense {5/5/5})</b><br>Immediately after the Tunneler goes underground or resurfaces, it may take <b>1 heat</b> to create a borehole occupying the area it currently stands on. The borehole is <b>Height 1/2</b>, cannot be created overlapping objects or terrain, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside a borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When a borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
-            "tags": [
-                {
-                    "id": "tg_heat_self",
-                    "val": 1
-                }
-            ]
+        "name": "Subterranean Networks",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": true
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "<b>Borehole (HP {8/10/12}, Evasion {5/5/5}, E-Defense {5/5/5})</b><br>Immediately after the Tunneler goes underground or resurfaces, it may take <b>1 heat</b> to create a borehole occupying the area it currently stands on. The borehole is <b>Height 1/2</b>, cannot be created overlapping objects or terrain, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside a borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When a borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
+        "tags": [
+            {
+                "id": "tg_heat_self",
+                "val": 1
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_borehead_ram_tunneler",
-            "name": "Borehead Ram",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": true
-            },
-            "locked": false,
-            "type": "Weapon",
-            "effect": "If the Tunneler is underground, this weapon gains <b>+1 Accuracy</b>, and after the attack resolves, the Tunneler may create a borehole without taking <b>heat</b>.",
-            "tags": [
-                {
-                    "id": "tg_knockback",
-                    "val": 2
-                }
-            ],
-            "weapon_type": "Main Melee",
-            "attack_bonus": [
-                1,
-                2,
-                3
-            ],
-            "damage": [
-                {
-                    "type": "explosive",
-                    "damage": [
-                        6,
-                        8,
-                        10
-                    ]
-                }
-            ],
-            "range": [
-                {
-                    "type": "Threat",
-                    "val": 1
-                }
-            ],
-            "on_hit": ""
+        "name": "Borehead Ram",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": true
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "If the Tunneler is underground, this weapon gains <b>+1 Accuracy</b>, and after the attack resolves, the Tunneler may create a borehole without taking <b>heat</b>.",
+        "tags": [
+            {
+                "id": "tg_knockback",
+                "val": 2
+            }
+        ],
+        "weapon_type": "Main Melee",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "damage": [
+            {
+                "type": "explosive",
+                "damage": [
+                    6,
+                    8,
+                    10
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Threat",
+                "val": 1
+            }
+        ],
+        "on_hit": ""
     },
     {
         "id": "sea-and-sky_npcf_explosive_excavation_tunneler",
-            "name": "Explosive Excavation",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": false
-            },
-            "locked": false,
-            "type": "System",
-            "effect": "<b>1/round</b>, after the Tunneler goes underground or resurfaces adjacent to a character, they must pass an <b>Agility</b> save or be pushed back <b>3 spaces</b> and knocked <b>Prone</b>.",
-            "tags": [
-                {
-                    "id": "tg_round",
-                    "val": 1
-                }
-            ]
+        "name": "Explosive Excavation",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "<b>1/round</b>, after the Tunneler goes underground or resurfaces adjacent to a character, they must pass an <b>Agility</b> save or be pushed back <b>3 spaces</b> and knocked <b>Prone</b>.",
+        "tags": [
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_earthrend_tunneler",
-            "name": "Earthrend",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": false
+        "name": "Earthrend",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "System",
+        "effect": "The Tunneler creates a borehole where it stands, then goes underground and moves its <b>Speed</b> in a straight line without provoking reactions.",
+        "tags": [
+            {
+                "id": "tg_full_action"
             },
-            "locked": false,
-            "type": "System",
-            "effect": "The Tunneler creates a borehole where it stands, then goes underground and moves its <b>Speed</b> in a straight line without provoking reactions.",
-            "tags": [
-                {
-                    "id": "tg_full_action"
-                },
-                {
-                    "id": "tg_heat_self",
-                    "val": 2
-                }
-            ]
+            {
+                "id": "tg_heat_self",
+                "val": 2
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_burrow_tunneler",
-            "name": "Burrow",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": false
+        "name": "Burrow",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "The Tunneler is targeted by an attack while aboveground.",
+        "effect": "Before the attack is rolled, the Tunneler goes underground and creates a borehole.",
+        "tags": [
+            {
+                "id": "tg_reaction"
             },
-            "locked": false,
-            "type": "Reaction",
-            "trigger": "The Tunneler is targeted by an attack while aboveground.",
-            "effect": "Before the attack is rolled, the Tunneler goes underground and creates a borehole.",
-            "tags": [
-                {
-                    "id": "tg_reaction"
-                },
-                {
-                    "id": "tg_round",
-                    "val": 1
-                },
-                {
-                    "id": "tg_heat_self",
-                    "val": 3
-                }
-            ]
+            {
+                "id": "tg_round",
+                "val": 1
+            },
+            {
+                "id": "tg_heat_self",
+                "val": 3
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_underwatch_tunneler",
-            "name": "Underwatch",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": false
+        "name": "Underwatch",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "Reaction",
+        "trigger": "A hostile character begins movement adjacent to or moves adjacent to a borehole while the Tunneler is underground.",
+        "effect": "The Tunneler interrupts the movement, <b>teleporting</b> to the borehole and attacking the triggering character with the <b>Borehead Ram</b>.",
+        "tags": [
+            {
+                "id": "tg_reaction"
             },
-            "locked": false,
-            "type": "Reaction",
-            "trigger": "A hostile character begins movement adjacent to or moves adjacent to a borehole while the Tunneler is underground.",
-            "effect": "The Tunneler interrupts the movement, <b>teleporting</b> to the borehole and attacking the triggering character with the <b>Borehead Ram</b>.",
-            "tags": [
-                {
-                    "id": "tg_reaction"
-                },
-                {
-                    "id": "tg_round",
-                    "val": 1
-                }
-            ]
+            {
+                "id": "tg_round",
+                "val": 1
+            }
+        ]
     },
     {
         "id": "sea-and-sky_npcf_sinkhole_carver_tunneler",
-            "name": "Sinkhole Carver",
-            "origin": {
-                "type": "Class",
-                "name": "Tunneler",
-                "base": false
+        "name": "Sinkhole Carver",
+        "origin": {
+            "type": "Class",
+            "name": "Tunneler",
+            "base": false
+        },
+        "locked": false,
+        "type": "Weapon",
+        "effect": "This weapon can only be used if the Tunneler is underground. It can target spaces occupied by the Tunneler, but cannot target <b>flying</b> characters. If there are multiple targets, the Tunneler does not resurface until all attacks resolve.",
+        "tags": [],
+        "weapon_type": "Heavy Melee",
+        "attack_bonus": [
+            1,
+            2,
+            3
+        ],
+        "damage": [
+            {
+                "type": "explosive",
+                "damage": [
+                    4,
+                    5,
+                    6
+                ]
+            }
+        ],
+        "range": [
+            {
+                "type": "Burst",
+                "val": 2
             },
-            "locked": false,
-            "type": "Weapon",
-            "effect": "This weapon can only be used if the Tunneler is underground. It can target spaces occupied by the Tunneler, but cannot target <b>flying</b> characters. If there are multiple targets, the Tunneler does not resurface until all attacks resolve.",
-            "tags": [],
-            "weapon_type": "Heavy Melee",
-            "attack_bonus": [
-                1,
-                2,
-                3
-            ],
-            "damage": [
-                {
-                    "type": "explosive",
-                    "damage": [
-                        4,
-                        5,
-                        6
-                    ]
-                }
-            ],
-            "range": [
-                {
-                    "type": "Burst",
-                    "val": 2
-                },
-                {
-                    "type": "Threat",
-                    "val": 2
-                }
-            ],
-            "on_hit": "Target is pulled as close as possible to the Tunneler and must make a <b>Hull</b> save. On a failure, they become <b>Immobilized</b> until they are moved involuntarily or they pass a <b>Hull</b> save as a quick action."
+            {
+                "type": "Threat",
+                "val": 2
+            }
+        ],
+        "on_hit": "Target is pulled as close as possible to the Tunneler and must make a <b>Hull</b> save. On a failure, they become <b>Immobilized</b> until they are moved involuntarily or they pass a <b>Hull</b> save as a quick action."
     },
     {
         "id": "sea-and-sky_npcf_oversize_tunnels_tunneler",
@@ -2000,67 +2004,137 @@
     },
     {
         "id": "sea-and-sky_npcf_murphys_law_loaded_die",
-            "name": "Murphy's Law",
-            "origin": {
-                "type": "Class",
-                "name": "Loaded Die",
-                "base": true
-            },
-            "locked": false,
-            "type": "Trait",
-            "effect": "When hostile characters within <b>Burst 2</b> succeed on an attack, they must choose one: they take <b>{3/4/5} explosive damage</b>, or they reroll and keep the second result. This effect triggers only once per attack roll.",
-            "tags": []
+        "name": "Murphy's Law",
+        "origin": {
+            "type": "Class",
+            "name": "Loaded Die",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "When hostile characters within <b>Burst 2</b> succeed on an attack, they must choose one: they take <b>{3/4/5} explosive damage</b>, or they reroll and keep the second result. This effect triggers only once per attack roll.",
+        "tags": []
     },
     {
         "id": "sea-and-sky_npcf_einstein_rosen_bridge_gate",
-            "name": "Einstein-Rosen Bridge",
-            "origin": {
-                "type": "Class",
-                "name": "Gate",
-                "base": true
-            },
-            "locked": false,
-            "type": "Trait",
-            "effect": "The gate has a black side and a red side, clearly indicated to all characters on the field, and acts as a normal piece of <b>Height 1 hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if the gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules.",
-            "tags": []
+        "name": "Einstein-Rosen Bridge",
+        "origin": {
+            "type": "Class",
+            "name": "Gate",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The gate has a black side and a red side, clearly indicated to all characters on the field, and acts as a normal piece of <b>Height 1 hard cover</b>.<br>Whenever a character uses an ability that can target another character within line of sight and <b>X spaces</b>, if the gate is within their line of sight and <b>X spaces</b>, they can target any character within line of sight and <b>X spaces</b> of any other gate, as long as they and the target character are on the same color sides of their respective gates. For attacks, cover is determined from the gate within <b>X spaces</b> of the target. Reactions can also be triggered using the same rules.",
+        "tags": []
     },
     {
         "id": "sea-and-sky_npcf_kinetic_shunt_displacement_mine",
-            "name": "Kinetic Shunt",
-            "origin": {
-                "type": "Class",
-                "name": "Displacement Mine",
-                "base": true
-            },
-            "locked": false,
-            "type": "Trait",
-            "effect": "The displacement mine detonates in a <b>Burst 1</b> area when an adjacent allied character triggers it as a <b>free action</b> or a hostile character moves adjacent. Characters in the area are pushed <b>4 spaces</b> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <b>Agility</b> save or be knocked <b>Prone</b>.",
-            "tags": []
+        "name": "Kinetic Shunt",
+        "origin": {
+            "type": "Class",
+            "name": "Displacement Mine",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The displacement mine detonates in a <b>Burst 1</b> area when an adjacent allied character triggers it as a <b>free action</b> or a hostile character moves adjacent. Characters in the area are pushed <b>4 spaces</b> in a direction of the Pioneer's choice, and hostile characters must additionally pass an <b>Agility</b> save or be knocked <b>Prone</b>.",
+        "tags": []
     },
     {
         "id": "sea-and-sky_npcf_whitewash_pavement_pavement_drone",
-            "name": "Whitewash Pavement",
-            "origin": {
-                "type": "Class",
-                "name": "Pavement Drone",
-                "base": true
-            },
-            "locked": false,
-            "type": "Trait",
-            "effect": "The <b>Pavement Drone</b> continuously covers a <b>Burst 3</b> area with whitewash pavement. The pavement affects characters that are at least partially within the <b>Burst 3</b> area and not <b>flying</b>. While on the pavement, the Pioneer and allied characters gain <b>Immunity</b> to the effects of <b>Slowed</b>, and whenever they begin movement on the pavement or move onto it, they gain <b>+2 Speed</b> until the end of the turn. Hostile characters that start their turn on the pavement or move onto it for the first time in a round must pass an <b>Engineering</b> save or become <b>Slowed</b> until the start of their next turn.",
-            "tags": []
+        "name": "Whitewash Pavement",
+        "origin": {
+            "type": "Class",
+            "name": "Pavement Drone",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The <b>Pavement Drone</b> continuously covers a <b>Burst 3</b> area with whitewash pavement. The pavement affects characters that are at least partially within the <b>Burst 3</b> area and not <b>flying</b>. While on the pavement, the Pioneer and allied characters gain <b>Immunity</b> to the effects of <b>Slowed</b>, and whenever they begin movement on the pavement or move onto it, they gain <b>+2 Speed</b> until the end of the turn. Hostile characters that start their turn on the pavement or move onto it for the first time in a round must pass an <b>Engineering</b> save or become <b>Slowed</b> until the start of their next turn.",
+        "tags": []
     },
     {
         "id": "sea-and-sky_npcf_subterranean_networks_borehole",
-            "name": "Subterranean Networks",
-            "origin": {
-                "type": "Class",
-                "name": "Borehole",
-                "base": true
-            },
-            "locked": false,
-            "type": "Trait",
-            "effect": "The borehole is <b>Height 1/2</b>, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside the borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When the borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
-            "tags": []
+        "name": "Subterranean Networks",
+        "origin": {
+            "type": "Class",
+            "name": "Borehole",
+            "base": true
+        },
+        "locked": false,
+        "type": "Trait",
+        "effect": "The borehole is <b>Height 1/2</b>, does not obstruct movement or line of sight, and cannot interact with <b>flying</b> characters.<br><b>1/turn</b>, when standing completely inside the borehole, characters may <b>teleport</b> to any other borehole as a <b>free action</b> as long as they can stand completely inside the target borehole. This teleportation cannot be redirected.<br>When the borehole is destroyed, it collapses and deals <b>{4/5/6} kinetic damage</b> to all characters and objects within, as well as to all Tunnelers that are underground.",
+        "tags": []
+    },
+    {
+        "id": "sea-and-sky_npcf_enhanced_capacity_transport",
+        "name": "Enhanced Capacity",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": true,
+        "effect": "The Transport gains <strong>+5 HP</strong> and <strong>+1 Speed</strong> and is at least <strong>1 Size</strong> larger than normal, up to a maximum of <strong>Size 4</strong>. However, it cannot split its movement and must move in straight lines."
+    },
+    {
+        "id": "sea-and-sky_npcf_rapid_redeployer",
+        "name": "Rapid Redeployer",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": true,
+        "effect": "If they are not <strong>Immobilized</strong>, adjacent allied characters may board the Transport as a <strong>quick action</strong>, starting a <emph>ride</emph>. Allied characters (including drones) may also deploy already riding with the Transport.<br>During the ride, passengers occupy the Transport's spaces and are moved with the Transport whenever it moves. A passenger's ride ends when they move away from the Transport or the Transport is destroyed. Before the ride ends, they first move into a free space of the triggering character's choice adjacent to the Transport.<br>The Transport can carry one Squad or characters whose combined <strong>Size</strong> is less than its own."
+    },
+    {
+        "id": "sea-and-sky_npcf_no_manipulators_transport",
+        "name": "No Manipulators",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": true,
+        "effect": "The Transport can't <strong>Interact</strong> with objects or the environment or make melee attacks other than <strong>Ram</strong>."
+    },
+    {
+        "id": "sea-and-sky_npcf_all_terrain_transport",
+        "name": "All-Terrain",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": false,
+        "effect": "The Transport climbs at normal speed and ignores <strong>difficult terrain</strong>."
+    },
+    {
+        "id": "sea-and-sky_npcf_amphibious_transport",
+        "name": "Amphibious",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": false,
+        "effect": "The Transport moves normally in water.",
+        "active_effects": [
+            {
+                "name": "Amphibious",
+                "detail": "You move normally in water."
+            }
+        ]
+    },
+    {
+        "id": "sea-and-sky_npcf_airborne_transport",
+        "name": "Airborne",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": false,
+        "effect": "The Transport may treat any and all of its movement as <strong>flying</strong>."
+    },
+    {
+        "id": "sea-and-sky_npcf_spaceborne_transport",
+        "name": "Spaceborne",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": false,
+        "effect": "The Transport moves normally in zero-g environments."
+    },
+    {
+        "id": "sea-and-sky_npcf_eternal_engine_transport",
+        "name": "Eternal Engine",
+        "type": "Trait",
+        "origin": "sea-and-sky_npct_transport",
+        "base": false,
+        "effect": "Whenever the Transport would become <strong>Immobilized</strong> or <strong>Stunned</strong>, it instead becomes <strong>Slowed</strong> for the same duration. This cannot be bypassed by <strong>Immunity</strong> to <strong>Slowed</strong> or the effects of <strong>Slowed</strong>."
     }
 ]

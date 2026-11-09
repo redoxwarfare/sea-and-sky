@@ -1,0 +1,19 @@
+[
+    {
+        "id": "sea-and-sky_npct_transport",
+        "name": "Transport",
+        "description": "The <strong>Transport</strong> template is a reimagining of the <strong>Vehicle</strong> template focused on ferrying allies around the battlefield.",
+        "base_features": [
+            "sea-and-sky_npcf_enhanced_capacity_transport",
+            "sea-and-sky_npcf_rapid_redeployer",
+            "sea-and-sky_npcf_no_manipulators_transport"
+        ],
+        "optional_features": [
+            "sea-and-sky_npcf_all_terrain_transport",
+            "sea-and-sky_npcf_amphibious_transport",
+            "sea-and-sky_npcf_airborne_transport",
+            "sea-and-sky_npcf_spaceborne_transport",
+            "sea-and-sky_npcf_eternal_engine_transport"
+        ]
+    }
+]
